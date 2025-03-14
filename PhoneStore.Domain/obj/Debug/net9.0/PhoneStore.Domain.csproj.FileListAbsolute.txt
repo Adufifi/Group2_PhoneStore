@@ -12,3 +12,4 @@ D:\ProjectGroup2\PhoneStore.Domain\obj\Debug\net9.0\refint\PhoneStore.Domain.dll
 D:\ProjectGroup2\PhoneStore.Domain\obj\Debug\net9.0\PhoneStore.Domain.pdb
 D:\ProjectGroup2\PhoneStore.Domain\obj\Debug\net9.0\PhoneStore.Domain.genruntimeconfig.cache
 D:\ProjectGroup2\PhoneStore.Domain\obj\Debug\net9.0\ref\PhoneStore.Domain.dll
+D:\ProjectGroup2\PhoneStore.Domain\obj\Debug\net9.0\PhoneStore.Domain.sourcelink.json
