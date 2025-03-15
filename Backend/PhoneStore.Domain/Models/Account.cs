@@ -8,6 +8,7 @@ namespace PhoneStore.Domain.Models
         public required string PassWord { get; set; }
         [StringLength(100)]
         public required string Email { get; set; }
+        public byte[]? Img { get; set; }
         public string? NormalizedUserName { get; set; }
         public string? NormalizedEmail { get; set; }
         public bool? EmailConfirmed { get; set; }

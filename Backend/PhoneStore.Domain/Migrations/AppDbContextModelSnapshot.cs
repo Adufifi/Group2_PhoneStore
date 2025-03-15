@@ -42,6 +42,9 @@ namespace PhoneStore.Domain.Migrations
                     b.Property<bool?>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<byte[]>("Img")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(max)");
 
@@ -242,6 +245,9 @@ namespace PhoneStore.Domain.Migrations
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int?>("BuyCount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -303,9 +309,6 @@ namespace PhoneStore.Domain.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("ProductVariantId")
                         .HasColumnType("uniqueidentifier");
 
@@ -313,8 +316,6 @@ namespace PhoneStore.Domain.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.HasIndex("ProductVariantsId");
 
@@ -344,6 +345,9 @@ namespace PhoneStore.Domain.Migrations
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -494,17 +498,9 @@ namespace PhoneStore.Domain.Migrations
 
             modelBuilder.Entity("PhoneStore.Domain.Models.ProductImage", b =>
                 {
-                    b.HasOne("PhoneStore.Domain.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("PhoneStore.Domain.Models.ProductVariants", "ProductVariants")
                         .WithMany()
                         .HasForeignKey("ProductVariantsId");
-
-                    b.Navigation("Product");
 
                     b.Navigation("ProductVariants");
                 });

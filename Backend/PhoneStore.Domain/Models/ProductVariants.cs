@@ -7,6 +7,11 @@ namespace PhoneStore.Domain.Models
         public virtual Product? Product { get; set; }
         public required Guid ColorId { get; set; }
         public virtual ProductColor? ProductColor { get; set; }
+        [Range(0, int.MaxValue)]
+        public int Quantity
+        {
+            get; set;
+        }
         public Guid CapacityId { get; set; }
         public virtual Capacity? Capacity { get; set; }
         [Range(0, double.MaxValue)]

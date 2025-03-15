@@ -13,6 +13,7 @@ namespace PhoneStore.Domain.Models
         [Range(0, int.MaxValue)]
         public int Stock { get; set; }
         public bool IsPromoted { get; set; }
+        public int? BuyCount { get; set; }
         public ICollection<Review> ProductReview { get; set; } = new List<Review>();
         public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
