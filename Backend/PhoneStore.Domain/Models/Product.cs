@@ -15,7 +15,6 @@ namespace PhoneStore.Domain.Models
         public bool IsPromoted { get; set; }
         public int? BuyCount { get; set; }
         public ICollection<Review> ProductReview { get; set; } = new List<Review>();
-        public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

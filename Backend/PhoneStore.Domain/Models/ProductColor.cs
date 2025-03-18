@@ -4,5 +4,6 @@ namespace PhoneStore.Domain.Models
     public class ProductColor : Base
     {
         public required string ColorName { get; set; }
+
     }
 }
