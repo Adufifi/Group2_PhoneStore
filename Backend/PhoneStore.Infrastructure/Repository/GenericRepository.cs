@@ -10,9 +10,9 @@ namespace PhoneStore.Infrastructure.Repository
             _context = context;
             _dbSet = context.Set<T>();
         }
-        public void Add(T entity)
+        public async Task AddAsync(T entity)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
         }
 
         public void Delete(int id)

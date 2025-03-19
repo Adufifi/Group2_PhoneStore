@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace PhoneStore.Domain.Models
 {
     public class Capacity : Base
     {
+        [StringLength(100)]
         public required string CapacityName { get; set; }
         public virtual ProductVariants? ProductVariant { get; set; }
     }

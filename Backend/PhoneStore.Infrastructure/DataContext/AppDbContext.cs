@@ -36,7 +36,8 @@ namespace PhoneStore.Infrastructure.DataContext
             modelBuilder.Entity<Account>()
             .HasOne(a => a.Cart)
             .WithOne(c => c.Account)
-            .HasForeignKey<Cart>(c => c.AccountId);
+            .HasForeignKey<Cart>(c => c.AccountId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Cart>()
                 .HasOne(c => c.Account)
@@ -59,6 +60,10 @@ namespace PhoneStore.Infrastructure.DataContext
             .WithOne(pi => pi.ProductVariants)
             .HasForeignKey<ProductImage>(pi => pi.ProductVariantId)
             .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<OrderItem>()
+    .Property(o => o.PriceAtTime)
+    .HasColumnType("decimal(18,2)");
+
         }
     }
 }

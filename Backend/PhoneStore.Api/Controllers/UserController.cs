@@ -4,5 +4,9 @@
     [ApiController]
     public class UserController : ControllerBase
     {
+        public UserController()
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace PhoneStore.Application.Services
         {
             if (entity != null)
             {
-                _unitOfWork.GenericRepository<T>().Add(entity);
+                _unitOfWork.GenericRepository<T>().AddAsync(entity);
                 return await _unitOfWork.SaveChangeAsync();
             }
             throw new ArgumentNullException();
