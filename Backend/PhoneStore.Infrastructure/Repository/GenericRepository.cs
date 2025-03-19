@@ -15,7 +15,7 @@ namespace PhoneStore.Infrastructure.Repository
             await _dbSet.AddAsync(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             var entity = _dbSet.Find(id);
 
@@ -63,12 +63,12 @@ namespace PhoneStore.Infrastructure.Repository
             return await _dbSet.ToListAsync();
         }
 
-        public T? GetById(int id)
+        public T? GetById(Guid id)
         {
             return _dbSet.Find(id);
         }
 
-        public async Task<T?> GetByIdAsync(int id)
+        public async Task<T?> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }

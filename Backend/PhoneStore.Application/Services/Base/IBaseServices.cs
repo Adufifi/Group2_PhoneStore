@@ -4,10 +4,10 @@ namespace PhoneStore.Application.Services
     {
         Task<int> AddAsync(T entity);
         Task<bool> UpdateAsync(T entity);
-        bool Delete(int id);
-        Task<bool> DeleteAsync(int id);
+        bool Delete(Guid id);
+        Task<bool> DeleteAsync(Guid id);
         Task<bool> DeleteAsync(T entity);
-        Task<T?> GetByIdAsync(int id);
+        Task<T?> GetByIdAsync(Guid id);
         Task<IEnumerable<T>> GetAllAsync();
     }
 }

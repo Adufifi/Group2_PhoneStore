@@ -19,13 +19,13 @@ namespace PhoneStore.Application.Services
             throw new ArgumentNullException();
         }
 
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             _unitOfWork.GenericRepository<T>().Delete(id);
             return _unitOfWork.SaveChanges() > 0;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
             _unitOfWork.GenericRepository<T>().Delete(id);
             return await _unitOfWork.SaveChangeAsync() > 0;
@@ -42,7 +42,7 @@ namespace PhoneStore.Application.Services
             return await _unitOfWork.GenericRepository<T>().GetAllAsync();
         }
 
-        public async Task<T?> GetByIdAsync(int id)
+        public async Task<T?> GetByIdAsync(Guid id)
         {
             return await _unitOfWork.GenericRepository<T>().GetByIdAsync(id);
         }

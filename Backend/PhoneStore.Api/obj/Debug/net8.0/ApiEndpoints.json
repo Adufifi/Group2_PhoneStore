@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.RoleController",
+    "Method": "All",
+    "RelativePath": "api/role/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.RoleController",
+    "Method": "CreateAccount",
+    "RelativePath": "api/role/CreateRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roleDto",
+        "Type": "PhoneStore.Application.Dto.RoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.RoleController",
+    "Method": "DeleteAccount",
+    "RelativePath": "api/role/DeleteById/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.RoleController",
+    "Method": "GetRoleById",
+    "RelativePath": "api/role/GetRoleById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.RoleController",
+    "Method": "UpdateRole",
+    "RelativePath": "api/role/UpdateById/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleDto",
+        "Type": "PhoneStore.Application.Dto.RoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

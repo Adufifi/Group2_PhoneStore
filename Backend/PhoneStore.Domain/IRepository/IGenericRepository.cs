@@ -6,11 +6,11 @@ namespace PhoneStore.Domain.Repository
     {
         IEnumerable<T> GetAll();
         Task<IEnumerable<T>> GetAllAsync();
-        T? GetById(int id);
-        Task<T?> GetByIdAsync(int id);
+        T? GetById(Guid id);
+        Task<T?> GetByIdAsync(Guid id);
         Task AddAsync(T entity);
         void Update(T entity);
-        void Delete(int id);
+        void Delete(Guid id);
         void Delete(T entity);
         IQueryable<T> GetQuery();
         IQueryable<T> GetQuery(Expression<Func<T, bool>> predicate);

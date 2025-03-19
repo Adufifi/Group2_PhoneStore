@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStore.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStore.Api", "PhoneStore.Api\PhoneStore.Api.csproj", "{B2351D11-164A-4EAB-8DAD-044B0ED566D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStore.UnitTest", "PhoneStore.Test\PhoneStore.UnitTest.csproj", "{2CFC77CF-D837-40EB-9395-DF79D161DDEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStore.IntegrationTest", "PhoneStore.IntegrationTest\PhoneStore.IntegrationTest.csproj", "{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B2351D11-164A-4EAB-8DAD-044B0ED566D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2351D11-164A-4EAB-8DAD-044B0ED566D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2351D11-164A-4EAB-8DAD-044B0ED566D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFC77CF-D837-40EB-9395-DF79D161DDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFC77CF-D837-40EB-9395-DF79D161DDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFC77CF-D837-40EB-9395-DF79D161DDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFC77CF-D837-40EB-9395-DF79D161DDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

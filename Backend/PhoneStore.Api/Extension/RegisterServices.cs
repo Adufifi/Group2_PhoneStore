@@ -27,6 +27,7 @@
             });
             services.AddTransient<IReviewServices, ReviewServices>();
             services.AddTransient<IRoleServices, RoleServices>();
+            services.AddAutoMapper(typeof(Program));
         }
     }
 }

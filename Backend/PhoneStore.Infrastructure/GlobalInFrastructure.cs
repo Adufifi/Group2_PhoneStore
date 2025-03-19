@@ -1,9 +1,9 @@
-global using System;
-global using System.Collections.Generic;
-global using System.Linq;
-global using System.Threading.Tasks;
-global using System.Linq.Expressions;
 global using Microsoft.EntityFrameworkCore;
 global using PhoneStore.Domain.Models;
 global using PhoneStore.Domain.Repository;
 global using PhoneStore.Infrastructure.DataContext;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Linq.Expressions;
+global using System.Threading.Tasks;
