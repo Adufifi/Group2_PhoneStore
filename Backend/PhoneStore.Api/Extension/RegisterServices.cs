@@ -1,4 +1,6 @@
-﻿namespace PhoneStore.Api
+﻿using PhoneStore.Api.MappingClass;
+
+namespace PhoneStore.Api
 {
     public static class RegisterServices
     {
@@ -9,7 +11,6 @@
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection") ?? throw new Exception("Sai đường dẫn kết nối kiểm tra lại appsetting"));
             });
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IAccountRoleServices, AccountRoleServices>();
             services.AddTransient<IAccountServices, AccountServices>();
             services.AddTransient<IBrandServices, BrandServices>();
             services.AddTransient<ICapacityServices, CapacityServices>();
@@ -27,7 +28,7 @@
             });
             services.AddTransient<IReviewServices, ReviewServices>();
             services.AddTransient<IRoleServices, RoleServices>();
-            services.AddAutoMapper(typeof(Program));
+            services.AddAutoMapper(typeof(ClassMapping));
         }
     }
 }

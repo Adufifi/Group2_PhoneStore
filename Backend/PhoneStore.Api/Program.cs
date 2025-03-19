@@ -1,4 +1,3 @@
-
 namespace PhoneStore.Api
 {
     public class Program
@@ -17,6 +16,7 @@ namespace PhoneStore.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.ConfigureBuildInExceptionHandler();
             app.UseCors(options =>
             {
                 options.AllowAnyHeader();

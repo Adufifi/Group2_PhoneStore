@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "CreateAccount",
+    "RelativePath": "api/account/CreateAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "register",
+        "Type": "PhoneStore.Domain.ViewModel.RegisterAccount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "GetAllAccount",
+    "RelativePath": "api/account/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/account/GetById{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PhoneStore.Api.Controllers.RoleController",
     "Method": "All",
     "RelativePath": "api/role/All",

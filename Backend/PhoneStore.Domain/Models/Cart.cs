@@ -5,8 +5,8 @@ namespace PhoneStore.Domain.Models
     public class Cart : Base
     {
         public Guid ProductId { get; set; }
-        public virtual Product? Product { get; set; }
+        public ICollection<Product> Product { get; set; } = new List<Product>();
         public Guid AccountId { get; set; }
-        public virtual Account? Account { get; set; }
+        public ICollection<Account> Account { get; set; } = new List<Account>();
     }
 }

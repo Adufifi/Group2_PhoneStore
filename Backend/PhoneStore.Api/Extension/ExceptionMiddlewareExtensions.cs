@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http.Features;
-using PhoneStore.Domain.ViewModel;
 using System.Net;
+using System.Text.Json;
 
 namespace PhoneStore.Api.Extension
 {
@@ -19,12 +19,13 @@ namespace PhoneStore.Api.Extension
                     var contextRequest = context.Features.Get<IHttpRequestFeature>();
                     if (contextFeature != null)
                     {
-                        await context.Response.WriteAsync(new ErrorVm()
+                        await context.Response.WriteAsync(JsonSerializer.Serialize(new ErrorVm()
                         {
                             StatusCode = context.Response.StatusCode,
                             Message = contextFeature.Error.Message,
                             Path = contextRequest.Path
-                        }.ToString());
+                        }));
+
                     }
                 });
             });

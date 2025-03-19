@@ -28,7 +28,7 @@ namespace PhoneStore.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CartId")
+                    b.Property<Guid?>("CartId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
@@ -58,6 +58,9 @@ namespace PhoneStore.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -65,25 +68,11 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CartId")
-                        .IsUnique();
-
-                    b.ToTable("Account");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.AccountRole", b =>
-                {
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("AccountId", "RoleId");
+                    b.HasIndex("CartId");
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AccountRole");
+                    b.ToTable("Account");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>
@@ -145,8 +134,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Cart");
                 });
@@ -233,6 +220,9 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<int?>("BuyCount")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("CartId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -258,6 +248,8 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
+
+                    b.HasIndex("CartId");
 
                     b.ToTable("Product");
                 });
@@ -396,42 +388,18 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Cart", "Cart")
-                        .WithOne("Account")
-                        .HasForeignKey("PhoneStore.Domain.Models.Account", "CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cart");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.AccountRole", b =>
-                {
-                    b.HasOne("PhoneStore.Domain.Models.Account", "Account")
-                        .WithMany("AccountRoles")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Account")
+                        .HasForeignKey("CartId");
 
                     b.HasOne("PhoneStore.Domain.Models.Role", "Role")
-                        .WithMany("AccountRoles")
+                        .WithMany("Accounts")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Account");
+                    b.Navigation("Cart");
 
                     b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
-                {
-                    b.HasOne("PhoneStore.Domain.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
@@ -471,6 +439,10 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("PhoneStore.Domain.Models.Cart", null)
+                        .WithMany("Product")
+                        .HasForeignKey("CartId");
 
                     b.Navigation("Brand");
                 });
@@ -533,8 +505,6 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.Navigation("AccountReview");
-
-                    b.Navigation("AccountRoles");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>
@@ -550,6 +520,8 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
                 {
                     b.Navigation("Account");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
@@ -571,7 +543,7 @@ namespace PhoneStore.Infrastructure.Migrations
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Role", b =>
                 {
-                    b.Navigation("AccountRoles");
+                    b.Navigation("Accounts");
                 });
 #pragma warning restore 612, 618
         }

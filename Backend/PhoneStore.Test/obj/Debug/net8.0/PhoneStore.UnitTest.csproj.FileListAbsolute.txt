@@ -1,10 +1,4 @@
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\CoverletSourceRootsMapping_PhoneStore.UnitTest
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.csproj.AssemblyReference.cache
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.AssemblyInfoInputs.cache
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.AssemblyInfo.cs
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.csproj.CoreCompileInputs.cache
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.sourcelink.json
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\testhost.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\testhost.exe
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -212,6 +206,12 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\Phon
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\PhoneStore.Application.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\bin\Debug\net8.0\PhoneStore.Domain.pdb
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.csproj.AssemblyReference.cache
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.AssemblyInfoInputs.cache
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.AssemblyInfo.cs
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.csproj.CoreCompileInputs.cache
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.sourcelink.json
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneSto.F38919E0.Up2Date
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\PhoneStore.UnitTest.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Test\obj\Debug\net8.0\refint\PhoneStore.UnitTest.dll

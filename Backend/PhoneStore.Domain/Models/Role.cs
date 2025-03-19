@@ -5,6 +5,6 @@ namespace PhoneStore.Domain.Models
     {
         [StringLength(100)]
         public required string RoleName { get; set; }
-        public ICollection<AccountRole> AccountRoles { get; set; } = new List<AccountRole>();
+        public ICollection<Account> Accounts { get; set; } = new List<Account>();
     }
 }

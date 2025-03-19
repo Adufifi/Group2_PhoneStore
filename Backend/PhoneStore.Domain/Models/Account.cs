@@ -15,9 +15,10 @@ namespace PhoneStore.Domain.Models
         public string? NormalizedEmail { get; set; }
         [StringLength(256)]
         public bool? EmailConfirmed { get; set; }
-        public Guid CartId { get; set; }
+        public Guid? CartId { get; set; }
         public virtual Cart? Cart { get; set; }
-        public ICollection<AccountRole> AccountRoles { get; set; } = new List<AccountRole>();
+        public Guid RoleId { get; set; }
+        public virtual Role? Role { get; set; }
         public ICollection<Review> AccountReview { get; set; } = new List<Review>();
     }
 }

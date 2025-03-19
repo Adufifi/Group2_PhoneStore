@@ -3,7 +3,6 @@ namespace PhoneStore.Infrastructure.DataContext
     public class AppDbContext : DbContext
     {
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<AccountRole> AccountRoles { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductColor> ProductColors { get; set; }
@@ -28,21 +27,8 @@ namespace PhoneStore.Infrastructure.DataContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AccountRole>().HasKey(sc => new { sc.AccountId, sc.RoleId });
-            modelBuilder.Entity<AccountRole>().HasOne<Account>(sc => sc.Account)
-            .WithMany(s => s.AccountRoles).HasForeignKey(sc => sc.AccountId);
-            modelBuilder.Entity<AccountRole>().HasOne<Role>(sc => sc.Role)
-            .WithMany(s => s.AccountRoles).HasForeignKey(sc => sc.RoleId);
-            modelBuilder.Entity<Account>()
-            .HasOne(a => a.Cart)
-            .WithOne(c => c.Account)
-            .HasForeignKey<Cart>(c => c.AccountId)
-            .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Cart>()
-                .HasOne(c => c.Account)
-                .WithOne(a => a.Cart)
-                .HasForeignKey<Account>(a => a.CartId);
+
             modelBuilder.Entity<Review>().HasKey(sc => new { sc.AccountId, sc.ProductId });
             modelBuilder.Entity<Review>().HasOne<Account>(sc => sc.Account)
             .WithMany(s => s.AccountReview).HasForeignKey(sc => sc.AccountId)

@@ -16,8 +16,16 @@
         [HttpGet("All")]
         public async Task<IActionResult> All()
         {
-            var data = await _roleServices.GetAllAsync();
-            return Ok(data);
+            try
+            {
+                var data = await _roleServices.GetAllAsync();
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+                throw;
+            }
         }
         [HttpGet("GetRoleById/{id}")]
         public async Task<IActionResult> GetRoleById(Guid id)
@@ -38,6 +46,16 @@
                 statusResponse.status = -999;
                 statusResponse.mess = "Input invalid";
                 return NotFound(statusResponse);
+            }
+            var roleExit = await _roleServices.GetAllAsync();
+            foreach (var item in roleExit)
+            {
+                if (item.RoleName.ToUpper().Equals(roleDto.RoleName.ToUpper()))
+                {
+                    statusResponse.status = -909;
+                    statusResponse.mess = "Role đã tồn tại";
+                    return NotFound(statusResponse);
+                }
             }
             var dataAdd = _mapper.Map<Role>(roleDto);
             dataAdd.CreatedDate = DateTime.Now;
@@ -66,7 +84,7 @@
             }
             statusResponse.status = -2;
             statusResponse.mess = "Delete valid";
-            return StatusCode(500, statusResponse);
+            return NotFound(statusResponse);
         }
         [HttpPut("UpdateById/{id}")]
         public async Task<IActionResult> UpdateRole(Guid id, RoleDto roleDto)
