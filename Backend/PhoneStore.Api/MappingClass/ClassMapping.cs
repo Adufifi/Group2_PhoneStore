@@ -7,7 +7,8 @@ namespace PhoneStore.Api.MappingClass
         public ClassMapping()
         {
             CreateMap<Role, RoleDto>().ReverseMap();
-            CreateMap<AccountResponse, Account>()
+            CreateMap<Brand, BrandDto>().ReverseMap();
+            CreateMap<Account, AccountResponse>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
@@ -19,7 +20,7 @@ namespace PhoneStore.Api.MappingClass
             CreateMap<RegisterAccount, Account>()
            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-           .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => HashPassword(src.Password)));
+           .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => HasBCrypt(src.Password)));
 
         }
         private static string HashPassword(string password)
@@ -43,6 +44,10 @@ namespace PhoneStore.Api.MappingClass
                 rng.GetBytes(salt);
                 return Convert.ToBase64String(salt);
             }
+        }
+        private static string HasBCrypt(string pass)
+        {
+            return BCrypt.Net.BCrypt.EnhancedHashPassword(pass);
         }
     }
 }

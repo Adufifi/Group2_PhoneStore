@@ -344,6 +344,41 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.ToTable("ProductVariant");
                 });
 
+            modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DateAdded")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateExpire")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("JwtId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId")
+                        .IsUnique();
+
+                    b.ToTable("RefreshToken");
+                });
+
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
                 {
                     b.Property<Guid>("AccountId")
@@ -483,6 +518,15 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("ProductColor");
                 });
 
+            modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
+                {
+                    b.HasOne("PhoneStore.Domain.Models.Account", null)
+                        .WithOne("RefreshToken")
+                        .HasForeignKey("PhoneStore.Domain.Models.RefreshToken", "AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Account", "Account")
@@ -505,6 +549,8 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.Navigation("AccountReview");
+
+                    b.Navigation("RefreshToken");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>

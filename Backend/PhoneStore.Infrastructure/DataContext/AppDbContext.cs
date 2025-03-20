@@ -14,6 +14,7 @@ namespace PhoneStore.Infrastructure.DataContext
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Capacity> Capacities { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> context) : base(context)
         {
 
@@ -22,7 +23,8 @@ namespace PhoneStore.Infrastructure.DataContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =HIEU; database = PhoneStore;uid=sa;pwd=123;Encrypt=True;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("server =HIEU; database = PhoneStore;uid=sa;pwd=123;Encrypt=True;TrustServerCertificate=True",
+                b => b.MigrationsAssembly("PhoneStore.Infrastructure"));
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -2,8 +2,6 @@
 
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace PhoneStore.Application.Services
 {
@@ -21,39 +19,49 @@ namespace PhoneStore.Application.Services
 
         public async Task<AuthResultVm> GenerateJwtToken(Account account)
         {
-            var authClaim = new List<Claim>()
+            try
+            {
+                var authClaim = new List<Claim>()
             {
                 new Claim(ClaimTypes.Sid, account.Id.ToString()),
                 new Claim(ClaimTypes.Email,account.Email)
             };
-            var authSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"] ?? throw new Exception("Sai Secret key")));
-            var timeToken = int.Parse(_configuration["JWT:Time"] ?? throw new Exception("Time Token is not valid"));
-            var tokenGennerate = GenerateRefreshToken(50);
-            var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:Issuer"],
-                audience: _configuration["JWT:Audience"],
-                expires: DateTime.UtcNow.AddMinutes(timeToken),
-                claims: authClaim,
-                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
-                );
-            var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-            var refershToken = new RefreshToken
+                var authSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"] ?? throw new Exception("Sai Secret key")));
+                var timeToken = int.Parse(_configuration["JWT:Time"] ?? throw new Exception("Time Token is not valid"));
+
+                var token = new JwtSecurityToken(
+                    issuer: _configuration["JWT:Issuer"],
+                    audience: _configuration["JWT:Audience"],
+                    expires: DateTime.UtcNow.AddMinutes(timeToken),
+                    claims: authClaim,
+                    signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                    );
+                var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+                var refershToken = new RefreshToken
+                {
+                    JwtId = token.Id,
+                    IsRevoked = false,
+                    AccountId = account.Id,
+                    DateAdded = DateTime.UtcNow,
+                    Token = GenerateRefreshToken(50)
+                };
+                await _unitOfWork.GenericRepository<RefreshToken>().AddAsync(refershToken);
+                await _unitOfWork.SaveChangeAsync();
+                var response = new AuthResultVm
+                {
+                    Token = jwtToken,
+                    RefreshToken = refershToken.Token,
+                    ExpireAt = token.ValidTo,
+
+                };
+                return response;
+            }
+            catch (DbUpdateException ex)
             {
-                JwtId = token.Id,
-                IsRevoked = false,
-                AccountId = account.Id,
-                DateAdded = DateTime.UtcNow,
-                Token = tokenGennerate
-            };
-            await _unitOfWork.GenericRepository<RefreshToken>().AddAsync(refershToken);
-            await _unitOfWork.SaveChangeAsync();
-            var response = new AuthResultVm
-            {
-                Token = jwtToken,
-                RefreshToken = refershToken.Token,
-                ExpireAt = token.ValidTo
-            };
-            return response;
+                Console.WriteLine("Lỗi khi lưu database: " + ex.Message);
+                Console.WriteLine("Chi tiết lỗi: " + ex.InnerException?.Message);
+                throw;
+            }
         }
         public static string GenerateRefreshToken(int length)
         {

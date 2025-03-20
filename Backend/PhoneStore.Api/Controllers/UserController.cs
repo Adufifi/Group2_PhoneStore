@@ -118,7 +118,7 @@ namespace PhoneStore.Api.Controllers
                 statusResponse.mess = "Email chưa đăng ký";
                 return Ok(statusResponse);
             }
-            var checkPassword = await _accountServices.CheckPassAccount(emailExit);
+            var checkPassword = _accountServices.CheckPassAccount(emailExit, login);
             if (checkPassword)
             {
                 var authResult = await _refreshToken.GenerateJwtToken(emailExit);
