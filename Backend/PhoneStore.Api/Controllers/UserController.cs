@@ -1,4 +1,4 @@
-﻿using PhoneStore.Domain.ModelResponse;
+﻿
 
 namespace PhoneStore.Api.Controllers
 {
@@ -9,12 +9,14 @@ namespace PhoneStore.Api.Controllers
         private readonly IAccountServices _accountServices;
         private readonly IMapper _mapper;
         private readonly IRoleServices _roleServices;
+        private readonly IRefreshTokenServices _refreshToken;
 
-        public UserController(IAccountServices accountServices, IMapper mapper, IRoleServices roleServices)
+        public UserController(IAccountServices accountServices, IMapper mapper, IRoleServices roleServices, IRefreshTokenServices refreshToken)
         {
             _accountServices = accountServices;
             _mapper = mapper;
             _roleServices = roleServices;
+            _refreshToken = refreshToken;
         }
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllAccount()
@@ -43,7 +45,12 @@ namespace PhoneStore.Api.Controllers
             try
             {
 
-
+                if (!IsValidEmail(register.Email))
+                {
+                    statusResponse.status = -909;
+                    statusResponse.mess = "Email not valid";
+                    return NotFound(statusResponse);
+                }
                 if (!ModelState.IsValid)
                 {
                     statusResponse.status = -999;
@@ -88,6 +95,54 @@ namespace PhoneStore.Api.Controllers
                 throw;
             }
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginVm? login)
+        {
+            var statusResponse = new StatusResponse();
+            if (login == null)
+            {
+                statusResponse.status = -9999;
+                statusResponse.mess = "Object null";
+                return Ok(statusResponse);
+            }
+            if (!ModelState.IsValid)
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input not valid";
+                return Ok(statusResponse);
+            }
+            var emailExit = await _accountServices.GetAccountByEmail(login.Email);
+            if (emailExit == null)
+            {
+                statusResponse.status = -2;
+                statusResponse.mess = "Email chưa đăng ký";
+                return Ok(statusResponse);
+            }
+            var checkPassword = await _accountServices.CheckPassAccount(emailExit);
+            if (checkPassword)
+            {
+                var authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                return Ok(authResult);
+            }
+            statusResponse.status = 2;
+            statusResponse.mess = "Mật khẩu không đúng";
+            return Ok(statusResponse);
+        }
+        [HttpDelete("delete{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var statusResponse = new StatusResponse();
+            var result = await _accountServices.DeleteAsync(id);
+            if (result)
+            {
+                statusResponse.status = 1;
+                statusResponse.mess = "Xoa thanh cong";
+                return Ok(statusResponse);
+            }
+            statusResponse.status = -2;
+            statusResponse.mess = "Xoa that bai";
+            return Ok(statusResponse);
+        }
         [NonAction]
         public async Task<bool> CheckEmail(string email)
         {
@@ -101,5 +156,26 @@ namespace PhoneStore.Api.Controllers
             }
             return false;
         }
+        [NonAction]
+        static bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false;
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
+

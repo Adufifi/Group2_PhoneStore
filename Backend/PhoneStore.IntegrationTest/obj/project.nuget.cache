@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "JTE6sYMJxT8=",
+  "dgSpecHash": "6lEcJTZrg34=",
   "success": true,
   "projectFilePath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hieun\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\hieun\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\fluentassertions\\7.0.0\\fluentassertions.7.0.0.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

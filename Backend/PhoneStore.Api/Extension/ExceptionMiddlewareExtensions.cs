@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http.Features;
-using System.Net;
-using System.Text.Json;
+﻿
 
 namespace PhoneStore.Api.Extension
 {

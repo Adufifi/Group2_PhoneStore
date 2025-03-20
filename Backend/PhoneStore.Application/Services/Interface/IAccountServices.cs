@@ -1,9 +1,8 @@
-﻿
-
-namespace PhoneStore.Application.Services
+﻿namespace PhoneStore.Application.Services
 {
     public interface IAccountServices : IBaseServices<Account>
     {
-        //Task<Account> Login();
+        Task<Account?> GetAccountByEmail(string email);
+        Task<bool> CheckPassAccount(Account account);
     }
 }

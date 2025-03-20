@@ -13,7 +13,7 @@ namespace PhoneStore.Domain.Repository
         void Delete(Guid id);
         void Delete(T entity);
         IQueryable<T> GetQuery();
-        IQueryable<T> GetQuery(Expression<Func<T, bool>> predicate);
+        Task<IQueryable<T>> GetQuery(Expression<Func<T, bool>> predicate);
         IQueryable<T> Get(
             Expression<Func<T, bool>>? filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,

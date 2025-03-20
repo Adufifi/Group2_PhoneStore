@@ -551,3 +551,4 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\PhoneStore.IntegrationTest.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\PhoneStore.IntegrationTest.genruntimeconfig.cache
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\ref\PhoneStore.IntegrationTest.dll
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\BCrypt.Net-Next.dll

@@ -78,9 +78,9 @@ namespace PhoneStore.Infrastructure.Repository
             return _dbSet;
         }
 
-        public IQueryable<T> GetQuery(Expression<Func<T, bool>> predicate)
+        public async Task<IQueryable<T>> GetQuery(Expression<Func<T, bool>> predicate)
         {
-            return _dbSet.Where(predicate);
+            return await Task.FromResult(_dbSet.Where(predicate));
         }
 
         public void Update(T entity)

@@ -1,6 +1,4 @@
-﻿using PhoneStore.Domain.ModelResponse;
-using System.Security.Cryptography;
-using System.Text;
+﻿
 
 namespace PhoneStore.Api.MappingClass
 {
@@ -16,27 +14,34 @@ namespace PhoneStore.Api.MappingClass
                 .ForMember(dest => dest.Img, opt => opt.MapFrom(src => src.Img));
             CreateMap<Account, RegisterAccount>()
                 .ForMember(desc => desc.UserName, opt => opt.MapFrom(src => src.UserName))
-                .ForMember(desc => desc.Password, opt => opt.MapFrom(src => ComputeHmacSha256(src.PassWord)))
+                .ForMember(desc => desc.Password, opt => opt.MapFrom(src => HashPassword(src.PassWord)))
                 .ForMember(desc => desc.Email, opt => opt.MapFrom(src => src.Email));
             CreateMap<RegisterAccount, Account>()
            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-           .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => ComputeHmacSha256(src.Password)));
+           .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => HashPassword(src.Password)));
 
         }
-        public static string ComputeHmacSha256(string data)
+        private static string HashPassword(string password)
         {
-            var encoding = new UTF8Encoding();
-            byte[] keyBytes = encoding.GetBytes("ItrvNYKjxqoLk2rX58UN39OQwitnytor");
-            byte[] dataBytes = encoding.GetBytes(data);
-
-            using (var hmacsha256 = new HMACSHA256(keyBytes))
+            if (string.IsNullOrEmpty(password))
+                throw new ArgumentNullException(nameof(password));
+            var salt = GenerateSalt();
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] hash = hmacsha256.ComputeHash(dataBytes);
-                return Convert.ToBase64String(hash)
-                    .Replace('+', '-')
-                    .Replace('/', '_')
-                    .TrimEnd('=');
+                byte[] saltedPassword = Encoding.UTF8.GetBytes(password + salt);
+                byte[] hashBytes = sha256.ComputeHash(saltedPassword);
+                return Convert.ToBase64String(hashBytes) + ":" + salt;
+            }
+        }
+
+        private static string GenerateSalt(int size = 16)
+        {
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                var salt = new byte[size];
+                rng.GetBytes(salt);
+                return Convert.ToBase64String(salt);
             }
         }
     }

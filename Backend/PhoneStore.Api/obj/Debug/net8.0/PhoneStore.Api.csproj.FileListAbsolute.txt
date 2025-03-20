@@ -154,3 +154,4 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\refin
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.genruntimeconfig.cache
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\ref\PhoneStore.Api.dll
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
