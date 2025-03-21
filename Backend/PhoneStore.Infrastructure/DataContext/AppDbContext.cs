@@ -29,8 +29,6 @@ namespace PhoneStore.Infrastructure.DataContext
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-
             modelBuilder.Entity<Review>().HasKey(sc => new { sc.AccountId, sc.ProductId });
             modelBuilder.Entity<Review>().HasOne<Account>(sc => sc.Account)
             .WithMany(s => s.AccountReview).HasForeignKey(sc => sc.AccountId)
@@ -49,9 +47,14 @@ namespace PhoneStore.Infrastructure.DataContext
             .HasForeignKey<ProductImage>(pi => pi.ProductVariantId)
             .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<OrderItem>()
-    .Property(o => o.PriceAtTime)
-    .HasColumnType("decimal(18,2)");
+            .Property(o => o.PriceAtTime)
+            .HasColumnType("decimal(18,2)");
 
+            modelBuilder.Entity<Account>()
+            .HasMany(a => a.RefreshTokens)
+            .WithOne(r => r.Account)
+            .HasForeignKey(r => r.AccountId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

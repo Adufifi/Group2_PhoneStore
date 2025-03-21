@@ -121,7 +121,7 @@ namespace PhoneStore.Api.Controllers
             var checkPassword = _accountServices.CheckPassAccount(emailExit, login);
             if (checkPassword)
             {
-                var authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                AuthResultVm authResult = await _refreshToken.GenerateJwtToken(emailExit);
                 return Ok(authResult);
             }
             statusResponse.status = 2;

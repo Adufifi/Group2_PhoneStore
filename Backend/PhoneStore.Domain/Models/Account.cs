@@ -19,7 +19,7 @@ namespace PhoneStore.Domain.Models
         public virtual Cart? Cart { get; set; }
         public Guid RoleId { get; set; }
         public virtual Role? Role { get; set; }
-        public virtual RefreshToken? RefreshToken { get; set; }
+        public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
         public ICollection<Review> AccountReview { get; set; } = new List<Review>();
     }
 }

@@ -8,5 +8,7 @@ namespace PhoneStore.Domain.Models
         public ICollection<Product> Product { get; set; } = new List<Product>();
         public Guid AccountId { get; set; }
         public ICollection<Account> Account { get; set; } = new List<Account>();
+        [Range(0, int.MaxValue)]
+        public int Quantity { get; set; }
     }
 }

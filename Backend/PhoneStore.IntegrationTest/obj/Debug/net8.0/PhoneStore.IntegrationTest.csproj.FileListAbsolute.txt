@@ -319,6 +319,7 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\AutoMapper.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\Azure.Core.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\Azure.Identity.dll
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\FluentAssertions.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\Humanizer.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -551,4 +552,3 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\PhoneStore.IntegrationTest.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\PhoneStore.IntegrationTest.genruntimeconfig.cache
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\obj\Debug\net8.0\ref\PhoneStore.IntegrationTest.dll
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.IntegrationTest\bin\Debug\net8.0\BCrypt.Net-Next.dll

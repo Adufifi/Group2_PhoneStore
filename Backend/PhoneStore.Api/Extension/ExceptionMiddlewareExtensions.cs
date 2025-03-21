@@ -20,7 +20,7 @@ namespace PhoneStore.Api.Extension
                         {
                             StatusCode = context.Response.StatusCode,
                             Message = contextFeature.Error.Message,
-                            Path = contextRequest.Path
+                            Path = contextRequest!.Path
                         }));
 
                     }

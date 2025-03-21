@@ -1,82 +1,205 @@
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
 }
 
 .register-box {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
 }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+.register-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.register-header h2 {
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #718096;
+  font-size: 16px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #666;
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  color: #a0aec0;
+  font-size: 18px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
 }
 
 .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 15px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
 }
 
 .form-control:focus {
-    outline: none;
-    border-color: #4caf50;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  outline: none;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #e53e3e;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.error-message i {
+  font-size: 16px;
 }
 
 .btn-register {
-    width: 100%;
-    padding: 12px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn-register:hover {
-    background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 .btn-register:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.divider {
+  text-align: center;
+  margin: 24px 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  background-color: white;
+  padding: 0 15px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  color: #4a5568;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-social:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.btn-social i {
+  font-size: 18px;
+}
+
+.btn-social.google i {
+  color: #ea4335;
+}
+
+.btn-social.facebook i {
+  color: #1877f2;
 }
 
 .form-footer {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 24px;
+  color: #718096;
+  font-size: 15px;
 }
 
 .login-link {
-    color: #4caf50;
-    text-decoration: none;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .login-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

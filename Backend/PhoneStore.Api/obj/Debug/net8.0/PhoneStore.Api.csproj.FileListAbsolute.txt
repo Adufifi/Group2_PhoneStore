@@ -9,6 +9,7 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Phone
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\AutoMapper.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Azure.Core.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Azure.Identity.dll
+D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Humanizer.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -154,4 +155,3 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\refin
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.genruntimeconfig.cache
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\ref\PhoneStore.Api.dll
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll

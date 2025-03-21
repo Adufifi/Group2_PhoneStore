@@ -15,6 +15,7 @@ namespace PhoneStore.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
             }
             app.ConfigureBuildInExceptionHandler();
             app.UseCors(options =>

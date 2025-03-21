@@ -1,39 +1,87 @@
 using System.Net;
+using System.Text;
+using Newtonsoft.Json;
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Xunit;
 
 namespace PhoneStore.IntegrationTest
 {
-    public class RoleIntergrationTest : IClassFixture<WebApplicationFactory<Program>>
+    public class RoleIntegrationTest : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _factory;
+        private readonly HttpClient _client;
 
-        public RoleIntergrationTest(WebApplicationFactory<Program> factory)
+        public RoleIntegrationTest(WebApplicationFactory<Program> factory)
         {
             _factory = factory;
+            _client = _factory.CreateClient();
         }
+
         [Fact]
-        public async Task RoleTest()
+        public async Task CreateRole_WithValidData_ShouldReturnNotFound()
         {
-            var client = _factory.CreateClient();
+            // Arrange
             var roleDto = new RoleDto { RoleName = "User" };
-            var content = new StringContent(JsonConvert.SerializeObject(roleDto), Encoding.UTF8, "application/json");
-            var testAdd = await client.PostAsync($"/api/role/CreateRole", content);
-            testAdd.StatusCode.Should().Be(System.Net.HttpStatusCode.NotFound);
-            var testGetAllRole = await client.GetAsync("/api/role/All");
-            testGetAllRole.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
-            var jsonStringAllRole = await testGetAllRole.Content.ReadAsStringAsync();
+            var content = new StringContent(
+                JsonConvert.SerializeObject(roleDto),
+                Encoding.UTF8,
+                "application/json");
+
+            // Act
+            var response = await _client.PostAsync("/api/role/CreateRole", content);
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        }
+
+        [Fact]
+        public async Task GetAllRoles_ShouldReturnSuccessAndValidData()
+        {
+            // Act
+            var response = await _client.GetAsync("/api/role/All");
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var roles = JsonConvert.DeserializeObject<List<Role>>(jsonString);
+            roles.Should().NotBeNull();
+        }
+
+        [Fact]
+        public async Task GetRoleById_WithExistingId_ShouldReturnCorrectRole()
+        {
+            // Arrange
+            var getAllResponse = await _client.GetAsync("/api/role/All");
+            var jsonStringAllRole = await getAllResponse.Content.ReadAsStringAsync();
             var listRole = JsonConvert.DeserializeObject<List<Role>>(jsonStringAllRole);
             var firstRole = listRole!.FirstOrDefault();
-            var testGetById = await client.GetAsync($"/api/role/GetRoleById/{firstRole.Id}");
-            testGetById.StatusCode.Should().Be(HttpStatusCode.OK);
+            firstRole.Should().NotBeNull("Cần có ít nhất một role trong database để test");
 
+            // Act
+            var response = await _client.GetAsync($"/api/role/GetRoleById/{firstRole!.Id}");
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var roleById = JsonConvert.DeserializeObject<Role>(jsonString);
+
+            roleById.Should().NotBeNull();
+            roleById!.Id.Should().Be(firstRole.Id);
+            roleById.RoleName.Should().Be(firstRole.RoleName);
         }
+
         [Fact]
-        public async Task RoleDelete()
+        public async Task DeleteRole_WithNonExistingId_ShouldReturnNotFound()
         {
-            var client = _factory.CreateClient();
-            var id = Guid.NewGuid();
-            var testDeleteById = await client.DeleteAsync($"/api/role/DeleteById/{id}");
-            testDeleteById.StatusCode.Should().Be(HttpStatusCode.NotFound);
+            // Arrange
+            var nonExistingId = Guid.NewGuid();
+
+            // Act
+            var response = await _client.DeleteAsync($"/api/role/DeleteById/{nonExistingId}");
+
+            // Assert
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
     }
 }

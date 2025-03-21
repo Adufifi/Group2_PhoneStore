@@ -133,6 +133,9 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Cart");
@@ -364,17 +367,13 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<bool>("IsRevoked")
                         .HasColumnType("bit");
 
-                    b.Property<string>("JwtId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Token")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountId")
-                        .IsUnique();
+                    b.HasIndex("AccountId");
 
                     b.ToTable("RefreshToken");
                 });
@@ -520,11 +519,13 @@ namespace PhoneStore.Infrastructure.Migrations
 
             modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
                 {
-                    b.HasOne("PhoneStore.Domain.Models.Account", null)
-                        .WithOne("RefreshToken")
-                        .HasForeignKey("PhoneStore.Domain.Models.RefreshToken", "AccountId")
+                    b.HasOne("PhoneStore.Domain.Models.Account", "Account")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
@@ -550,7 +551,7 @@ namespace PhoneStore.Infrastructure.Migrations
                 {
                     b.Navigation("AccountReview");
 
-                    b.Navigation("RefreshToken");
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>

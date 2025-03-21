@@ -39,11 +39,11 @@ namespace PhoneStore.Application.Services
                 var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
                 var refershToken = new RefreshToken
                 {
-                    JwtId = token.Id,
                     IsRevoked = false,
                     AccountId = account.Id,
                     DateAdded = DateTime.UtcNow,
-                    Token = GenerateRefreshToken(50)
+                    Token = GenerateRefreshToken(50),
+                    DateExpire = DateTime.Now.AddMonths(1)
                 };
                 await _unitOfWork.GenericRepository<RefreshToken>().AddAsync(refershToken);
                 await _unitOfWork.SaveChangeAsync();
