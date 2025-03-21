@@ -11,6 +11,8 @@ namespace PhoneStore.Api.MappingClass
         {
             CreateMap<Role, RoleDto>().ReverseMap();
             CreateMap<Brand, BrandDto>().ReverseMap();
+            CreateMap<Review, ReviewDto>().ReverseMap();
+            CreateMap<Product, ProductDto>().ReverseMap();
         }
     }
 }

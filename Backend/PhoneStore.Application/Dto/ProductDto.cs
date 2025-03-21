@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PhoneStore.Application.Dto
+{
+ public   class ProductDto
+    {
+        public Guid BrandId { get; set; }
+    //    public virtual Brand? Brand { get; set; }
+        [StringLength(100)]
+        public required string ProductName { get; set; }
+        public byte[]? Image { get; set; }
+        [StringLength(1000)]
+        public string Description { get; set; } = string.Empty;
+        [Range(0, int.MaxValue)]
+        public int Stock { get; set; }
+        public bool IsPromoted { get; set; }
+        [Range(0, int.MaxValue)]
+        public int? BuyCount { get; set; }
+     //   public ICollection<Review> ProductReview { get; set; } = new List<Review>();
+     //   public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    }
+}
