@@ -3,56 +3,36 @@
   "WorkspaceRootPath": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.application\\dto\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|solutionrelative:phonestore.application\\dto\\branddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\mappingclass\\classmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\mappingclass\\classmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.application\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|solutionrelative:phonestore.application\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.integrationtest\\test\\reviewintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|solutionrelative:phonestore.integrationtest\\test\\reviewintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.application\\dto\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|solutionrelative:phonestore.application\\dto\\reviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.application\\services\\reviewservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{496822E8-5B29-45BC-9324-4CF3A883C124}|PhoneStore.Application\\PhoneStore.Application.csproj|solutionrelative:phonestore.application\\services\\reviewservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.domain\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.integrationtest\\test\\productintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|solutionrelative:phonestore.integrationtest\\test\\productintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.test\\globaltest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|solutionrelative:phonestore.test\\globaltest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.integrationtest\\test\\roleintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|solutionrelative:phonestore.integrationtest\\test\\roleintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.test\\roletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|solutionrelative:phonestore.test\\roletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|d:\\ojt\\ojt_hehe\\group2_phonestore\\backend\\phonestore.test\\roletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CFC77CF-D837-40EB-9395-DF79D161DDEB}|PhoneStore.Test\\PhoneStore.UnitTest.csproj|solutionrelative:phonestore.test\\roletest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,78 +41,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 492,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 504,
+          "SelectedChildIndex": 65,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ClassMapping.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\MappingClass\\ClassMapping.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\MappingClass\\ClassMapping.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\MappingClass\\ClassMapping.cs",
-              "RelativeToolTip": "PhoneStore.Api\\MappingClass\\ClassMapping.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T13:30:02.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReviewServices.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Services\\ReviewServices.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\ReviewServices.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Services\\ReviewServices.cs",
-              "RelativeToolTip": "PhoneStore.Application\\Services\\ReviewServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T04:15:42.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\ReviewController.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "PhoneStore.Api\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T04:07:05.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "PhoneStore.Api\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:31:34.311Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 297,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BrandDto.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Dto\\BrandDto.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Application\\Dto\\BrandDto.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Dto\\BrandDto.cs",
-              "RelativeToolTip": "PhoneStore.Application\\Dto\\BrandDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T02:54:29.136Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
@@ -383,12 +297,8 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:8:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "ReviewDto.cs",
               "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Dto\\ReviewDto.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Dto\\ReviewDto.cs",
@@ -396,98 +306,66 @@
               "RelativeToolTip": "PhoneStore.Application\\Dto\\ReviewDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T04:07:19.19Z"
+              "WhenOpened": "2025-03-21T13:53:28.662Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GlobalTest.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\GlobalTest.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Test\\GlobalTest.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\GlobalTest.cs",
-              "RelativeToolTip": "PhoneStore.Test\\GlobalTest.cs",
+              "DocumentIndex": 2,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Review.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Review.cs",
+              "RelativeToolTip": "PhoneStore.Domain\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:53:18.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReviewIntergrationTest.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\ReviewIntergrationTest.cs",
+              "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\ReviewIntergrationTest.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\ReviewIntergrationTest.cs*",
+              "RelativeToolTip": "PhoneStore.IntegrationTest\\Test\\ReviewIntergrationTest.cs*",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:38:45.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductIntergrationTest.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\ProductIntergrationTest.cs",
+              "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\ProductIntergrationTest.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\ProductIntergrationTest.cs",
+              "RelativeToolTip": "PhoneStore.IntegrationTest\\Test\\ProductIntergrationTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:55:18.017Z"
+              "WhenOpened": "2025-03-21T13:38:13.549Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "RoleTest.cs",
               "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\RoleTest.cs",
               "RelativeDocumentMoniker": "PhoneStore.Test\\RoleTest.cs",
               "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\RoleTest.cs",
               "RelativeToolTip": "PhoneStore.Test\\RoleTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:55:15.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Role.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Role.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Role.cs",
-              "RelativeToolTip": "PhoneStore.Domain\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:53:34.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BrandController.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\BrandController.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
-              "RelativeToolTip": "PhoneStore.Api\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:32:23.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
-              "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:49:31.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RoleController.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\RoleController.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
-              "RelativeToolTip": "PhoneStore.Api\\Controllers\\RoleController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAswFsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T04:02:08.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDto.cs",
-              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Dto\\ProductDto.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Application\\Dto\\ProductDto.cs",
-              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Dto\\ProductDto.cs",
-              "RelativeToolTip": "PhoneStore.Application\\Dto\\ProductDto.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwA8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:26:25.335Z",
+              "WhenOpened": "2025-03-21T02:55:15.166Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 11,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 344,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -500,6 +378,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\ReviewController.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:48:48.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:48:43.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoleIntergrationTest.cs",
+              "DocumentMoniker": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "ToolTip": "D:\\ojt\\OJT_hehe\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "RelativeToolTip": "PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwBAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T13:36:55.699Z",
+              "EditorCaption": ""
             }
           ]
         }
