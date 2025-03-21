@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
+import {
+  RegisterService,
+  RegisterRequest,
+} from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +22,13 @@ export class RegisterComponent {
     confirmPassword: '',
   };
 
-  constructor(private router: Router) {}
+  errorMessage: string = '';
+  isLoading: boolean = false;
+
+  constructor(
+    private router: Router,
+    private registerService: RegisterService
+  ) {}
 
   isPasswordMatch(): boolean {
     return this.registerData.password === this.registerData.confirmPassword;
@@ -31,9 +41,30 @@ export class RegisterComponent {
       this.registerData.password &&
       this.isPasswordMatch()
     ) {
-      console.log('Đăng ký với:', this.registerData);
-      alert('Đăng ký thành công!');
-      this.router.navigate(['/login']);
+      this.isLoading = true;
+      this.errorMessage = '';
+
+      const registerRequest: RegisterRequest = {
+        email: this.registerData.email,
+        username: this.registerData.username,
+        password: this.registerData.password,
+      };
+
+      this.registerService.register(registerRequest).subscribe({
+        next: (response) => {
+          this.isLoading = false;
+          alert('Đăng ký thành công!');
+          this.router.navigate(['/login']);
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.errorMessage =
+            error.error.message || 'Có lỗi xảy ra khi đăng ký.';
+        },
+      });
+    } else {
+      this.errorMessage =
+        'Vui lòng điền đầy đủ thông tin và đảm bảo mật khẩu khớp.';
     }
   }
 }

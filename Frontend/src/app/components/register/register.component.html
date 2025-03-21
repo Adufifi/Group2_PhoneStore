@@ -80,12 +80,18 @@
       <div class="form-group">
         <button
           type="submit"
-          [disabled]="!registerForm.valid || !isPasswordMatch()"
+          [disabled]="!registerForm.valid || !isPasswordMatch() || isLoading"
           class="btn-register"
         >
-          <span>Tạo Tài Khoản</span>
-          <i class="fas fa-arrow-right"></i>
+          <span *ngIf="!isLoading">Tạo Tài Khoản</span>
+          <span *ngIf="isLoading">Đang xử lý...</span>
+          <i class="fas fa-arrow-right" *ngIf="!isLoading"></i>
+          <i class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>
         </button>
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
       </div>
 
       <div class="divider">
