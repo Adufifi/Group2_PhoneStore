@@ -7,6 +7,26 @@
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\projectgroup2\\group2_phonestore\\backend\\phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\projectgroup2\\group2_phonestore\\backend\\phonestore.domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16EC6DC1-8568-4E34-B80C-78EE86DF91D7}|PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj|d:\\projectgroup2\\group2_phonestore\\backend\\phonestore.infrastructure\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16EC6DC1-8568-4E34-B80C-78EE86DF91D7}|PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj|solutionrelative:phonestore.infrastructure\\datacontext\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\projectgroup2\\group2_phonestore\\backend\\phonestore.domain\\modelrequest\\authresultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\modelrequest\\authresultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,7 +69,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -85,7 +105,72 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250323045645_createDatabase.cs",
+              "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs",
+              "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs",
+              "RelativeToolTip": "PhoneStore.Infrastructure\\Migrations\\20250323045645_createDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:56:45.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Account.cs",
+              "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
+              "RelativeToolTip": "PhoneStore.Domain\\Models\\Account.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:55:47.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Role.cs",
+              "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Role.cs",
+              "RelativeToolTip": "PhoneStore.Domain\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:55:34.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAqwEQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:54:36.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
+              "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
+              "RelativeToolTip": "PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA4wBsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:54:13.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "GlobalModel.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\GlobalModel.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\GlobalModel.cs",
@@ -93,12 +178,11 @@
               "RelativeToolTip": "PhoneStore.Domain\\GlobalModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T15:03:48.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T15:03:48.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AccountServices.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Services\\AccountServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\AccountServices.cs",
@@ -106,12 +190,11 @@
               "RelativeToolTip": "PhoneStore.Application\\Services\\AccountServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T14:57:48.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T14:57:48.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AuthResultVm.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\ModelRequest\\AuthResultVm.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\ModelRequest\\AuthResultVm.cs",
@@ -119,12 +202,11 @@
               "RelativeToolTip": "PhoneStore.Domain\\ModelRequest\\AuthResultVm.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAADwvxIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T14:52:03.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T14:52:03.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "AccountResponse.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\ModelResponse\\AccountResponse.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\ModelResponse\\AccountResponse.cs",
@@ -132,12 +214,11 @@
               "RelativeToolTip": "PhoneStore.Domain\\ModelResponse\\AccountResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T14:51:57.73Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T14:51:57.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "20250321084013_adfasdf.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250321084013_adfasdf.cs",
               "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\Migrations\\20250321084013_adfasdf.cs",
@@ -145,12 +226,11 @@
               "RelativeToolTip": "PhoneStore.Infrastructure\\Migrations\\20250321084013_adfasdf.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T08:40:13.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T08:40:13.818Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Cart.cs",
@@ -168,14 +248,14 @@
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAQwG0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAxwEsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T07:20:48.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -185,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Program.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Program.cs",
@@ -197,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "RefreshTokenServices.cs",
               "DocumentMoniker": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\Services\\RefreshTokenServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\RefreshTokenServices.cs",
@@ -205,8 +285,7 @@
               "RelativeToolTip": "PhoneStore.Application\\Services\\RefreshTokenServices.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAQwDEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:50:51.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-20T08:50:51.043Z"
             }
           ]
         }

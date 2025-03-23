@@ -148,7 +148,6 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\stati
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PhoneStore.Api.props
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PhoneStore.Api.props
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.pack.json
-D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneSto.6B372973.Up2Date
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\refint\PhoneStore.Api.dll

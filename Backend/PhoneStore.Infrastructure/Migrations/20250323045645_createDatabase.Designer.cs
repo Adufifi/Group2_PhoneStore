@@ -12,8 +12,8 @@ using PhoneStore.Infrastructure.DataContext;
 namespace PhoneStore.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250320083536_addRefershToken")]
-    partial class addRefershToken
+    [Migration("20250323045645_createDatabase")]
+    partial class createDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,6 +135,9 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -358,18 +361,14 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("AccountId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DateAdded")
+                    b.Property<DateTime?>("DateAdded")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateExpire")
+                    b.Property<DateTime?>("DateExpire")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsRevoked")
                         .HasColumnType("bit");
-
-                    b.Property<string>("JwtId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Token")
                         .IsRequired()
@@ -379,7 +378,7 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasIndex("AccountId");
 
-                    b.ToTable("RefreshTokens");
+                    b.ToTable("RefreshToken");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
@@ -524,7 +523,7 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Account", "Account")
-                        .WithMany()
+                        .WithMany("RefreshTokens")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -554,6 +553,8 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.Navigation("AccountReview");
+
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>

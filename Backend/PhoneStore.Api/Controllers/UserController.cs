@@ -75,6 +75,7 @@ namespace PhoneStore.Api.Controllers
                 dataAdd.NormalizedEmail = register.Email.ToUpper();
                 dataAdd.Id = Guid.NewGuid();
                 dataAdd.RoleId = defaultRole.Id;
+                dataAdd.Role = defaultRole;
                 var result = await _accountServices.AddAsync(dataAdd);
 
                 if (result > 0)
@@ -115,7 +116,7 @@ namespace PhoneStore.Api.Controllers
             if (emailExit == null)
             {
                 authResult.status = -2;
-                authResult.mess = "Email chưa đăng ký";
+                authResult.mess = "Email not register";
                 return Ok(authResult);
             }
             var checkPassword = _accountServices.CheckPassAccount(emailExit, login);
@@ -125,7 +126,7 @@ namespace PhoneStore.Api.Controllers
                 return Ok(authResult);
             }
             authResult.status = 2;
-            authResult.mess = "Mật khẩu không đúng";
+            authResult.mess = "Password not correct";
             return Ok(authResult);
         }
         [HttpDelete("delete{id}")]

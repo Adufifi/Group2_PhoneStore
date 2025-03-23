@@ -30,7 +30,7 @@ namespace PhoneStore.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CapacityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CapacityName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -39,11 +39,26 @@ namespace PhoneStore.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Cart",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cart", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Color",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ColorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ColorName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -56,7 +71,7 @@ namespace PhoneStore.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RoleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RoleName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -76,6 +91,7 @@ namespace PhoneStore.Infrastructure.Migrations
                     Stock = table.Column<int>(type: "int", nullable: false),
                     IsPromoted = table.Column<bool>(type: "bit", nullable: false),
                     BuyCount = table.Column<int>(type: "int", nullable: true),
+                    CartId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -87,24 +103,41 @@ namespace PhoneStore.Infrastructure.Migrations
                         principalTable: "Brand",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Product_Cart_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Cart",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cart",
+                name: "Account",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+                    PassWord = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Img = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", maxLength: 256, nullable: true),
+                    CartId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cart", x => x.Id);
+                    table.PrimaryKey("PK_Account", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cart_Product_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Product",
+                        name: "FK_Account_Cart_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Cart",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Account_Role_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -146,77 +179,6 @@ namespace PhoneStore.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Account",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    PassWord = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Img = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: true),
-                    CartId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Account", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Account_Cart_CartId",
-                        column: x => x.CartId,
-                        principalTable: "Cart",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductImage",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductVariantId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Img = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductImage", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductImage_ProductVariant_ProductVariantId",
-                        column: x => x.ProductVariantId,
-                        principalTable: "ProductVariant",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AccountRole",
-                columns: table => new
-                {
-                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AccountRole", x => new { x.AccountId, x.RoleId });
-                    table.ForeignKey(
-                        name: "FK_AccountRole_Account_AccountId",
-                        column: x => x.AccountId,
-                        principalTable: "Account",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AccountRole_Role_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "Role",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -224,9 +186,9 @@ namespace PhoneStore.Infrastructure.Migrations
                     AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PaymentMethod = table.Column<int>(type: "int", nullable: false),
                     StatusProduct = table.Column<int>(type: "int", nullable: false),
-                    ShippingAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecipientName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ShippingAddress = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    RecipientName = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -234,6 +196,29 @@ namespace PhoneStore.Infrastructure.Migrations
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Orders_Account_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "Account",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RefreshToken",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsRevoked = table.Column<bool>(type: "bit", nullable: false),
+                    DateAdded = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateExpire = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RefreshToken", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RefreshToken_Account_AccountId",
                         column: x => x.AccountId,
                         principalTable: "Account",
                         principalColumn: "Id",
@@ -262,6 +247,27 @@ namespace PhoneStore.Infrastructure.Migrations
                         name: "FK_Review_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductImage",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProductVariantId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Img = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductImage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductImage_ProductVariant_ProductVariantId",
+                        column: x => x.ProductVariantId,
+                        principalTable: "ProductVariant",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -297,18 +303,12 @@ namespace PhoneStore.Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Account_CartId",
                 table: "Account",
-                column: "CartId",
-                unique: true);
+                column: "CartId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccountRole_RoleId",
-                table: "AccountRole",
+                name: "IX_Account_RoleId",
+                table: "Account",
                 column: "RoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cart_ProductId",
-                table: "Cart",
-                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_OrderId",
@@ -329,6 +329,11 @@ namespace PhoneStore.Infrastructure.Migrations
                 name: "IX_Product_BrandId",
                 table: "Product",
                 column: "BrandId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Product_CartId",
+                table: "Product",
+                column: "CartId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductImage_ProductVariantId",
@@ -353,6 +358,11 @@ namespace PhoneStore.Infrastructure.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_RefreshToken_AccountId",
+                table: "RefreshToken",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Review_ProductId",
                 table: "Review",
                 column: "ProductId");
@@ -362,19 +372,16 @@ namespace PhoneStore.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AccountRole");
-
-            migrationBuilder.DropTable(
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
                 name: "ProductImage");
 
             migrationBuilder.DropTable(
-                name: "Review");
+                name: "RefreshToken");
 
             migrationBuilder.DropTable(
-                name: "Role");
+                name: "Review");
 
             migrationBuilder.DropTable(
                 name: "Orders");
@@ -392,13 +399,16 @@ namespace PhoneStore.Infrastructure.Migrations
                 name: "Color");
 
             migrationBuilder.DropTable(
-                name: "Cart");
-
-            migrationBuilder.DropTable(
                 name: "Product");
 
             migrationBuilder.DropTable(
+                name: "Role");
+
+            migrationBuilder.DropTable(
                 name: "Brand");
+
+            migrationBuilder.DropTable(
+                name: "Cart");
         }
     }
 }
