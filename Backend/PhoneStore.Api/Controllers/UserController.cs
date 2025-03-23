@@ -1,5 +1,7 @@
 ﻿
 
+using System.Threading.Tasks;
+
 namespace PhoneStore.Api.Controllers
 {
     [Route("api/account")]
@@ -11,7 +13,10 @@ namespace PhoneStore.Api.Controllers
         private readonly IRoleServices _roleServices;
         private readonly IRefreshTokenServices _refreshToken;
 
-        public UserController(IAccountServices accountServices, IMapper mapper, IRoleServices roleServices, IRefreshTokenServices refreshToken)
+        public UserController(IAccountServices accountServices
+        , IMapper mapper
+        , IRoleServices roleServices
+        , IRefreshTokenServices refreshToken)
         {
             _accountServices = accountServices;
             _mapper = mapper;
@@ -120,15 +125,30 @@ namespace PhoneStore.Api.Controllers
                 return Ok(authResult);
             }
             var checkPassword = _accountServices.CheckPassAccount(emailExit, login);
-            if (checkPassword)
+            if (!checkPassword)
             {
-                authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                authResult.status = 2;
+                authResult.mess = "Password not correct";
                 return Ok(authResult);
             }
-            authResult.status = 2;
-            authResult.mess = "Password not correct";
-            return Ok(authResult);
+            if (await checkIdAccountIsAdminOrUser(emailExit))
+            {
+                authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                authResult.status = 3;
+                authResult.mess = "Account is Admin";
+                return Ok(authResult);
+            }
+            else
+            {
+                authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                authResult.status = 1;
+                authResult.mess = "Login successfully";
+                return Ok(authResult);
+            }
+
+
         }
+
         [HttpDelete("delete{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -176,7 +196,16 @@ namespace PhoneStore.Api.Controllers
                 return false;
             }
         }
-
+        [NonAction]
+        async Task<bool> checkIdAccountIsAdminOrUser(Account account)
+        {
+            var role = await _roleServices.GetByIdAsync(account.RoleId);
+            if (role.RoleName == "Admin")
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
 
