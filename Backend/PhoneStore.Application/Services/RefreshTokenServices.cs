@@ -49,6 +49,8 @@ namespace PhoneStore.Application.Services
                 await _unitOfWork.SaveChangeAsync();
                 var response = new AuthResultVm
                 {
+                    status = 1,
+                    mess = "Login successfully",
                     Token = jwtToken,
                     RefreshToken = refershToken.Token,
                     ExpireAt = token.ValidTo,

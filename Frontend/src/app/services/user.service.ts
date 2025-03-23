@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LoginVm, AuthResultVm } from '../models/auth.model';
 import { environment } from '../../environments/environment';
-import { StatusResponse } from '../Models/StatusResponse';
+import { AuthResultVm } from '../Interface/AuthResultVm';
 
 @Injectable({
   providedIn: 'root',
@@ -13,15 +12,18 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  login(loginData: LoginVm): Observable<AuthResultVm> {
+  login(loginData: any): Observable<AuthResultVm> {
     return this.http.post<AuthResultVm>(
       `${this.apiUrl}/Account/login`,
       loginData
     );
   }
 
-  register(registerData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/Account/register`, registerData);
+  register(registerData: any): Observable<AuthResultVm> {
+    return this.http.post<AuthResultVm>(
+      `${this.apiUrl}/Account/register`,
+      registerData
+    );
   }
 
   forgotPassword(email: string): Observable<any> {
@@ -32,5 +34,3 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/Account/reset-password`, data);
   }
 }
-
-export const reusltLogin: AuthResultVm | StatusResponse | undefined = undefined;

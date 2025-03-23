@@ -1,14 +1,18 @@
-﻿using System.Text.Json.Serialization;
+﻿
 
 namespace PhoneStore.Domain.ViewModel
 {
     public class AuthResultVm
     {
-        [JsonPropertyName("Token")]
-        public string Token { get; set; } = string.Empty;
-        [JsonPropertyName("RefreshToken")]
-        public string RefreshToken { get; set; } = string.Empty;
-        [JsonPropertyName("ExpireAt")]
-        public DateTime ExpireAt { get; set; }
+        [JsonPropertyName("status")]
+        public int status { get; set; }
+        [JsonPropertyName("mess")]
+        public string? mess { get; set; }
+        [JsonPropertyName("token")]
+        public string? Token { get; set; }
+        [JsonPropertyName("refreshToken")]
+        public string? RefreshToken { get; set; }
+        [JsonPropertyName("expireAt")]
+        public DateTime? ExpireAt { get; set; }
     }
 }

@@ -98,35 +98,35 @@ namespace PhoneStore.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginVm? login)
         {
-            var statusResponse = new StatusResponse();
+            var authResult = new AuthResultVm();
             if (login == null)
             {
-                statusResponse.status = -9999;
-                statusResponse.mess = "Object null";
-                return Ok(statusResponse);
+                authResult.status = -9999;
+                authResult.mess = "Object null";
+                return Ok(authResult);
             }
             if (!ModelState.IsValid)
             {
-                statusResponse.status = -999;
-                statusResponse.mess = "Input not valid";
-                return Ok(statusResponse);
+                authResult.status = -999;
+                authResult.mess = "Input not valid";
+                return Ok(authResult);
             }
             var emailExit = await _accountServices.GetAccountByEmail(login.Email);
             if (emailExit == null)
             {
-                statusResponse.status = -2;
-                statusResponse.mess = "Email chưa đăng ký";
-                return Ok(statusResponse);
+                authResult.status = -2;
+                authResult.mess = "Email chưa đăng ký";
+                return Ok(authResult);
             }
             var checkPassword = _accountServices.CheckPassAccount(emailExit, login);
             if (checkPassword)
             {
-                AuthResultVm authResult = await _refreshToken.GenerateJwtToken(emailExit);
+                authResult = await _refreshToken.GenerateJwtToken(emailExit);
                 return Ok(authResult);
             }
-            statusResponse.status = 2;
-            statusResponse.mess = "Mật khẩu không đúng";
-            return Ok(statusResponse);
+            authResult.status = 2;
+            authResult.mess = "Mật khẩu không đúng";
+            return Ok(authResult);
         }
         [HttpDelete("delete{id}")]
         public async Task<IActionResult> Delete(Guid id)

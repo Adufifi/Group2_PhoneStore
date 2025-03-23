@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { AuthResultVm } from '../../models/auth.model';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -22,24 +22,13 @@ export class LoginComponent {
   returnUrl: string = '/home';
   errorMessage: string = '';
   isLoading: boolean = false;
-
-  constructor(
-    private userService: UserService,
-    private authService: AuthService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/home']);
-    }
-
-    this.route.queryParams.subscribe((params) => {
-      this.returnUrl = params['returnUrl'] || '/home';
-    });
-  }
+  userService = inject(UserService);
+  authService = inject(AuthService);
+  router = inject(Router);
+  cookieService = inject(CookieService);
+  constructor() {}
 
   onSubmit() {
-    debugger;
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -48,43 +37,39 @@ export class LoginComponent {
       this.isLoading = false;
       return;
     }
-
     this.userService.login(this.loginData).subscribe({
-      next: (response: any) => {
-        console.log('Response từ API:', response);
-        if (response.status && !response.token) {
-          this.errorMessage = response.mess;
-          this.isLoading = false;
-          return;
-        }
-        if (response.token && response.refreshToken) {
-          console.log('Đăng nhập thành công:', response);
-          const success = this.authService.setAuthTokens(
-            response.token,
-            response.refreshToken
-          );
+      next: (res) => {
+        console.log('Login response:', res);
 
-          if (success) {
-            if (this.rememberMe) {
-              localStorage.setItem('userEmail', this.loginData.email);
-            }
-            this.router.navigateByUrl('home');
-          } else {
-            this.errorMessage = 'Có lỗi xảy ra khi lưu thông tin đăng nhập';
-          }
-        } else {
-          this.errorMessage = 'Lỗi xác thực. Vui lòng thử lại!';
+        if (res.status === 1) {
+          this.cookieService.set(
+            'Authentication',
+            `${res.token}`,
+            undefined,
+            '/',
+            undefined,
+            true,
+            'Strict'
+          );
+          localStorage.setItem('email', this.loginData.email);
+          this.router.navigateByUrl('/home');
         }
-      },
-      error: (error) => {
-        console.error('Lỗi đăng nhập:', error);
-        if (error.error && error.error.mess) {
-          this.errorMessage = error.error.mess;
-        } else {
-          this.errorMessage = 'Đăng nhập thất bại. Vui lòng thử lại!';
+        if (res.status === -9999) {
+          this.errorMessage = res.mess || 'An unknown error occurred.';
         }
+        if (res.status === -999) {
+          this.errorMessage = res.mess || 'An unknown error occurred.';
+        }
+        if (res.status === -2) {
+          this.errorMessage = res.mess || 'An unknown error occurred.';
+        }
+        if (res.status === 2) {
+          this.errorMessage = res.mess || 'An unknown error occurred.';
+        }
+        this.isLoading = false;
       },
-      complete: () => {
+      error: (err) => {
+        this.errorMessage = 'Đã xảy ra lỗi khi đăng nhập';
         this.isLoading = false;
       },
     });
