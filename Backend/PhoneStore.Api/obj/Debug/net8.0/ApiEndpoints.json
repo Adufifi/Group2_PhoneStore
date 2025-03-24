@@ -74,6 +74,59 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "PhoneStore.Domain.Models.Cart",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "DeleteFromCart",
+    "RelativePath": "api/cart/{productId}/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "GetCartByUserId",
+    "RelativePath": "api/cart/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PhoneStore.Api.Controllers.RoleController",
     "Method": "All",
     "RelativePath": "api/role/All",

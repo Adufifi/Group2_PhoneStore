@@ -1,6 +1,6 @@
 {
-  "PhoneStore.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api",
-  "PhoneStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application",
-  "PhoneStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain",
-  "PhoneStore.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure"
+  "PhoneStore.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api",
+  "PhoneStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application",
+  "PhoneStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain",
+  "PhoneStore.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure"
 }
