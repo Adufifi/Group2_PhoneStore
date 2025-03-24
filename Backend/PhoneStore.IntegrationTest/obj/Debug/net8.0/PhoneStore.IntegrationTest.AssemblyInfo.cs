@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d737b4e02a3d09459b8b896a97acf40dd19eb49")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e90902690b8c6c8521631eab5da50e7aed853f6")]
->>>>>>> DungNT
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b52af1f7f7e717fb4c5c9175b5b089945642d8aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
