@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using PhoneStore.Domain.Enums;
+
 namespace PhoneStore.Application.Dto
 {
     public class OrderDto

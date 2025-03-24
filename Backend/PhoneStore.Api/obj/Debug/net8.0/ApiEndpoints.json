@@ -74,7 +74,6 @@
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "AllBrand",
     "RelativePath": "api/brand/AllBrand",
@@ -88,53 +87,28 @@
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "CreateBrand",
     "RelativePath": "api/brand/CreateBrand",
-=======
-    "ContainingType": "PhoneStore.Api.Controllers.CartController",
-    "Method": "AddToCart",
-    "RelativePath": "api/cart",
->>>>>>> DungNT
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-<<<<<<< HEAD
         "Name": "brandDto",
         "Type": "PhoneStore.Application.Dto.BrandDto",
-=======
-        "Name": "cart",
-        "Type": "PhoneStore.Domain.Models.Cart",
->>>>>>> DungNT
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "DeleteBrand",
     "RelativePath": "api/brand/DeleteById/{id}",
-=======
-    "ContainingType": "PhoneStore.Api.Controllers.CartController",
-    "Method": "DeleteFromCart",
-    "RelativePath": "api/cart/{productId}/{userId}",
->>>>>>> DungNT
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-<<<<<<< HEAD
         "Name": "id",
-=======
-        "Name": "productId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
->>>>>>> DungNT
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -142,25 +116,15 @@
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "GetBrandById",
     "RelativePath": "api/brand/GetBrandById/{id}",
-=======
-    "ContainingType": "PhoneStore.Api.Controllers.CartController",
-    "Method": "GetCartByUserId",
-    "RelativePath": "api/cart/{userId}",
->>>>>>> DungNT
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-<<<<<<< HEAD
         "Name": "id",
-=======
-        "Name": "userId",
->>>>>>> DungNT
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -168,7 +132,6 @@
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "UpdateBrand",
     "RelativePath": "api/brand/UpdateById/{id}",
@@ -190,8 +153,190 @@
     "ReturnTypes": []
   },
   {
-=======
->>>>>>> DungNT
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "GetCart",
+    "RelativePath": "api/cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "DeleteCart",
+    "RelativePath": "api/cart/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/Order/createOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderDto",
+        "Type": "PhoneStore.Application.Dto.OrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderController",
+    "Method": "DeleteOrder",
+    "RelativePath": "api/Order/deleteOrder/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/Order/getAllOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/Order/getOrderById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/Order/updateOrder/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "orderDto",
+        "Type": "PhoneStore.Application.Dto.OrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderItemController",
+    "Method": "CreateOrderItem",
+    "RelativePath": "api/OrderItem/createOrderItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderItemDto",
+        "Type": "PhoneStore.Application.Dto.OrderItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderItemController",
+    "Method": "DeleteOrderItem",
+    "RelativePath": "api/OrderItem/deleteOrderItem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderItemController",
+    "Method": "GetAllOrderItems",
+    "RelativePath": "api/OrderItem/getAllOrderItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderItemController",
+    "Method": "GetOrderItemById",
+    "RelativePath": "api/OrderItem/getOrderItemById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.OrderItemController",
+    "Method": "UpdateOrderItem",
+    "RelativePath": "api/OrderItem/updateOrderItem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "orderItemDto",
+        "Type": "PhoneStore.Application.Dto.OrderItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PhoneStore.Api.Controllers.RoleController",
     "Method": "All",
     "RelativePath": "api/role/All",

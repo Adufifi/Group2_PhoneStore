@@ -20,6 +20,5 @@
   
   <ItemGroup>
     <ProjectReference Include="..\PhoneStore.Domain\PhoneStore.Domain.csproj" />
-    <ProjectReference Include="..\PhoneStore.Infrastructure\PhoneStore.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,7 @@
-﻿namespace PhoneStore.Api.Controllers
+﻿using System.Threading.Tasks;
+using Azure;
+
+namespace PhoneStore.Api.Controllers
 {
     [Route("api/cart")]
     [ApiController]
@@ -13,34 +16,36 @@
             _mapper = mapper;
         }
 
-        [HttpGet("{userId}")]
-        public IActionResult GetCartByUserId(Guid userId)
+        [HttpGet]
+        public async Task<IActionResult> GetCart()
         {
-            var carts = _cartServices.GetCartByUserId(userId);
-            if (carts == null)
-                return NotFound();
-            return Ok(carts);
+            var cart = await _cartServices.GetAllAsync();
+            return Ok(cart);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCart(Guid id)
+        {
+            var statusResponse = new StatusResponse();
+            try
+            {
+                var result = await _cartServices.DeleteAsync(id);
+                if (result)
+                {
+                    statusResponse.status = 1;
+                    statusResponse.mess = "Delete success";
+                    return Ok(statusResponse);
+                }
+                statusResponse.status = -99;
+                statusResponse.mess = "Delete fail";
+                return Ok(statusResponse);
+            }
+            catch (RequestFailedException ex)
+            {
+                statusResponse.status = -9999;
+                statusResponse.mess = ex.Message;
+                return BadRequest(statusResponse);
+            }
         }
 
-        [HttpPost]
-        public IActionResult AddToCart([FromBody] Cart cart)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var result = _cartServices.AddProductToCart(cart);
-            if (!result)
-                return BadRequest();
-            return Ok();
-        }
-
-        [HttpDelete("{productId}/{userId}")]
-        public IActionResult DeleteFromCart(Guid productId, Guid userId)
-        {
-            var result = _cartServices.DeleteProductFromCart(productId, userId);
-            if (!result)
-                return NotFound();
-            return Ok();
-        }
     }
 }

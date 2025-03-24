@@ -1,7 +1,9 @@
+
+
 namespace PhoneStore.Api.Controllers
 {
     [ApiController]
-    [Route("api/order")]
+    [Route("api/[controller]")]
     public class OrderController : ControllerBase
     {
         private readonly IOrderServices _orderServices;
