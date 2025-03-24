@@ -1483,6 +1483,20 @@
         "runtime": {
           "bin/placeholder/PhoneStore.Domain.dll": {}
         }
+      },
+      "PhoneStore.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.14",
+          "PhoneStore.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PhoneStore.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PhoneStore.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -3778,33 +3792,39 @@
       "type": "project",
       "path": "../PhoneStore.Domain/PhoneStore.Domain.csproj",
       "msbuildProject": "../PhoneStore.Domain/PhoneStore.Domain.csproj"
+    },
+    "PhoneStore.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../PhoneStore.Infrastructure/PhoneStore.Infrastructure.csproj",
+      "msbuildProject": "../PhoneStore.Infrastructure/PhoneStore.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.14",
-      "PhoneStore.Domain >= 1.0.0"
+      "PhoneStore.Domain >= 1.0.0",
+      "PhoneStore.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hieun\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+      "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
       "projectName": "PhoneStore.Application",
-      "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
-      "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-      "outputPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\obj\\",
+      "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hieun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3813,14 +3833,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
-              "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+            "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+              "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+            },
+            "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+              "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
             }
           }
         }
@@ -3835,7 +3859,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -3866,7 +3890,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

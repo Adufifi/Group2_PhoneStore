@@ -74,6 +74,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "AllBrand",
     "RelativePath": "api/brand/AllBrand",
@@ -87,28 +88,53 @@
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "CreateBrand",
     "RelativePath": "api/brand/CreateBrand",
+=======
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/cart",
+>>>>>>> DungNT
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+<<<<<<< HEAD
         "Name": "brandDto",
         "Type": "PhoneStore.Application.Dto.BrandDto",
+=======
+        "Name": "cart",
+        "Type": "PhoneStore.Domain.Models.Cart",
+>>>>>>> DungNT
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "DeleteBrand",
     "RelativePath": "api/brand/DeleteById/{id}",
+=======
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "DeleteFromCart",
+    "RelativePath": "api/cart/{productId}/{userId}",
+>>>>>>> DungNT
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+<<<<<<< HEAD
         "Name": "id",
+=======
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+>>>>>>> DungNT
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -116,15 +142,25 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "GetBrandById",
     "RelativePath": "api/brand/GetBrandById/{id}",
+=======
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "GetCartByUserId",
+    "RelativePath": "api/cart/{userId}",
+>>>>>>> DungNT
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
+<<<<<<< HEAD
         "Name": "id",
+=======
+        "Name": "userId",
+>>>>>>> DungNT
         "Type": "System.Guid",
         "IsRequired": true
       }
@@ -132,6 +168,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "PhoneStore.Api.Controllers.BrandController",
     "Method": "UpdateBrand",
     "RelativePath": "api/brand/UpdateById/{id}",
@@ -153,6 +190,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> DungNT
     "ContainingType": "PhoneStore.Api.Controllers.RoleController",
     "Method": "All",
     "RelativePath": "api/role/All",

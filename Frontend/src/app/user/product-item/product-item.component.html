@@ -1,0 +1,23 @@
+<div class="card product-card">
+  <div class="discount-badge" *ngIf="product.discount">
+    -{{ product.discount }}%
+  </div>
+  <div class="discount-badge" *ngIf="product.isNew">NEW</div>
+  <img [src]="product.image" class="card-img-top" [alt]="product.name" />
+  <div class="card-body">
+    <h5 class="product-title">{{ product.name }}</h5>
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <span class="product-price">{{
+          product.price | currency : "VND" : "symbol-narrow" : "1.0-0"
+        }}</span>
+        <span class="old-price d-block" *ngIf="product.oldPrice">{{
+          product.oldPrice | currency : "VND" : "symbol-narrow" : "1.0-0"
+        }}</span>
+      </div>
+      <button class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
