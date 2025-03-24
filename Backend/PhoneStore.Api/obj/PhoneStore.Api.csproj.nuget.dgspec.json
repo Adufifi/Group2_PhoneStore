@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {}
+    "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {}
   },
   "projects": {
-    "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {
+    "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
+        "projectUniqueName": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
         "projectName": "PhoneStore.Api",
-        "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
+        "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
         "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\obj\\",
+        "outputPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
-                "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
+              "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+                "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
               },
-              "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
-                "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
+              "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+                "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
               }
             }
           }
@@ -89,14 +89,14 @@
         }
       }
     },
-    "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+    "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+        "projectUniqueName": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
         "projectName": "PhoneStore.Application",
-        "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+        "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
         "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\obj\\",
+        "outputPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -117,8 +117,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
-                "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+              "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+                "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
               }
             }
           }
@@ -168,14 +168,14 @@
         }
       }
     },
-    "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+    "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
+        "projectUniqueName": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
         "projectName": "PhoneStore.Domain",
-        "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
+        "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
         "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\obj\\",
+        "outputPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -243,14 +243,14 @@
         }
       }
     },
-    "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+    "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
         "projectName": "PhoneStore.Infrastructure",
-        "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
+        "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\obj\\",
+        "outputPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -271,8 +271,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
-                "projectPath": "D:\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+              "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+                "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
               }
             }
           }

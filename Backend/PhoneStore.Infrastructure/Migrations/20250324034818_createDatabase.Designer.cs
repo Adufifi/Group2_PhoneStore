@@ -12,7 +12,7 @@ using PhoneStore.Infrastructure.DataContext;
 namespace PhoneStore.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250323045645_createDatabase")]
+    [Migration("20250324034818_createDatabase")]
     partial class createDatabase
     {
         /// <inheritdoc />
