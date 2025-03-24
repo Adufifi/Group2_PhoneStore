@@ -1,0 +1,436 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Admin Sidebar -->
+    <div class="col-lg-3 col-xl-2 p-0 bg-dark vh-100 position-fixed">
+      <div class="px-3 pt-4 pb-3 text-white">
+        <h4 class="fw-bold mb-4">Mobile Shop Admin</h4>
+        <div class="d-flex flex-column h-100">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a routerLink="/admin" class="nav-link px-0 text-white-50">
+                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                routerLink="/admin/products"
+                class="nav-link px-0 text-white-50"
+              >
+                <i class="bi bi-box me-2"></i> Sản phẩm
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a routerLink="/admin/orders" class="nav-link px-0 text-white-50">
+                <i class="bi bi-cart me-2"></i> Đơn hàng
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                routerLink="/admin/customers"
+                class="nav-link px-0 text-white-50"
+              >
+                <i class="bi bi-people me-2"></i> Khách hàng
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a routerLink="/admin/report" class="nav-link px-0 text-white-50">
+                <i class="bi bi-graph-up me-2"></i> Báo cáo
+              </a>
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                routerLink="/admin/settings"
+                class="nav-link active px-0 text-white"
+              >
+                <i class="bi bi-gear me-2"></i> Cài đặt
+              </a>
+            </li>
+          </ul>
+          <div class="mt-auto">
+            <a routerLink="/" class="nav-link px-0 text-white-50">
+              <i class="bi bi-box-arrow-left me-2"></i> Thoát Admin
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-lg-9 col-xl-10 ms-auto p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Cài đặt hệ thống</h2>
+        <button class="btn btn-primary" (click)="saveSettings()">
+          <i class="bi bi-save me-2"></i>
+          Lưu cài đặt
+        </button>
+      </div>
+
+      <!-- Settings Tabs -->
+      <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#general"
+            >Cài đặt chung</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#payment"
+            >Thanh toán</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#shipping"
+            >Vận chuyển</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#user">Tài khoản</a>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- General Settings -->
+        <div class="tab-pane fade show active" id="general">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="mb-4">Thông tin cửa hàng</h5>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="shopName" class="form-label"
+                      >Tên cửa hàng</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="shopName"
+                      [(ngModel)]="generalSettings.shopName"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      [(ngModel)]="generalSettings.email"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="phone"
+                      [(ngModel)]="generalSettings.phone"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="currency" class="form-label"
+                      >Đơn vị tiền tệ</label
+                    >
+                    <select
+                      class="form-select"
+                      id="currency"
+                      [(ngModel)]="generalSettings.currency"
+                    >
+                      <option value="VND">VND - Việt Nam Đồng</option>
+                      <option value="USD">USD - Đô la Mỹ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="address" class="form-label">Địa chỉ</label>
+                <textarea
+                  class="form-control"
+                  id="address"
+                  rows="2"
+                  [(ngModel)]="generalSettings.address"
+                ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="language" class="form-label"
+                  >Ngôn ngữ mặc định</label
+                >
+                <select
+                  class="form-select"
+                  id="language"
+                  [(ngModel)]="generalSettings.language"
+                >
+                  <option value="vi">Tiếng Việt</option>
+                  <option value="en">Tiếng Anh</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Settings -->
+        <div class="tab-pane fade" id="payment">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="mb-4">Phương thức thanh toán</h5>
+
+              <div class="mb-4">
+                <div class="form-check form-switch mb-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="enableCOD"
+                    [(ngModel)]="paymentSettings.enableCOD"
+                  />
+                  <label class="form-check-label" for="enableCOD">
+                    Thanh toán khi nhận hàng (COD)
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="enableBankTransfer"
+                    [(ngModel)]="paymentSettings.enableBankTransfer"
+                  />
+                  <label class="form-check-label" for="enableBankTransfer">
+                    Chuyển khoản ngân hàng
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="enableMomo"
+                    [(ngModel)]="paymentSettings.enableMomo"
+                  />
+                  <label class="form-check-label" for="enableMomo">
+                    Ví MoMo
+                  </label>
+                </div>
+                <div class="form-check form-switch mb-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="enableZaloPay"
+                    [(ngModel)]="paymentSettings.enableZaloPay"
+                  />
+                  <label class="form-check-label" for="enableZaloPay">
+                    ZaloPay
+                  </label>
+                </div>
+              </div>
+
+              <h6 class="mt-4 mb-3">Thông tin tài khoản ngân hàng</h6>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <label for="bankName" class="form-label"
+                      >Tên ngân hàng</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bankName"
+                      [(ngModel)]="paymentSettings.bankName"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="bankAccount" class="form-label"
+                      >Số tài khoản</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bankAccount"
+                      [(ngModel)]="paymentSettings.bankAccount"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="bankAccountName" class="form-label"
+                      >Tên chủ tài khoản</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bankAccountName"
+                      [(ngModel)]="paymentSettings.bankAccountName"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Settings -->
+        <div class="tab-pane fade" id="shipping">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="mb-4">Cài đặt vận chuyển</h5>
+
+              <div class="mb-4">
+                <div class="form-check form-switch mb-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="enableFreeShipping"
+                    [(ngModel)]="shippingSettings.enableFreeShipping"
+                  />
+                  <label class="form-check-label" for="enableFreeShipping">
+                    Miễn phí vận chuyển cho đơn hàng đạt mức tối thiểu
+                  </label>
+                </div>
+
+                <div
+                  class="row mb-3"
+                  *ngIf="shippingSettings.enableFreeShipping"
+                >
+                  <div class="col-md-6">
+                    <label for="freeShippingMinimum" class="form-label"
+                      >Mức tối thiểu để miễn phí vận chuyển</label
+                    >
+                    <div class="input-group">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="freeShippingMinimum"
+                        [(ngModel)]="shippingSettings.freeShippingMinimum"
+                      />
+                      <span class="input-group-text">VNĐ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="flatRate" class="form-label"
+                      >Phí vận chuyển cố định</label
+                    >
+                    <div class="input-group mb-3">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="flatRate"
+                        [(ngModel)]="shippingSettings.flatRate"
+                      />
+                      <span class="input-group-text">VNĐ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="enableLocalPickup"
+                  [(ngModel)]="shippingSettings.enableLocalPickup"
+                />
+                <label class="form-check-label" for="enableLocalPickup">
+                  Cho phép khách hàng đến lấy hàng tại cửa hàng
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Settings -->
+        <div class="tab-pane fade" id="user">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h5 class="mb-4">Tài khoản quản trị</h5>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="adminName" class="form-label"
+                      >Tên quản trị viên</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="adminName"
+                      value="Administrator"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="adminEmail" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="adminEmail"
+                      value="admin@mobileshop.com"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="currentPassword" class="form-label"
+                  >Mật khẩu hiện tại</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="currentPassword"
+                />
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="newPassword" class="form-label"
+                      >Mật khẩu mới</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="newPassword"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="confirmPassword" class="form-label"
+                      >Xác nhận mật khẩu mới</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary">
+                <i class="bi bi-key me-2"></i>
+                Đổi mật khẩu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

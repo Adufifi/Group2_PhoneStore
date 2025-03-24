@@ -1,0 +1,11 @@
+<div class="row">
+  <div *ngFor="let product of products" class="col-md-4 col-sm-6">
+    <app-product-item [product]="product"></app-product-item>
+  </div>
+</div>
+
+<div class="text-center mt-4 mb-5" *ngIf="showViewMoreButton">
+  <button class="btn btn-primary px-4" (click)="loadMore()">
+    Xem thêm sản phẩm
+  </button>
+</div>
