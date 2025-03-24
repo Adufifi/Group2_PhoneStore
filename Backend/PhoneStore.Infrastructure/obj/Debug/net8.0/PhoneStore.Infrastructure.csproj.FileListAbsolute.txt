@@ -14,19 +14,51 @@ D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\n
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\refint\PhoneStore.Infrastructure.dll
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.pdb
 D:\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\ref\PhoneStore.Infrastructure.dll
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.deps.json
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.dll
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.pdb
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.AssemblyReference.cache
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfoInputs.cache
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfo.cs
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.CoreCompileInputs.cache
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.sourcelink.json
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneSto.5B54037E.Up2Date
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.dll
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\refint\PhoneStore.Infrastructure.dll
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.pdb
-D:\code\OJT\project\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\ref\PhoneStore.Infrastructure.dll
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.dll
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\refint\PhoneStore.Infrastructure.dll
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.pdb
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.AssemblyReference.cache
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfoInputs.cache
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfo.cs
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.sourcelink.json
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.deps.json
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.dll
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.pdb
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneSto.5B54037E.Up2Date
+D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\ref\PhoneStore.Infrastructure.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.deps.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.sourcelink.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneSto.5B54037E.Up2Date
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\refint\PhoneStore.Infrastructure.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\ref\PhoneStore.Infrastructure.dll
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.deps.json
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.dll
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\bin\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.sourcelink.json
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneSto.5B54037E.Up2Date
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.dll
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\refint\PhoneStore.Infrastructure.dll
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\Admin\Downloads\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Infrastructure\obj\Debug\net8.0\ref\PhoneStore.Infrastructure.dll

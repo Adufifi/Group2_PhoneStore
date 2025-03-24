@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhoneStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b52af1f7f7e717fb4c5c9175b5b089945642d8aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d127bea3ffb2e0577782262fac165d4ef43a578")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhoneStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhoneStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

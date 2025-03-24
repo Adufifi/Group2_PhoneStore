@@ -13,8 +13,7 @@ export class CartComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Kiểm tra nếu người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
-    const userEmail = localStorage.getItem('userEmail');
+    const userEmail = localStorage.getItem('email');
     if (!userEmail) {
       this.router.navigate(['/login']);
     }

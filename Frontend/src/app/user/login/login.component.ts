@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { LoginVm } from './../../Interface/LoginVm';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../Services/user.service';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,33 +15,62 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  user = {
+  user: LoginVm = {
     email: '',
     password: '',
   };
-
+  userServices = inject(UserService);
+  cookieServices = inject(CookieService);
+  router = inject(Router);
+  authService = inject(AuthService);
   errorMessage = '';
 
-  constructor(private router: Router) {}
-
   login() {
-    console.log('Login attempt:', this.user);
-
-    // Kiểm tra đăng nhập với tài khoản admin
-    if (this.user.email === 'admin' && this.user.password === '123') {
-      console.log('Admin login successful');
-      // Lưu email vào localStorage
-      localStorage.setItem('userEmail', this.user.email);
-      this.router.navigate(['/admin']);
-    } else if (this.user.email && this.user.password) {
-      // Mô phỏng đăng nhập thành công cho người dùng thông thường
-      console.log('User login successful');
-      // Lưu email vào localStorage
-      localStorage.setItem('userEmail', this.user.email);
-      this.router.navigate(['/']);
-    } else {
-      // Hiển thị thông báo lỗi nếu thông tin đăng nhập không chính xác
-      this.errorMessage = 'Email hoặc mật khẩu không chính xác';
-    }
+    this.userServices.login(this.user).subscribe(
+      (res) => {
+        if (res.status === -9999) {
+          this.errorMessage = res.mess ?? '';
+        }
+        if (res.status === -999) {
+          this.errorMessage = res.mess ?? '';
+        }
+        if (res.status === -2) {
+          this.errorMessage = res.mess ?? '';
+        }
+        if (res.status === 2) {
+          this.errorMessage = res.mess ?? '';
+        }
+        if (res.status === 3) {
+          this.cookieServices.set(
+            'Authentication',
+            `${res.token}`,
+            undefined,
+            '/',
+            undefined,
+            true,
+            'Strict'
+          );
+          this.authService.login(this.user.email);
+          this.router.navigateByUrl('/admin');
+        }
+        if (res.status === 1) {
+          this.cookieServices.set(
+            'Authentication',
+            `${res.token}`,
+            undefined,
+            '/',
+            undefined,
+            true,
+            'Strict'
+          );
+          this.authService.login(this.user.email);
+          this.router.navigateByUrl('/home');
+        }
+      },
+      (err) => {
+        console.log(err);
+        this.errorMessage = 'Server Error';
+      }
+    );
   }
 }

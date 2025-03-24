@@ -21,7 +21,8 @@ namespace PhoneStore.Api.MappingClass
            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
            .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => HasBCrypt(src.Password)));
-
+            CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<OrderItem, OrderItemDto>().ReverseMap();
         }
         private static string HashPassword(string password)
         {

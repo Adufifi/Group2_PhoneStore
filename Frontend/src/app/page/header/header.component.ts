@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,24 +14,17 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   userEmail: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    // Kiểm tra xem người dùng đã đăng nhập chưa
-    this.checkLoginStatus();
-  }
-
-  checkLoginStatus() {
-    this.userEmail = localStorage.getItem('userEmail');
-    this.isLoggedIn = !!this.userEmail;
+    this.authService.isLoggedIn.subscribe((status: boolean) => {
+      this.isLoggedIn = status;
+      this.userEmail = status ? localStorage.getItem('email') : null;
+    });
   }
 
   logout() {
-    // Xóa email khỏi localStorage
-    localStorage.removeItem('userEmail');
-    this.isLoggedIn = false;
-    this.userEmail = null;
-    // Chuyển hướng về trang chủ
+    this.authService.logout();
     this.router.navigate(['/']);
   }
 }

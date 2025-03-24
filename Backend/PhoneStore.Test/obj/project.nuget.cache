@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hjDRvUOUnXk=",
+  "dgSpecHash": "qghfw5hf8I0=",
   "success": true,
-  "projectFilePath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
