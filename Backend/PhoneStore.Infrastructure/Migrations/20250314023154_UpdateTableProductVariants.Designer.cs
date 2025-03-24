@@ -3,25 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
 using PhoneStore.Domain.DataContext;
 
 #nullable disable
 
 namespace PhoneStore.Domain.Migrations
-=======
-using PhoneStore.Infrastructure.DataContext;
-
-#nullable disable
-
-namespace PhoneStore.Infrastructure.Migrations
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250314023154_UpdateTableProductVariants")]
+    partial class UpdateTableProductVariants
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,11 +31,7 @@ namespace PhoneStore.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<Guid>("CartId")
-=======
-                    b.Property<Guid?>("CartId")
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
@@ -52,7 +43,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<bool?>("EmailConfirmed")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("bit");
 
                     b.Property<string>("NormalizedEmail")
@@ -60,32 +50,11 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasColumnType("nvarchar(max)");
-=======
-                        .HasMaxLength(256)
-                        .HasColumnType("bit");
-
-                    b.Property<byte[]>("Img")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<string>("PassWord")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -93,7 +62,6 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.HasIndex("CartId")
                         .IsUnique();
 
@@ -113,13 +81,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AccountRole");
-=======
-                    b.HasIndex("CartId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("Account");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>
@@ -154,23 +115,14 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<string>("CapacityName")
                         .IsRequired()
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("nvarchar(max)");
-=======
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.ToTable("Capacity");
-=======
-                    b.ToTable("Capacities");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
@@ -185,7 +137,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.HasKey("Id");
 
                     b.ToTable("Cart");
@@ -203,8 +154,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-=======
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
@@ -213,15 +162,11 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.HasIndex("CartId");
 
                     b.HasIndex("ProductId");
 
                     b.ToTable("CardItem");
-=======
-                    b.ToTable("Cart");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
@@ -241,7 +186,6 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RecipientName")
@@ -251,20 +195,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<string>("ShippingAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-=======
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("RecipientName")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<string>("ShippingAddress")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<int>("StatusProduct")
                         .HasColumnType("int");
@@ -315,15 +245,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("BrandId")
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.Property<int?>("BuyCount")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("CartId")
-                        .HasColumnType("uniqueidentifier");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -350,11 +271,6 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasIndex("BrandId");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.HasIndex("CartId");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.ToTable("Product");
                 });
 
@@ -366,12 +282,7 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<string>("ColorName")
                         .IsRequired()
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("nvarchar(max)");
-=======
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -395,19 +306,12 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
-=======
-                    b.Property<byte[]>("Img")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<Guid>("ProductVariantId")
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<Guid?>("ProductVariantsId")
                         .HasColumnType("uniqueidentifier");
 
@@ -416,12 +320,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.HasIndex("ProductId");
 
                     b.HasIndex("ProductVariantsId");
-=======
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductVariantId")
-                        .IsUnique();
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.ToTable("ProductImage");
                 });
@@ -450,23 +348,12 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.Property<Guid>("ProductImageId")
-                        .HasColumnType("uniqueidentifier");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.HasIndex("CapacityId");
-=======
-                    b.HasIndex("CapacityId")
-                        .IsUnique();
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.HasIndex("ProductColorId");
 
@@ -475,56 +362,15 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.ToTable("ProductVariant");
                 });
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-=======
-            modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Property<Guid>("AccountId")
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.Property<DateTime?>("DateAdded")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DateExpire")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsRevoked")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AccountId");
-
-                    b.ToTable("RefreshToken");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
-                {
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<string>("Comment")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
@@ -532,16 +378,12 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AccountId");
-=======
-                    b.HasKey("AccountId", "ProductId");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.HasIndex("ProductId");
 
@@ -559,12 +401,7 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.Property<string>("RoleName")
                         .IsRequired()
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .HasColumnType("nvarchar(max)");
-=======
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.HasKey("Id");
 
@@ -574,7 +411,6 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Cart", "Cart")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .WithOne("Account")
                         .HasForeignKey("PhoneStore.Domain.Models.Account", "CartId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -593,18 +429,10 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasOne("PhoneStore.Domain.Models.Role", "Role")
                         .WithMany("AccountRoles")
-=======
-                        .WithMany("Account")
-                        .HasForeignKey("CartId");
-
-                    b.HasOne("PhoneStore.Domain.Models.Role", "Role")
-                        .WithMany("Accounts")
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("Account");
 
                     b.Navigation("Role");
@@ -627,11 +455,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("Cart");
 
                     b.Navigation("Product");
-=======
-                    b.Navigation("Cart");
-
-                    b.Navigation("Role");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
@@ -656,11 +479,7 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.HasOne("PhoneStore.Domain.Models.Product", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .OnDelete(DeleteBehavior.Cascade)
-=======
-                        .OnDelete(DeleteBehavior.Restrict)
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .IsRequired();
 
                     b.Navigation("Order");
@@ -676,19 +495,11 @@ namespace PhoneStore.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-                    b.HasOne("PhoneStore.Domain.Models.Cart", null)
-                        .WithMany("Product")
-                        .HasForeignKey("CartId");
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("Brand");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.ProductImage", b =>
                 {
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.HasOne("PhoneStore.Domain.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
@@ -700,13 +511,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasForeignKey("ProductVariantsId");
 
                     b.Navigation("Product");
-=======
-                    b.HasOne("PhoneStore.Domain.Models.ProductVariants", "ProductVariants")
-                        .WithOne("ProductImages")
-                        .HasForeignKey("PhoneStore.Domain.Models.ProductImage", "ProductVariantId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
 
                     b.Navigation("ProductVariants");
                 });
@@ -714,13 +518,8 @@ namespace PhoneStore.Infrastructure.Migrations
             modelBuilder.Entity("PhoneStore.Domain.Models.ProductVariants", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Capacity", "Capacity")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .WithMany()
                         .HasForeignKey("CapacityId")
-=======
-                        .WithOne("ProductVariant")
-                        .HasForeignKey("PhoneStore.Domain.Models.ProductVariants", "CapacityId")
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -741,40 +540,18 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("ProductColor");
                 });
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-            modelBuilder.Entity("PhoneStore.Domain.Models.RefreshToken", b =>
-                {
-                    b.HasOne("PhoneStore.Domain.Models.Account", "Account")
-                        .WithMany("RefreshTokens")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
             modelBuilder.Entity("PhoneStore.Domain.Models.Review", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Account", "Account")
                         .WithMany("AccountReview")
                         .HasForeignKey("AccountId")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .OnDelete(DeleteBehavior.Cascade)
-=======
-                        .OnDelete(DeleteBehavior.Restrict)
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .IsRequired();
 
                     b.HasOne("PhoneStore.Domain.Models.Product", "Product")
                         .WithMany("ProductReview")
                         .HasForeignKey("ProductId")
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                         .OnDelete(DeleteBehavior.Cascade)
-=======
-                        .OnDelete(DeleteBehavior.Restrict)
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                         .IsRequired();
 
                     b.Navigation("Account");
@@ -786,11 +563,7 @@ namespace PhoneStore.Infrastructure.Migrations
                 {
                     b.Navigation("AccountReview");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("AccountRoles");
-=======
-                    b.Navigation("RefreshTokens");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Brand", b =>
@@ -798,23 +571,11 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("Products");
                 });
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
-=======
-            modelBuilder.Entity("PhoneStore.Domain.Models.Capacity", b =>
-                {
-                    b.Navigation("ProductVariant");
-                });
-
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
             modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
                 {
                     b.Navigation("Account");
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("CartItems");
-=======
-                    b.Navigation("Product");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
@@ -824,30 +585,16 @@ namespace PhoneStore.Infrastructure.Migrations
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Product", b =>
                 {
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("CartItems");
 
-=======
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                     b.Navigation("OrderItems");
 
                     b.Navigation("ProductReview");
                 });
 
-<<<<<<< HEAD:PhoneStore.Domain/Migrations/AppDbContextModelSnapshot.cs
             modelBuilder.Entity("PhoneStore.Domain.Models.Role", b =>
                 {
                     b.Navigation("AccountRoles");
-=======
-            modelBuilder.Entity("PhoneStore.Domain.Models.ProductVariants", b =>
-                {
-                    b.Navigation("ProductImages");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.Role", b =>
-                {
-                    b.Navigation("Accounts");
->>>>>>> 41a6b7ead206b44440065dbb6e01b8e681c23bbf:Backend/PhoneStore.Infrastructure/Migrations/AppDbContextModelSnapshot.cs
                 });
 #pragma warning restore 612, 618
         }
