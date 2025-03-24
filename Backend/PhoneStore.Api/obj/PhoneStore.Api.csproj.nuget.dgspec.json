@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {}
+    "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {}
   },
   "projects": {
-    "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {
+    "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
+        "projectUniqueName": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
         "projectName": "PhoneStore.Api",
-        "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\obj\\",
+        "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
+        "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
-                "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
+              "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+                "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
               },
-              "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
-                "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
+              "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
               }
             }
           }
@@ -51,8 +50,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -86,24 +84,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+    "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+        "projectUniqueName": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
         "projectName": "PhoneStore.Application",
-        "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\obj\\",
+        "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj",
+        "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,18 +110,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
-                "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+              "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+                "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
               },
-              "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
-                "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
+              "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
               }
             }
           }
@@ -137,8 +134,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -169,24 +165,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+    "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
         "projectName": "PhoneStore.Domain",
-        "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\obj\\",
+        "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
+        "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -195,7 +191,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -213,8 +208,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -245,24 +239,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+    "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
         "projectName": "PhoneStore.Infrastructure",
-        "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -271,15 +265,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
-                "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
+              "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj": {
+                "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj"
               }
             }
           }
@@ -293,8 +286,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -321,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

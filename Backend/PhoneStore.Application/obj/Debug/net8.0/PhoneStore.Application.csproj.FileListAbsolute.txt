@@ -32,3 +32,21 @@ D:\code\OJT\project\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.A
 D:\code\OJT\project\Backend\PhoneStore.Application\obj\Debug\net8.0\ref\PhoneStore.Application.dll
 D:\code\OJT\project\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
 D:\code\OJT\project\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\refint\PhoneStore.Application.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.deps.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Infrastructure.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.AssemblyReference.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfoInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.CoreCompileInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.sourcelink.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneSto.9E81BDAA.Up2Date
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\ref\PhoneStore.Application.dll
