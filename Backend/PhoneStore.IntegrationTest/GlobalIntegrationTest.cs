@@ -1,0 +1,10 @@
+﻿global using FluentAssertions;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Newtonsoft.Json;
+global using PhoneStore.Api;
+global using PhoneStore.Application.Dto;
+global using PhoneStore.Domain.Models;
+global using PhoneStore.Domain.ViewModel;
+global using System.Net;
+global using System.Net.Http.Json;
+global using System.Text;
