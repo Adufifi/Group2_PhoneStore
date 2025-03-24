@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7fvDtqG6nI8=",
+  "dgSpecHash": "WdiCPg3Y4no=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj",
+  "projectFilePath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

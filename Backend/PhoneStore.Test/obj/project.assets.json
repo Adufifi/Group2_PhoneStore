@@ -9203,11 +9203,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
+      "projectUniqueName": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
       "projectName": "PhoneStore.UnitTest",
-      "projectPath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
+      "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\obj\\",
+      "outputPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9229,11 +9229,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
+            "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+              "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
             },
-            "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Downloads\\Group2_PhoneStore\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
+            "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+              "projectPath": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
             }
           }
         }
