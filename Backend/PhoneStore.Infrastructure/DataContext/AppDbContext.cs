@@ -23,7 +23,7 @@ namespace PhoneStore.Infrastructure.DataContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =HIEU; database = PhoneStore;uid=sa;pwd=123;Encrypt=True;TrustServerCertificate=True",
+                optionsBuilder.UseSqlServer("server =DUCMANH; database = PhoneStore;uid=sa;pwd=123;Encrypt=True;TrustServerCertificate=True",
                 b => b.MigrationsAssembly("PhoneStore.Infrastructure"));
             }
         }
