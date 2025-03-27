@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RegisterRequest, UserService } from '../../Services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -11,10 +12,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
+  registerService = inject(UserService);
+  router = inject(Router);
+
   user = {
-    fullname: '',
+    username: '',
     email: '',
-    phone: '',
     password: '',
     confirmPassword: '',
   };
@@ -22,45 +25,61 @@ export class RegisterComponent {
   errors: string[] = [];
   isSuccess = false;
 
-  constructor(private router: Router) {}
-
   register() {
     this.errors = [];
     this.isSuccess = false;
-
-    // Kiểm tra xác nhận mật khẩu
     if (this.user.password !== this.user.confirmPassword) {
       this.errors.push('Mật khẩu xác nhận không khớp');
       return;
     }
-
-    // Kiểm tra độ dài mật khẩu
     if (this.user.password.length < 6) {
       this.errors.push('Mật khẩu phải có ít nhất 6 ký tự');
       return;
     }
-
-    // Kiểm tra email hợp lệ
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!emailPattern.test(this.user.email)) {
       this.errors.push('Email không hợp lệ');
       return;
     }
+    const registerData: RegisterRequest = {
+      username: this.user.username,
+      email: this.user.email,
+      password: this.user.password,
+    };
 
-    // Kiểm tra số điện thoại
-    const phonePattern = /^[0-9]{10}$/;
-    if (!phonePattern.test(this.user.phone)) {
-      this.errors.push('Số điện thoại phải có 10 chữ số');
-      return;
-    }
-
-    // Đăng ký thành công
-    console.log('Registration successful:', this.user);
-    this.isSuccess = true;
-
-    // Chuyển đến trang đăng nhập sau 2 giây
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 2000);
+    console.log('Attempting registration with data:', {
+      ...registerData,
+      password: '[REDACTED]',
+    });
+    this.registerService.register(registerData).subscribe({
+      next: (response) => {
+        console.log('Registration successful:', response);
+        this.isSuccess = true;
+        this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        console.error('Registration error:', error);
+        if (error.error && error.error.mess) {
+          this.errors.push(error.error.mess);
+        } else if (error.error && error.error.errors) {
+          // Debug
+          Object.values(error.error.errors).forEach((err: any) => {
+            this.errors.push(err[0]);
+          });
+        } else if (error.status === 0) {
+          this.errors.push(
+            'Không thể kết nối đến máy chủ. Vui lòng kiểm tra kết nối mạng và thử lại.'
+          );
+        } else if (error.status === 400) {
+          this.errors.push(
+            'Dữ liệu đăng ký không hợp lệ. Vui lòng kiểm tra lại thông tin.'
+          );
+        } else {
+          this.errors.push(
+            `Có lỗi xảy ra khi đăng ký (${error.status}). Vui lòng thử lại sau.`
+          );
+        }
+      },
+    });
   }
 }

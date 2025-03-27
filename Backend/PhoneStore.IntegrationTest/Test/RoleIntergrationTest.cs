@@ -1,10 +1,3 @@
-using System.Net;
-using System.Text;
-using Newtonsoft.Json;
-using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Xunit;
-
 namespace PhoneStore.IntegrationTest
 {
     public class RoleIntegrationTest : IClassFixture<WebApplicationFactory<Program>>
