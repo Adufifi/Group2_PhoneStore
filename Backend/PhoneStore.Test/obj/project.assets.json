@@ -9203,11 +9203,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
+      "projectUniqueName": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
       "projectName": "PhoneStore.UnitTest",
-      "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
+      "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\PhoneStore.UnitTest.csproj",
       "packagesPath": "C:\\Users\\hieun\\.nuget\\packages\\",
-      "outputPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\obj\\",
+      "outputPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9228,11 +9228,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
-              "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
+            "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj": {
+              "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application\\PhoneStore.Application.csproj"
             },
-            "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
-              "projectPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
+            "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj"
             }
           }
         }

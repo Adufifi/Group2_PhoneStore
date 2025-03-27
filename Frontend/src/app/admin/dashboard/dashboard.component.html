@@ -59,43 +59,6 @@
     <div class="col-lg-9 col-xl-10 ms-auto p-4">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Dashboard</h2>
-        <div class="d-flex align-items-center">
-          <div class="dropdown">
-            <button
-              class="btn btn-light dropdown-toggle"
-              type="button"
-              id="userDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="bi bi-person-circle me-2"></i>
-              Admin
-            </button>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="userDropdown"
-            >
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-person me-2"></i>Tài khoản</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-gear me-2"></i>Cài đặt</a
-                >
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-box-arrow-right me-2"></i>Đăng xuất</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
 
       <!-- Statistics -->
@@ -124,9 +87,9 @@
         <div class="card-header bg-white border-0 py-3">
           <div class="d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Đơn hàng gần đây</h5>
-            <a routerLink="/admin/orders" class="btn btn-sm btn-primary">
-              Xem tất cả
-            </a>
+            <a routerLink="/admin/orders" class="btn btn-sm btn-primary"
+              >Xem tất cả</a
+            >
           </div>
         </div>
         <div class="card-body p-0">
@@ -145,20 +108,24 @@
               <tbody>
                 <tr *ngFor="let order of recentOrders">
                   <td>{{ order.id }}</td>
-                  <td>{{ order.customer }}</td>
-                  <td>{{ order.date }}</td>
-                  <td>{{ order.total }}</td>
+                  <td>{{ order.UserName }}</td>
+                  <!-- Hiển thị tên người dùng -->
+                  <td>{{ order.createdDate | date : "dd/MM/yyyy" }}</td>
+                  <!-- Hiển thị ngày tạo đơn hàng -->
+                  <td>{{ order.total | currency : "VND" }}</td>
+                  <!-- Hiển thị tổng tiền với định dạng VND -->
                   <td>
                     <span
-                      class="badge"
+                      class="badge text-dark"
                       [ngClass]="{
-                        'bg-success': order.status === 'Hoàn thành',
-                        'bg-primary': order.status === 'Đang giao',
-                        'bg-warning text-dark': order.status === 'Đang xử lý',
-                        'bg-danger': order.status === 'Đã hủy'
+                        'bg-danger': order.statusProduct === 0,
+                        'bg-warning': order.statusProduct === 1,
+                        'bg-primary': order.statusProduct === 2,
+                        'bg-success': order.statusProduct === 3
                       }"
-                      >{{ order.status }}</span
                     >
+                      {{ getStatusText(order.statusProduct) }}
+                    </span>
                   </td>
                   <td>
                     <div class="btn-group">

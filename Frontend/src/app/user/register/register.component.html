@@ -24,22 +24,22 @@
 
           <form (ngSubmit)="register()" #registerForm="ngForm">
             <div class="mb-3">
-              <label for="fullname" class="form-label">Họ và tên</label>
+              <label for="username" class="form-label">Tên đăng nhập</label>
               <input
                 type="text"
                 class="form-control"
-                id="fullname"
-                name="fullname"
-                [(ngModel)]="user.fullname"
-                placeholder="Nhập họ và tên của bạn"
+                id="username"
+                name="username"
+                [(ngModel)]="user.username"
+                placeholder="Nhập tên đăng nhập của bạn"
                 required
-                #fullname="ngModel"
+                #username="ngModel"
               />
               <div
-                *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)"
+                *ngIf="username.invalid && (username.dirty || username.touched)"
                 class="text-danger mt-1 small"
               >
-                Vui lòng nhập họ và tên
+                Vui lòng nhập tên đăng nhập
               </div>
             </div>
 
@@ -60,26 +60,6 @@
                 class="text-danger mt-1 small"
               >
                 Vui lòng nhập email hợp lệ
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="phone" class="form-label">Số điện thoại</label>
-              <input
-                type="tel"
-                class="form-control"
-                id="phone"
-                name="phone"
-                [(ngModel)]="user.phone"
-                placeholder="Nhập số điện thoại của bạn"
-                required
-                #phone="ngModel"
-              />
-              <div
-                *ngIf="phone.invalid && (phone.dirty || phone.touched)"
-                class="text-danger mt-1 small"
-              >
-                Vui lòng nhập số điện thoại
               </div>
             </div>
 

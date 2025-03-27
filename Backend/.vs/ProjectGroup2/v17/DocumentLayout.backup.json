@@ -1,7 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Dung\\Group2_PhoneStore\\Backend\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.integrationtest\\test\\usertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|solutionrelative:phonestore.integrationtest\\test\\usertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.integrationtest\\test\\roleintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A210FD2-CF18-4B94-9C50-DB2BCB2DDFD3}|PhoneStore.IntegrationTest\\PhoneStore.IntegrationTest.csproj|solutionrelative:phonestore.integrationtest\\test\\roleintergrationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,6 +59,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserTest.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\UserTest.cs",
+              "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\UserTest.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\UserTest.cs",
+              "RelativeToolTip": "PhoneStore.IntegrationTest\\Test\\UserTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T03:08:48.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoleIntergrationTest.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "RelativeToolTip": "PhoneStore.IntegrationTest\\Test\\RoleIntergrationTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T03:08:47.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderItemController.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\OrderItemController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\OrderItemController.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\OrderItemController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\OrderItemController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAQwGMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T04:17:03.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAQwHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T04:16:45.09Z"
             }
           ]
         }

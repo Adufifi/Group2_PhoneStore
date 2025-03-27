@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u5Fb5DRo2Cw=",
+  "dgSpecHash": "bhRc4UM2HhU=",
   "success": true,
-  "projectFilePath": "D:\\Dung\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
+  "projectFilePath": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\PhoneStore.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hieun\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\hieun\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
