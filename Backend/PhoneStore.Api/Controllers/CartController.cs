@@ -1,50 +1,79 @@
-﻿using System.Threading.Tasks;
-using Azure;
-
-namespace PhoneStore.Api.Controllers
+﻿namespace PhoneStore.Api.Controllers
 {
     [Route("api/cart")]
     [ApiController]
     public class CartController : ControllerBase
     {
         private readonly ICartServices _cartServices;
-        private readonly IMapper _mapper;
 
-        public CartController(ICartServices cartServices, IMapper mapper)
+        public CartController(ICartServices cartServices)
         {
             _cartServices = cartServices;
-            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCart()
+        public async Task<ActionResult<IEnumerable<Cart>>> GetAll()
         {
-            var cart = await _cartServices.GetAllAsync();
+            var carts = await _cartServices.GetAllAsync();
+            return Ok(carts);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cart>> GetById(Guid id)
+        {
+            var cart = await _cartServices.GetByIdAsync(id);
+            if (cart == null)
+                return NotFound($"Cart with id {id} not found");
             return Ok(cart);
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCart(Guid id)
+
+        [HttpPost]
+        public async Task<ActionResult<Cart>> Create([FromBody] Cart cart)
         {
-            var statusResponse = new StatusResponse();
-            try
-            {
-                var result = await _cartServices.DeleteAsync(id);
-                if (result)
-                {
-                    statusResponse.status = 1;
-                    statusResponse.mess = "Delete success";
-                    return Ok(statusResponse);
-                }
-                statusResponse.status = -99;
-                statusResponse.mess = "Delete fail";
-                return Ok(statusResponse);
-            }
-            catch (RequestFailedException ex)
-            {
-                statusResponse.status = -9999;
-                statusResponse.mess = ex.Message;
-                return BadRequest(statusResponse);
-            }
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            cart.CreatedDate = DateTime.UtcNow;
+            var result = await _cartServices.AddAsync(cart);
+            if (result <= 0)
+                return BadRequest("Failed to create cart");
+
+            return CreatedAtAction(nameof(GetById), new { id = cart.Id }, cart);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] Cart cart)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (id != cart.Id)
+                return BadRequest("Id mismatch");
+
+            var existingCart = await _cartServices.GetByIdAsync(id);
+            if (existingCart == null)
+                return NotFound($"Cart with id {id} not found");
+
+            cart.CreatedDate = existingCart.CreatedDate;
+            var result = await _cartServices.UpdateAsync(cart);
+            if (!result)
+                return BadRequest("Failed to update cart");
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var existingCart = await _cartServices.GetByIdAsync(id);
+            if (existingCart == null)
+                return NotFound($"Cart with id {id} not found");
+
+            var result = await _cartServices.DeleteAsync(id);
+            if (!result)
+                return BadRequest("Failed to delete cart");
+
+            return NoContent();
         }
 
     }
