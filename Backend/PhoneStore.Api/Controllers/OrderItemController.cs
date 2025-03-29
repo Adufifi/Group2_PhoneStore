@@ -49,6 +49,19 @@ namespace PhoneStore.Api.Controllers
                 return Ok(statusResponse);
             }
         }
+        [HttpGet("getOrderItemsByOrderId/{orderId}")]
+        public async Task<IActionResult> GetOrderItemsByOrderId(Guid orderId)
+        {
+            var orderItems = await _orderItemServices.GetAllAsync();
+            var filteredOrderItems = orderItems.Where(item => item.OrderId == orderId).ToList();
+
+            if (filteredOrderItems.Any())
+            {
+                return Ok(filteredOrderItems);
+            }
+
+            return NotFound("Không tìm thấy OrderItems cho orderId: " + orderId);
+        }
         [HttpPut("updateOrderItem/{id}")]
         public async Task<IActionResult> UpdateOrderItem(Guid id, [FromBody] OrderItemDto orderItemDto)
         {

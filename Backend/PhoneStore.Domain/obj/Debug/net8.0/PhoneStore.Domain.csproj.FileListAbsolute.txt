@@ -28,3 +28,48 @@ D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.pdb
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.genruntimeconfig.cache
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\ref\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.deps.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.runtimeconfig.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.AssemblyReference.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfoInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.sourcelink.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\refint\PhoneStore.Domain.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.genruntimeconfig.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\ref\PhoneStore.Domain.dll
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.deps.json
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.runtimeconfig.json
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.dll
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.pdb
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.AssemblyReference.cache
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfoInputs.cache
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfo.cs
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.CoreCompileInputs.cache
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.sourcelink.json
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.dll
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\refint\PhoneStore.Domain.dll
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.pdb
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.genruntimeconfig.cache
+D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\ref\PhoneStore.Domain.dll
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.deps.json
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.runtimeconfig.json
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.dll
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\bin\Debug\net8.0\PhoneStore.Domain.pdb
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.AssemblyReference.cache
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfoInputs.cache
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.AssemblyInfo.cs
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.csproj.CoreCompileInputs.cache
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.sourcelink.json
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.dll
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\refint\PhoneStore.Domain.dll
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.pdb
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\PhoneStore.Domain.genruntimeconfig.cache
+D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Domain\obj\Debug\net8.0\ref\PhoneStore.Domain.dll

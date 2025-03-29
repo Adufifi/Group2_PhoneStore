@@ -26,6 +26,23 @@ export class LoginComponent {
   errorMessage = '';
 
   login() {
+    // Predefined admin credentials for testing
+    if (this.user.email === 'Amin123' && this.user.password === 'Admin123') {
+      this.cookieServices.set(
+        'Authentication',
+        'admin-token',
+        undefined,
+        '/',
+        undefined,
+        true,
+        'Strict'
+      );
+      this.authService.login(this.user.email);
+      this.router.navigateByUrl('/admin');
+      return;
+    }
+
+    // Existing login logic
     this.userServices.login(this.user).subscribe(
       (res) => {
         if (res.status === -9999) {
@@ -72,5 +89,11 @@ export class LoginComponent {
         this.errorMessage = 'Server Error';
       }
     );
+  }
+
+  loginWithGoogle() {
+    // TODO: Implement Google login functionality
+    console.log('Google login clicked');
+    this.errorMessage = 'Tính năng đăng nhập bằng Google đang được phát triển';
   }
 }
