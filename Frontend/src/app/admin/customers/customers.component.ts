@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CustomerService } from '../../Services/customer.service';
-import { Customer } from '../../Models/customer.interface';
+
+import { Customer } from '../../models/customer.interface';
 import { HttpClientModule } from '@angular/common/http';
+import { Role, RoleService } from '../../services/role.service';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-customers',
@@ -16,26 +18,84 @@ import { HttpClientModule } from '@angular/common/http';
 export class CustomersComponent implements OnInit {
   customers: Customer[] = [];
   filteredCustomers: Customer[] = [];
+  roles: Role[] = [];
   searchTerm = '';
-  sortBy = 'name';
+  sortBy = 'username';
   sortOrder = 'asc';
+  currentPage = 1;
+  pageSize = 10;
+  totalCustomers = 0;
+  totalPages = 1;
+  pages: number[] = [];
+  Math = Math;
 
-  constructor(private customerService: CustomerService) {}
+  constructor(
+    private customerService: CustomerService,
+    private roleService: RoleService
+  ) {}
 
   ngOnInit() {
+    this.loadRoles();
     this.loadCustomers();
+  }
+
+  loadRoles() {
+    this.roleService.getAllRoles().subscribe({
+      next: (data) => {
+        this.roles = data;
+      },
+      error: (error) => {
+        console.error('Lỗi khi tải danh sách vai trò:', error);
+      }
+    });
+  }
+
+  getRoleName(roleId: number): string {
+    const role = this.roles.find(r => r.id === roleId);
+    return role ? role.roleName : 'Không xác định';
   }
 
   loadCustomers() {
     this.customerService.getAllCustomers().subscribe({
       next: (data) => {
-        this.customers = data;
+        console.log('Dữ liệu nhận được:', data);
+        this.customers = data.map(customer => ({
+          id: customer.id,
+          username: customer.username,
+          email: customer.email,
+          password: customer.password,
+          role_id: customer.role_id,
+          created_date: customer.created_date,
+          updated_date: customer.updated_date,
+          status: customer.status
+        }));
         this.filteredCustomers = [...this.customers];
+        this.totalCustomers = this.filteredCustomers.length;
+        this.calculatePages();
+        this.sortCustomers();
       },
       error: (error) => {
         console.error('Lỗi khi tải danh sách khách hàng:', error);
       }
     });
+  }
+
+  calculatePages() {
+    this.totalPages = Math.ceil(this.totalCustomers / this.pageSize);
+    this.pages = Array.from({length: this.totalPages}, (_, i) => i + 1);
+  }
+
+  changePage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.applyPagination();
+    }
+  }
+
+  applyPagination() {
+    const start = (this.currentPage - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    this.filteredCustomers = this.customers.slice(start, end);
   }
 
   search() {
@@ -45,30 +105,31 @@ export class CustomersComponent implements OnInit {
       const term = this.searchTerm.toLowerCase();
       this.filteredCustomers = this.customers.filter(
         (customer) =>
-          customer.name.toLowerCase().includes(term) ||
-          customer.email.toLowerCase().includes(term) ||
-          customer.phone.includes(term)
+          customer.username.toLowerCase().includes(term) ||
+          customer.email.toLowerCase().includes(term)
       );
     }
+    this.totalCustomers = this.filteredCustomers.length;
+    this.calculatePages();
+    this.currentPage = 1;
     this.sortCustomers();
   }
 
   sortCustomers() {
     this.filteredCustomers.sort((a, b) => {
       let comparison = 0;
-      if (this.sortBy === 'name') {
-        comparison = a.name.localeCompare(b.name);
-      } else if (this.sortBy === 'orders') {
-        comparison = a.orders - b.orders;
-      } else if (this.sortBy === 'totalSpent') {
-        comparison = a.totalSpent - b.totalSpent;
+      if (this.sortBy === 'username') {
+        comparison = a.username.localeCompare(b.username);
+      } else if (this.sortBy === 'created_date') {
+        comparison = new Date(a.created_date).getTime() - new Date(b.created_date).getTime();
       }
       return this.sortOrder === 'asc' ? comparison : -comparison;
     });
+    this.applyPagination();
   }
 
   deleteCustomer(id: number) {
-    this.customerService.deleteCustomer(id).subscribe({
+    this.customerService.deleteCustomer(id.toString()).subscribe({
       next: () => {
         this.customers = this.customers.filter(customer => customer.id !== id);
         this.search();
@@ -77,5 +138,10 @@ export class CustomersComponent implements OnInit {
         console.error('Lỗi khi xóa khách hàng:', error);
       }
     });
+  }
+
+  openAddCustomerModal() {
+    // TODO: Implement modal logic
+    console.log('Opening add customer modal');
   }
 }

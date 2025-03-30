@@ -8,14 +8,11 @@
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               <a routerLink="/admin" class="nav-link px-0 text-white-50">
-                <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                <i class="bi bi-speedometer2 me-2"></i> Bảng điều khiển
               </a>
             </li>
             <li class="nav-item mb-2">
-              <a
-                routerLink="/admin/products"
-                class="nav-link px-0 text-white-50"
-              >
+              <a routerLink="/admin/products" class="nav-link px-0 text-white-50">
                 <i class="bi bi-box me-2"></i> Sản phẩm
               </a>
             </li>
@@ -25,10 +22,7 @@
               </a>
             </li>
             <li class="nav-item mb-2">
-              <a
-                routerLink="/admin/customers"
-                class="nav-link active px-0 text-white"
-              >
+              <a routerLink="/admin/customers" class="nav-link active px-0 text-white">
                 <i class="bi bi-people me-2"></i> Khách hàng
               </a>
             </li>
@@ -38,10 +32,7 @@
               </a>
             </li>
             <li class="nav-item mb-2">
-              <a
-                routerLink="/admin/settings"
-                class="nav-link px-0 text-white-50"
-              >
+              <a routerLink="/admin/settings" class="nav-link px-0 text-white-50">
                 <i class="bi bi-gear me-2"></i> Cài đặt
               </a>
             </li>
@@ -59,7 +50,7 @@
     <div class="col-lg-9 col-xl-10 ms-auto p-4">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Quản lý khách hàng</h2>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="openAddCustomerModal()">
           <i class="bi bi-plus-lg me-2"></i>
           Thêm khách hàng
         </button>
@@ -78,32 +69,19 @@
                   [(ngModel)]="searchTerm"
                   (keyup)="search()"
                 />
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  (click)="search()"
-                >
+                <button class="btn btn-outline-secondary" type="button" (click)="search()">
                   <i class="bi bi-search"></i>
                 </button>
               </div>
             </div>
             <div class="col-md-3">
-              <select
-                class="form-select"
-                [(ngModel)]="sortBy"
-                (change)="sortCustomers()"
-              >
+              <select class="form-select" [(ngModel)]="sortBy" (change)="sortCustomers()">
                 <option value="name">Sắp xếp theo tên</option>
-                <option value="orders">Sắp xếp theo đơn hàng</option>
-                <option value="totalSpent">Sắp xếp theo chi tiêu</option>
+                <option value="created_date">Sắp xếp theo ngày tạo</option>
               </select>
             </div>
             <div class="col-md-3">
-              <select
-                class="form-select"
-                [(ngModel)]="sortOrder"
-                (change)="sortCustomers()"
-              >
+              <select class="form-select" [(ngModel)]="sortOrder" (change)="sortCustomers()">
                 <option value="asc">Tăng dần</option>
                 <option value="desc">Giảm dần</option>
               </select>
@@ -120,24 +98,24 @@
               <thead class="bg-light">
                 <tr>
                   <th>#</th>
-                  <th>Họ tên</th>
+                  <th>Tên người dùng</th>
                   <th>Email</th>
                   <th>Số điện thoại</th>
                   <th>Địa chỉ</th>
-                  <th>Đơn hàng</th>
-                  <th>Tổng chi tiêu</th>
+                  <th>Vai trò</th>
+                  <th>Ngày tạo</th>
+                  <th>Trạng thái</th>
                   <th>Hành động</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let customer of filteredCustomers; let i = index">
                   <td>{{ i + 1 }}</td>
-                  <td>{{ customer.name }}</td>
+                  <td>{{ customer.username }}</td>
                   <td>{{ customer.email }}</td>
-                  <td>{{ customer.phone }}</td>
-                  <td>{{ customer.address }}</td>
-                  <td>{{ customer.orders }}</td>
-                  <td>{{ customer.totalSpent | number }} ₫</td>
+                  <td>{{ getRoleName(customer.role_id) }}</td>
+                  <td>{{ customer.created_date | date:'dd/MM/yyyy' }}</td>
+                  <td>{{ customer.status ? 'Hoạt động' : 'Không hoạt động' }}</td>
                   <td>
                     <div class="btn-group">
                       <button class="btn btn-sm btn-outline-secondary">
@@ -155,6 +133,9 @@
                     </div>
                   </td>
                 </tr>
+                <tr *ngIf="filteredCustomers.length === 0">
+                  <td colspan="4" class="text-center py-3">Không tìm thấy khách hàng nào</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -163,19 +144,23 @@
 
       <!-- Pagination -->
       <div class="d-flex justify-content-between align-items-center mt-4">
-        <div>Hiển thị 1-5 của 5 khách hàng</div>
+        <div>
+          Hiển thị {{ (currentPage - 1) * pageSize + 1 }} - 
+          {{ Math.min(currentPage * pageSize, totalCustomers) }} 
+          của {{ totalCustomers }} khách hàng
+        </div>
         <nav aria-label="Page navigation">
           <ul class="pagination mb-0">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" aria-label="Previous">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+              <a class="page-link" href="javascript:void(0)" (click)="changePage(currentPage - 1)">
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-            <li class="page-item active">
-              <a class="page-link" href="#">1</a>
+            <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+              <a class="page-link" href="javascript:void(0)" (click)="changePage(page)">{{ page }}</a>
             </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#" aria-label="Next">
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+              <a class="page-link" href="javascript:void(0)" (click)="changePage(currentPage + 1)">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
