@@ -6,11 +6,25 @@ namespace PhoneStore.Api.Controllers
     {
         private readonly IProductServices _productServices;
         private readonly IMapper _mapper;
+        private readonly IOrderServices _orderServices;
+        private readonly IReviewServices _reviewServices;
+        private readonly ICartServices _cartServices;
+        private readonly IOrderItemServices _orderItemServices;
+        private readonly IProductVariantsServices _productVariantsServices;
+        private readonly IProductImageServices _productImageServices;
 
-        public ProductController(IProductServices productServices, IMapper mapper)
+        public ProductController(IProductServices productServices, IMapper mapper,
+        IOrderServices orderServices, IReviewServices reviewServices, ICartServices cartServices, IOrderItemServices orderItemServices,
+        IProductVariantsServices productVariantsServices, IProductImageServices productImageServices)
         {
             _productServices = productServices;
             _mapper = mapper;
+            _orderServices = orderServices;
+            _reviewServices = reviewServices;
+            _cartServices = cartServices;
+            _orderItemServices = orderItemServices;
+            _productVariantsServices = productVariantsServices;
+            _productImageServices = productImageServices;
         }
 
         [HttpGet("All")]
@@ -56,21 +70,11 @@ namespace PhoneStore.Api.Controllers
             return StatusCode(500, statusResponse);
         }
 
-        [HttpDelete("DeleteById/{id}")]
-        public async Task<IActionResult> DeleteProduct(Guid id)
-        {
-            var statusResponse = new StatusResponse();
-            var result = await _productServices.DeleteAsync(id);
-            if (result)
-            {
-                statusResponse.status = 1;
-                statusResponse.mess = "Delete success";
-                return Ok(statusResponse);
-            }
-            statusResponse.status = -2;
-            statusResponse.mess = "Delete valid";
-            return StatusCode(500, statusResponse);
-        }
+        // [HttpDelete("DeleteById/{id}")]
+        // public async Task<IActionResult> DeleteProduct(Guid id)
+        // {
+
+        // }
 
         [HttpPut("UpdateById/{id}")]
         public async Task<IActionResult> UpdateProduct(Guid id, ProductDto productDto)

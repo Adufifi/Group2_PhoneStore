@@ -33,6 +33,7 @@ namespace PhoneStore.Infrastructure.DataContext
             modelBuilder.Entity<Review>().HasOne<Account>(sc => sc.Account)
             .WithMany(s => s.AccountReview).HasForeignKey(sc => sc.AccountId)
             .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Review>().HasOne<Product>(sc => sc.Product)
             .WithMany(s => s.ProductReview).HasForeignKey(sc => sc.ProductId)
             .OnDelete(DeleteBehavior.Restrict);

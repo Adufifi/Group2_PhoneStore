@@ -803,29 +803,6 @@
         }
       }
     },
-    "/api/product/DeleteById/{id}": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/product/UpdateById/{id}": {
       "put": {
         "tags": [
@@ -1850,12 +1827,6 @@
             "type": "string",
             "nullable": true
           },
-          "description": {
-            "maxLength": 500,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
           "products": {
             "type": "array",
             "items": {
@@ -1907,8 +1878,12 @@
             "type": "string",
             "nullable": true
           },
-          "productVariant": {
-            "$ref": "#/components/schemas/ProductVariants"
+          "productVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductVariants"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
