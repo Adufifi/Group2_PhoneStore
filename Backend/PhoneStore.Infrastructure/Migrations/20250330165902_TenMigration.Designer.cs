@@ -12,8 +12,8 @@ using PhoneStore.Infrastructure.DataContext;
 namespace PhoneStore.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250324034818_createDatabase")]
-    partial class createDatabase
+    [Migration("20250330165902_TenMigration")]
+    partial class TenMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

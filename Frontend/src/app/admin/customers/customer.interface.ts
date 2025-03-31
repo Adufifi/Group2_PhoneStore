@@ -1,9 +1,10 @@
 export interface Customer {
-    id: number;
-    name: string;
-    email: string;
-    phone: string;
-    address: string;
-    orders: number;
-    totalSpent: number;
-  }
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+  role_id: number;
+  created_date: Date;
+  updated_date: Date;
+  status: boolean;
+}
