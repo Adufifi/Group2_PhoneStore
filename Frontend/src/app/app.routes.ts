@@ -9,6 +9,7 @@ import { CartComponent } from './user/cart/cart.component';
 import { NewsComponent } from './user/news/news.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { ProfileDetailComponent } from './user/profile-detail/profile-detail.component';
 
 // Trang admin
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -40,6 +41,7 @@ export const routes: Routes = [
   // Auth routes - Các trang tài khoản
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'profile/:id', component: ProfileDetailComponent, canActivate: [authGuard] },
 
   // Admin routes - Các trang admin
   { path: 'admin', component: DashboardComponent },

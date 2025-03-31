@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { Customer } from '../../models/customer.interface';
+
 import { HttpClientModule } from '@angular/common/http';
-import { Role, RoleService } from '../../services/role.service';
-import { CustomerService } from '../../services/customer.service';
+import { Customer } from '../../Interface/customer.interface';
+import { Role, RoleService } from '../../Services/role.service';
+import { CustomerService } from '../../Services/customer.service';
+
 
 @Component({
   selector: 'app-customers',

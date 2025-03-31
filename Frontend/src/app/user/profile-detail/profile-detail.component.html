@@ -4,112 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Detail</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile-detail.component.scss">
     <!-- Thêm font awesome để có icon đẹp hơn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <main class="profile-container">
-        <section class="profile-header">
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Thông tin cá nhân</h1>
+        </div>
+
+        <div *ngIf="loading" class="loading">
+            Đang tải thông tin...
+        </div>
+
+        <div *ngIf="error" class="error">
+            {{ error }}
+        </div>
+
+        <div *ngIf="user" class="profile-content">
             <div class="profile-image">
-                <img src="https://via.placeholder.com/150" alt="Profile Image">
-                <button class="edit-button" aria-label="Edit profile picture">
-                    <i class="fas fa-pencil-alt"></i>
+                <img [src]="user.avatar || 'assets/default-avatar.png'" alt="Avatar">
+                <button class="edit-button">
+                    <i class="fas fa-camera"></i>
                 </button>
             </div>
-            
-            <h1>John Doe</h1>
 
             <div class="profile-info">
                 <div class="info-group">
+                    <label>Tên đăng nhập</label>
+                    <p>{{ user.username }}</p>
+                </div>
+                <div class="info-group">
                     <label>Email</label>
-                    <p><i class="fas fa-envelope"></i> john.doe@example.com</p>
+                    <p>{{ user.email }}</p>
                 </div>
-
                 <div class="info-group">
-                    <label>Phone</label>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <label>Họ và tên</label>
+                    <p>{{ user.fullName }}</p>
                 </div>
-
                 <div class="info-group">
-                    <label>Date of Birth</label>
-                    <p><i class="fas fa-calendar"></i> May 15, 1990</p>
+                    <label>Số điện thoại</label>
+                    <p>{{ user.phoneNumber }}</p>
                 </div>
-
                 <div class="info-group">
-                    <label>Location</label>
-                    <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
-                </div>
-
-                <div class="info-group">
-                    <label>Joined Date</label>
-                    <p><i class="fas fa-clock"></i> January 01, 2022</p>
+                    <label>Địa chỉ</label>
+                    <p>{{ user.address }}</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section class="password-section">
-            <h2>Change Password</h2>
-            <form id="passwordForm" novalidate>
-                <div class="form-group">
-                    <label for="currentPassword">Current Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="currentPassword"
-                            name="currentPassword"
-                            required
-                            minlength="8"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
+    <section class="password-section">
+        <h2>Change Password</h2>
+        <form id="passwordForm" novalidate>
+            <div class="form-group">
+                <label for="currentPassword">Current Password</label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="currentPassword"
+                        name="currentPassword"
+                        required
+                        minlength="8"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="newPassword">New Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="newPassword"
-                            name="newPassword"
-                            required
-                            minlength="8"
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <p class="password-hint">
-                        <i class="fas fa-info-circle"></i>
-                        Password must contain at least 8 characters, including uppercase, lowercase, number, and special character
-                    </p>
+            <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="newPassword"
+                        name="newPassword"
+                        required
+                        minlength="8"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
+                <p class="password-hint">
+                    <i class="fas fa-info-circle"></i>
+                    Password must contain at least 8 characters, including uppercase, lowercase, number, and special character
+                </p>
+            </div>
 
-                <div class="form-group">
-                    <label for="confirmPassword">Confirm New Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            required
-                            minlength="8"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm New Password</label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        required
+                        minlength="8"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
+            </div>
 
-                <button type="submit" class="update-button">
-                    <i class="fas fa-save"></i> Update Password
-                </button>
-            </form>
-        </section>
-    </main>
+            <button type="submit" class="update-button">
+                <i class="fas fa-save"></i> Update Password
+            </button>
+        </form>
+    </section>
 
     <!-- Script để xử lý hiển thị/ẩn mật khẩu -->
     <script>
