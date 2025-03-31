@@ -206,14 +206,18 @@ namespace PhoneStore.Api.Controllers
             if (account == null)
                 return NotFound(new { success = false, message = "Không tìm thấy tài khoản." });
 
-            account.PassWord = request.NewPassword; // Bạn nên hash password ở đây
+            account.PassWord = HasBCrypt(request.NewPassword); // Bạn nên hash password ở đây
             var result = await _accountServices.UpdateAsync(account);
             if (result)
                 return Ok(new { success = true, message = "Đặt lại mật khẩu thành công." });
 
             return StatusCode(500, new { success = false, message = "Lỗi hệ thống khi đặt lại mật khẩu." });
         }
-
+        [NonAction]
+        private static string HasBCrypt(string pass)
+        {
+            return BCrypt.Net.BCrypt.EnhancedHashPassword(pass);
+        }
         public class ResetPasswordRequest
         {
             public string Email { get; set; } = string.Empty;
