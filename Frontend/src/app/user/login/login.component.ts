@@ -15,6 +15,9 @@ import { AuthService } from '../../Services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  loginWithGoogle() {
+    throw new Error('Method not implemented.');
+  }
   user: LoginVm = {
     email: '',
     password: '',

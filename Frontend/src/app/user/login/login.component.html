@@ -49,7 +49,9 @@
           <input type="checkbox" id="remember" />
           <label for="remember">Ghi nhớ đăng nhập</label>
         </div>
-        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+        <a routerLink="/forgot-password" class="forgot-password"
+          >Quên mật khẩu?</a
+        >
       </div>
 
       <button type="submit" class="login-button">
@@ -60,6 +62,23 @@
       <div class="register-link">
         Chưa có tài khoản? <a routerLink="/register">Đăng ký ngay</a>
       </div>
+
+      <div class="divider">
+        <span>hoặc</span>
+      </div>
+
+      <button
+        type="button"
+        class="google-login-button"
+        (click)="loginWithGoogle()"
+      >
+        <img
+          src="assets/images/google-icon.png"
+          alt="Google Icon"
+          class="google-icon"
+        />
+        <span>Đăng nhập với Google</span>
+      </button>
     </form>
 
     <div class="back-to-home">

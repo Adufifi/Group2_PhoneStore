@@ -311,19 +311,9 @@ D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneSto.6B372
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.genruntimeconfig.cache
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\ref\PhoneStore.Api.dll
 D:\Dung\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.csproj.AssemblyReference.cache
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.AssemblyInfoInputs.cache
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.AssemblyInfo.cs
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.csproj.CoreCompileInputs.cache
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.sourcelink.json
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.dll
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\refint\PhoneStore.Api.dll
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\appsettings.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Api.staticwebassets.endpoints.json
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Api.exe
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Api.deps.json
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Api.runtimeconfig.json
@@ -453,18 +443,28 @@ C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\Phone
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Application.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Infrastructure.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Domain.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.csproj.AssemblyReference.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.AssemblyInfoInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.AssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.csproj.CoreCompileInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.sourcelink.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\scopedcss\bundle\PhoneStore.Api.styles.css
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.PhoneStore.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.PhoneStore.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.build.PhoneStore.Api.props
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PhoneStore.Api.props
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PhoneStore.Api.props
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\scopedcss\bundle\PhoneStore.Api.styles.css
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneSto.6B372973.Up2Date
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\refint\PhoneStore.Api.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.genruntimeconfig.cache
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\ref\PhoneStore.Api.dll
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Api.staticwebassets.endpoints.json
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets\msbuild.PhoneStore.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

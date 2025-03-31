@@ -20,6 +20,7 @@ import { SettingsComponent } from './admin/settings/settings.component';
 
 // Guards
 import { authGuard } from './page/guards/auth.guard';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
   // Main routes - Các trang người dùng
@@ -28,6 +29,7 @@ export const routes: Routes = [
   { path: 'products', component: CustomerProductsComponent },
   { path: 'promotions', component: PromotionsComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   {
     path: 'cart',
     component: CartComponent,

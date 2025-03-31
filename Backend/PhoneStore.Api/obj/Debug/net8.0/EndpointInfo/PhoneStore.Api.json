@@ -1624,6 +1624,99 @@
         }
       }
     },
+    "/api/account/forgot-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/verify-otp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyOtpRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/reset-password": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/account/delete{id}": {
       "delete": {
         "tags": [
@@ -1794,6 +1887,32 @@
         },
         "additionalProperties": false
       },
+      "Capacity": {
+        "required": [
+          "capacityName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "capacityName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "productVariant": {
+            "$ref": "#/components/schemas/ProductVariants"
+          }
+        },
+        "additionalProperties": false
+      },
       "CapacityDto": {
         "required": [
           "capacityName"
@@ -1810,6 +1929,9 @@
         "additionalProperties": false
       },
       "Cart": {
+        "required": [
+          "productVariants"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1820,16 +1942,8 @@
             "type": "string",
             "format": "date-time"
           },
-          "productId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "product": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Product"
-            },
-            "nullable": true
+          "productVariants": {
+            "$ref": "#/components/schemas/ProductVariants"
           },
           "accountId": {
             "type": "string",
@@ -1969,12 +2083,12 @@
             "type": "string",
             "format": "date-time"
           },
-          "productId": {
+          "productVariantsId": {
             "type": "string",
             "format": "uuid"
           },
           "product": {
-            "$ref": "#/components/schemas/Product"
+            "$ref": "#/components/schemas/ProductVariants"
           },
           "orderId": {
             "type": "string",
@@ -2083,12 +2197,28 @@
               "$ref": "#/components/schemas/Review"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductColor": {
+        "required": [
+          "colorName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
           },
-          "orderItems": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrderItem"
-            },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "colorName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string",
             "nullable": true
           }
         },
@@ -2155,6 +2285,38 @@
         },
         "additionalProperties": false
       },
+      "ProductImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "productVariantId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productVariants": {
+            "$ref": "#/components/schemas/ProductVariants"
+          },
+          "img": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ProductImageDto": {
         "type": "object",
         "properties": {
@@ -2171,6 +2333,81 @@
             "maxLength": 1000,
             "minLength": 0,
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductVariants": {
+        "required": [
+          "capacityId",
+          "carts",
+          "colorId",
+          "price",
+          "productId",
+          "productImageId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "productId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "colorId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productColor": {
+            "$ref": "#/components/schemas/ProductColor"
+          },
+          "productImageId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "productImages": {
+            "$ref": "#/components/schemas/ProductImage"
+          },
+          "capacityId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "capacity": {
+            "$ref": "#/components/schemas/Capacity"
+          },
+          "quantity": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "price": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "cartId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "carts": {
+            "$ref": "#/components/schemas/Cart"
+          },
+          "orderItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderItem"
+            },
             "nullable": true
           }
         },
@@ -2268,6 +2505,20 @@
           "password": {
             "maxLength": 50,
             "minLength": 6,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResetPasswordRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
             "type": "string",
             "nullable": true
           }
@@ -2381,6 +2632,20 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "VerifyOtpRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "otp": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     }
   }

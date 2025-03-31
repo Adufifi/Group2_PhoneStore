@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/account/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
     "Method": "GetAllAccount",
     "RelativePath": "api/account/GetAll",
     "HttpMethod": "GET",
@@ -69,6 +85,38 @@
         "Name": "login",
         "Type": "PhoneStore.Domain.ModelRequest.LoginVm",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/auth/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PhoneStore.Api.Controllers.UserController\u002BResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "VerifyOtp",
+    "RelativePath": "api/auth/verify-otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PhoneStore.Api.Controllers.UserController\u002BVerifyOtpRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

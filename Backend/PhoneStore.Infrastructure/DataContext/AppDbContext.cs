@@ -15,10 +15,10 @@ namespace PhoneStore.Infrastructure.DataContext
         public DbSet<Order> Orders { get; set; }
         public DbSet<Capacity> Capacities { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
-        // public AppDbContext(DbContextOptions<AppDbContext> context) : base(context)
-        // {
+        public AppDbContext(DbContextOptions<AppDbContext> context) : base(context)
+        {
 
-        // }
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
