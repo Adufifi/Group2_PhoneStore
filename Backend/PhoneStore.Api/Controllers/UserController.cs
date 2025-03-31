@@ -148,6 +148,78 @@ namespace PhoneStore.Api.Controllers
 
 
         }
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] string email)
+        {
+
+            if (string.IsNullOrEmpty(email) || !email.Contains("@"))
+            {
+                return BadRequest("Email không hợp lệ.");
+            }
+            // Kiểm tra sự tồn tại của tài khoản với email
+            var account = await _accountServices.GetAccountByEmail(email);
+            if (account == null)
+            {
+                return NotFound("Email chưa được đăng ký.");
+            }
+            // Tạo OTP
+            string otp = new Random().Next(100000, 1000000).ToString();
+            // Gửi OTP qua email
+            bool sent = MailHelper.SendOtpEmail(email, otp);
+            if (!sent)
+            {
+                return StatusCode(500, "Không thể gửi email OTP.");
+            }
+            // Lưu OTP vào hệ thống (có thể lưu vào database hoặc cache)
+            OtpStore.SaveOtp(email, otp);
+
+            return Ok("OTP đã được gửi đến email.");
+        }
+
+
+        [HttpPost("/api/auth/verify-otp")]
+        public IActionResult VerifyOtp([FromBody] VerifyOtpRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Otp))
+                return BadRequest("Email hoặc mã OTP không hợp lệ.");
+
+            // Giả lập xác minh OTP, ví dụ kiểm tra với cache hoặc DB
+            bool isValidOtp = OtpStore.VerifyOtp(request.Email, request.Otp); // Giả định bạn có OtpStore
+            if (!isValidOtp)
+                return BadRequest(new { success = false, message = "Mã OTP không đúng hoặc đã hết hạn." });
+
+            return Ok(new { success = true, message = "OTP hợp lệ." });
+        }
+
+        public class VerifyOtpRequest
+        {
+            public string Email { get; set; }
+            public string Otp { get; set; }
+        }
+        [HttpPost("/api/auth/reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.NewPassword))
+                return BadRequest(new { success = false, message = "Email hoặc mật khẩu không hợp lệ." });
+
+            var account = await _accountServices.GetAccountByEmail(request.Email);
+            if (account == null)
+                return NotFound(new { success = false, message = "Không tìm thấy tài khoản." });
+
+            account.PassWord = request.NewPassword; // Bạn nên hash password ở đây
+            var result = await _accountServices.UpdateAsync(account);
+            if (result)
+                return Ok(new { success = true, message = "Đặt lại mật khẩu thành công." });
+
+            return StatusCode(500, new { success = false, message = "Lỗi hệ thống khi đặt lại mật khẩu." });
+        }
+
+        public class ResetPasswordRequest
+        {
+            public string Email { get; set; } = string.Empty;
+            public string NewPassword { get; set; } = string.Empty;
+        }
+
 
         [HttpDelete("delete{id}")]
         public async Task<IActionResult> Delete(Guid id)

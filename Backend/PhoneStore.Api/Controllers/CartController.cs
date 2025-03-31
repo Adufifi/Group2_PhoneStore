@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using PhoneStore.Domain.Models;
-using PhoneStore.Application.Services;
-
-namespace PhoneStore.Api.Controllers
+﻿namespace PhoneStore.Api.Controllers
 {
+    [Route("api/cart")]
     [ApiController]
-    [Route("api/[controller]")]
     public class CartController : ControllerBase
     {
         private readonly ICartServices _cartServices;
@@ -82,5 +75,6 @@ namespace PhoneStore.Api.Controllers
 
             return NoContent();
         }
+
     }
 }

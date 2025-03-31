@@ -16,6 +16,5 @@ namespace PhoneStore.Domain.Models
         [Range(0, int.MaxValue)]
         public int? BuyCount { get; set; }
         public ICollection<Review> ProductReview { get; set; } = new List<Review>();
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

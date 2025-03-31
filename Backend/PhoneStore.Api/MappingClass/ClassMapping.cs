@@ -23,6 +23,12 @@ namespace PhoneStore.Api.MappingClass
            .ForMember(dest => dest.PassWord, opt => opt.MapFrom(src => HasBCrypt(src.Password)));
             CreateMap<Order, OrderDto>().ReverseMap();
             CreateMap<OrderItem, OrderItemDto>().ReverseMap();
+            CreateMap<Product, ProductDto>().ReverseMap();
+            CreateMap<Review, ReviewDto>().ReverseMap();
+            CreateMap<Capacity, CapacityDto>().ReverseMap();
+            CreateMap<ProductColor, ProductColorDto>().ReverseMap();
+            CreateMap<ProductVariants, ProductVariantsDto>().ReverseMap();
+            CreateMap<ProductImage, ProductImageDto>().ReverseMap();
         }
         private static string HashPassword(string password)
         {
