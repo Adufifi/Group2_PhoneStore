@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../Services/user.service';
-import { User } from '../../Interface/user';
-
+import { Customer } from '../../Interface/customer.interface';
 
 @Component({
   selector: 'app-profile-detail',
@@ -13,7 +12,7 @@ import { User } from '../../Interface/user';
   styleUrl: './profile-detail.component.scss'
 })
 export class ProfileDetailComponent implements OnInit {
-  user: User | null = null;
+  user: Customer | null = null;
   error: string | null = null;
 
   constructor(
@@ -27,9 +26,9 @@ export class ProfileDetailComponent implements OnInit {
     console.log('User ID from URL:', userId);
 
     if (userId) {
-      // Gọi API lấy thông tin người dùng
+      // Gọi API lấy thông tin người dùng bằng cách truyền ID vào
       this.userService.getUserById(userId).subscribe({
-        next: (data: User) => {
+        next: (data) => {
           this.user = data;
           console.log('Thông tin người dùng:', this.user);
         },

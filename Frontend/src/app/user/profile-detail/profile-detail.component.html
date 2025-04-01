@@ -16,8 +16,8 @@
 
         <div *ngIf="user" class="profile-info">
             <div class="profile-header">
-                <img [src]="user.avatar || 'assets/default-avatar.png'" alt="Avatar" class="avatar">
-                <h2>{{ user.fullName }}</h2>
+                <img src="assets/default-avatar.png" alt="Avatar" class="avatar">
+                <h2>{{ user.username }}</h2>
             </div>
 
             <div class="profile-details">
@@ -32,13 +32,18 @@
                 </div>
 
                 <div class="detail-item">
-                    <label>Số điện thoại:</label>
-                    <span>{{ user.phoneNumber }}</span>
+                    <label>Ngày tạo:</label>
+                    <span>{{ user.created_date | date:'dd/MM/yyyy' }}</span>
                 </div>
 
                 <div class="detail-item">
-                    <label>Địa chỉ:</label>
-                    <span>{{ user.address }}</span>
+                    <label>Ngày cập nhật:</label>
+                    <span>{{ user.updated_date | date:'dd/MM/yyyy' }}</span>
+                </div>
+
+                <div class="detail-item">
+                    <label>Trạng thái:</label>
+                    <span>{{ user.status ? 'Hoạt động' : 'Không hoạt động' }}</span>
                 </div>
             </div>
         </div>
