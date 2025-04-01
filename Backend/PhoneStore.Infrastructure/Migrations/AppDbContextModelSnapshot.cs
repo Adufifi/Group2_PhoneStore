@@ -234,9 +234,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
@@ -281,13 +278,14 @@ namespace PhoneStore.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<Guid>("ProductVariantId")
+                    b.Property<Guid?>("ProductVariantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductVariantId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ProductVariantId] IS NOT NULL");
 
                     b.ToTable("ProductImage");
                 });
@@ -319,7 +317,7 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProductImageId")
+                    b.Property<Guid?>("ProductImageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
@@ -474,8 +472,7 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.HasOne("PhoneStore.Domain.Models.ProductVariants", "ProductVariants")
                         .WithOne("ProductImages")
                         .HasForeignKey("PhoneStore.Domain.Models.ProductImage", "ProductVariantId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ProductVariants");
                 });

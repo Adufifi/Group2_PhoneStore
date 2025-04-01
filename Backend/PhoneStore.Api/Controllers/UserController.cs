@@ -69,7 +69,7 @@ namespace PhoneStore.Api.Controllers
                     return NotFound(statusResponse);
                 }
                 var defaultRole = (await _roleServices.GetAllAsync())
-                            .FirstOrDefault(r => r.RoleName == "User");
+                            .FirstOrDefault(r => r.RoleName == "Admin");
                 if (defaultRole is null)
                 {
                     statusResponse.status = -1;

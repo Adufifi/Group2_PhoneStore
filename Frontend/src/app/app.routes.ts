@@ -21,6 +21,7 @@ import { SettingsComponent } from './admin/settings/settings.component';
 // Guards
 import { authGuard } from './page/guards/auth.guard';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
 
 export const routes: Routes = [
   // Main routes - Các trang người dùng
@@ -48,6 +49,7 @@ export const routes: Routes = [
   { path: 'admin/customers', component: CustomersComponent },
   { path: 'admin/report', component: ReportComponent },
   { path: 'admin/settings', component: SettingsComponent },
+  { path: 'admin/products/new', component: AddProductComponent },
 
   // Fallback route
   { path: '**', redirectTo: '' },

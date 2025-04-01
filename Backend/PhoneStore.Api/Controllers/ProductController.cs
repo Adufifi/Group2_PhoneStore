@@ -1,3 +1,5 @@
+using PhoneStore.Api.Helper;
+
 namespace PhoneStore.Api.Controllers
 {
     [Route("api/product")]
@@ -30,8 +32,9 @@ namespace PhoneStore.Api.Controllers
         [HttpGet("All")]
         public async Task<IActionResult> All()
         {
-            var data = await _productServices.GetAllAsync();
-            return Ok(data);
+            var products = await _productServices.GetAlllAsync();
+            var productDtos = _mapper.Map<IEnumerable<ProductDto>>(products);
+            return Ok(productDtos);
         }
 
         [HttpGet("GetProductById/{id}")]
@@ -49,25 +52,44 @@ namespace PhoneStore.Api.Controllers
         public async Task<IActionResult> CreateProduct([FromBody] ProductDto productDto)
         {
             var statusResponse = new StatusResponse();
+
             if (!ModelState.IsValid)
             {
                 statusResponse.status = -999;
                 statusResponse.mess = "Input invalid";
-                return NotFound(statusResponse);
+                return BadRequest(statusResponse);
             }
-            var dataAdd = _mapper.Map<Product>(productDto);
-            dataAdd.CreatedDate = DateTime.Now;
-            dataAdd.Id = Guid.NewGuid();
-            var result = await _productServices.AddAsync(dataAdd);
-            if (result > 0)
+
+            try
             {
-                statusResponse.status = 1;
-                statusResponse.mess = "Add success";
-                return Ok(statusResponse);
+                var product = _mapper.Map<Product>(productDto);
+                product.CreatedDate = DateTime.Now;
+                product.Id = Guid.NewGuid();
+
+                if (!string.IsNullOrEmpty(productDto.ImagePath))
+                {
+                    product.Image = ImageHelper.ConvertImageToByteArray(productDto.ImagePath);
+                }
+
+                var result = await _productServices.AddAsync(product);
+
+                if (result > 0)
+                {
+                    statusResponse.status = 1;
+                    statusResponse.mess = "Add success";
+                    return Ok(statusResponse);
+                }
+
+                statusResponse.status = -2;
+                statusResponse.mess = "Failed to add product";
+                return StatusCode(500, statusResponse);
             }
-            statusResponse.status = -2;
-            statusResponse.mess = "Add valid";
-            return StatusCode(500, statusResponse);
+            catch (Exception ex)
+            {
+                statusResponse.status = -3;
+                statusResponse.mess = $"Error creating product: {ex.Message}";
+                return StatusCode(500, statusResponse);
+            }
         }
 
         // [HttpDelete("DeleteById/{id}")]

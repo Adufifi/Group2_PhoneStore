@@ -1848,12 +1848,6 @@
             "minLength": 0,
             "type": "string",
             "nullable": true
-          },
-          "description": {
-            "maxLength": 500,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2150,12 +2144,6 @@
             "type": "string",
             "nullable": true
           },
-          "stock": {
-            "maximum": 2147483647,
-            "minimum": 0,
-            "type": "integer",
-            "format": "int32"
-          },
           "isPromoted": {
             "type": "boolean"
           },
@@ -2220,19 +2208,30 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "brandId": {
             "type": "string",
             "format": "uuid"
           },
+          "brandName": {
+            "type": "string",
+            "nullable": true
+          },
           "productName": {
             "maxLength": 100,
             "minLength": 0,
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "image": {
             "type": "string",
             "format": "byte",
+            "nullable": true
+          },
+          "imagePath": {
+            "type": "string",
             "nullable": true
           },
           "description": {
