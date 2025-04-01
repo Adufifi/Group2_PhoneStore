@@ -21,6 +21,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cookie": "^1.0.2",
+    "jwt-decode": "^4.0.0",
     "ngx-bootstrap": "^19.0.2",
     "ngx-cookie-service": "^19.1.2",
     "rxjs": "~7.8.0",
@@ -38,6 +39,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "typescript": "^5.8.2"
   }
 }
