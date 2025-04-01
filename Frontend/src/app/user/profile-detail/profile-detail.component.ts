@@ -1,70 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../auth/services/auth.service';
-import { CookieService } from 'ngx-cookie-service';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../Services/user.service';
+import { User } from '../../Interface/user';
 
-interface AccountResponse {
-  id: string;
-  username: string;
-  email: string;
-  fullName: string;
-  phoneNumber: string;
-  address: string;
-  avatar?: string;
-}
 
 @Component({
   selector: 'app-profile-detail',
-  templateUrl: './profile-detail.component.html',
-  styleUrls: ['./profile-detail.component.scss'],
   standalone: true,
-  imports: [CommonModule, HttpClientModule]
+  imports: [CommonModule],
+  templateUrl: './profile-detail.component.html',
+  styleUrl: './profile-detail.component.scss'
 })
 export class ProfileDetailComponent implements OnInit {
-  user: AccountResponse | null = null;
-  loading: boolean = false;
+  user: User | null = null;
   error: string | null = null;
-
-  private apiUrl = 'https://localhost:7107/api';
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient,
-    private authService: AuthService,
-    private cookieService: CookieService
+    private userService: UserService
   ) {}
 
-  ngOnInit(): void {
-    // Lấy ID từ token
-    const userId = this.authService.getUserId();
-    console.log('User ID from token:', userId);
+  ngOnInit() {
+    // Lấy ID từ URL
+    const userId = this.route.snapshot.paramMap.get('id');
+    console.log('User ID from URL:', userId);
 
     if (userId) {
-      // Lấy thông tin người dùng từ API
-      this.getUserById(userId);
+      // Gọi API lấy thông tin người dùng
+      this.userService.getUserById(userId).subscribe({
+        next: (data: User) => {
+          this.user = data;
+          console.log('Thông tin người dùng:', this.user);
+        },
+        error: (error: any) => {
+          console.error('Lỗi khi lấy thông tin người dùng:', error);
+          this.error = 'Không thể lấy thông tin người dùng';
+        }
+      });
     } else {
-      this.error = 'Không tìm thấy thông tin người dùng';
+      console.error('Không tìm thấy ID người dùng trong URL');
+      this.error = 'Không tìm thấy ID người dùng';
     }
-  }
-
-  getUserById(id: string): void {
-    this.loading = true;
-    this.error = null;
-    
-    console.log('Fetching user with ID:', id);
-    this.http.get<AccountResponse>(`${this.apiUrl}/User/GetById/${id}`).subscribe({
-      next: (response) => {
-        console.log('User data received:', response);
-        this.user = response;
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Error details:', err);
-        this.error = 'Không thể tải thông tin người dùng';
-        this.loading = false;
-      }
-    });
   }
 }

@@ -47,7 +47,7 @@ export class AuthService {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
         console.log('Decoded token:', decodedToken);
         
-        const userId = decodedToken.nameid;
+        const userId = decodedToken.sid;
         console.log('User ID from token:', userId);
         
         const userJson = localStorage.getItem('user-data');
@@ -79,7 +79,7 @@ export class AuthService {
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
-        user.id = decodedToken.nameid;
+        user.id = decodedToken.sid;
         console.log('Setting user with ID:', user.id);
       } catch (error) {
         console.error('Lỗi khi decode token trong setUser:', error);
@@ -105,7 +105,7 @@ export class AuthService {
       try {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
         console.log('Decoded token in getUserId:', decodedToken);
-        return decodedToken.nameid;
+        return decodedToken.sid;
       } catch (error) {
         console.error('Lỗi khi decode token trong getUserId:', error);
       }

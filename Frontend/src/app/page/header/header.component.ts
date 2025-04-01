@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../Services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +17,11 @@ export class HeaderComponent implements OnInit {
   userEmail: string | null = null;
   userId: string | null = null;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router, 
+    private authService: AuthService,
+    private cookieService: CookieService
+  ) {}
 
   ngOnInit() {
     // Kiểm tra trạng thái đăng nhập khi component được khởi tạo
@@ -26,7 +32,7 @@ export class HeaderComponent implements OnInit {
       this.isLoggedIn = status;
       if (status) {
         this.userEmail = localStorage.getItem('email');
-        this.userId = localStorage.getItem('userId');
+        this.getUserIdFromToken();
       } else {
         this.userEmail = null;
         this.userId = null;
@@ -35,12 +41,26 @@ export class HeaderComponent implements OnInit {
   }
 
   private checkLoginStatus() {
-    // Kiểm tra token trong localStorage
-    const token = localStorage.getItem('token');
+    const token = this.cookieService.get('Authentication');
     if (token) {
       this.isLoggedIn = true;
       this.userEmail = localStorage.getItem('email');
-      this.userId = localStorage.getItem('userId');
+      this.getUserIdFromToken();
+    }
+  }
+
+  private getUserIdFromToken() {
+    const token = this.cookieService.get('Authentication');
+    if (token) {
+      try {
+        const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
+        const sidKey = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid";
+        this.userId = decodedToken[sidKey];
+        console.log('User ID from token:', this.userId);
+      } catch (error) {
+        console.error('Lỗi khi lấy ID từ token:', error);
+        this.userId = null;
+      }
     }
   }
 

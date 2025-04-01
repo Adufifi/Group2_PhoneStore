@@ -10,56 +10,49 @@
 </head>
 <body>
     <div class="profile-container">
-        <div class="profile-header">
-            <h1>Thông tin cá nhân</h1>
-        </div>
-
-        <div *ngIf="loading" class="loading">
-            Đang tải thông tin...
-        </div>
-
-        <div *ngIf="error" class="error">
+        <div *ngIf="error" class="error-message">
             {{ error }}
         </div>
 
-        <div *ngIf="user" class="profile-content">
-            <div class="profile-image">
-                <img [src]="user.avatar || 'assets/default-avatar.png'" alt="Avatar">
-                <button class="edit-button">
-                    <i class="fas fa-camera"></i>
-                </button>
+        <div *ngIf="user" class="profile-info">
+            <div class="profile-header">
+                <img [src]="user.avatar || 'assets/default-avatar.png'" alt="Avatar" class="avatar">
+                <h2>{{ user.fullName }}</h2>
             </div>
 
-            <div class="profile-info">
-                <div class="info-group">
-                    <label>Tên đăng nhập</label>
-                    <p>{{ user.username }}</p>
+            <div class="profile-details">
+                <div class="detail-item">
+                    <label>Tên đăng nhập:</label>
+                    <span>{{ user.username }}</span>
                 </div>
-                <div class="info-group">
-                    <label>Email</label>
-                    <p>{{ user.email }}</p>
+
+                <div class="detail-item">
+                    <label>Email:</label>
+                    <span>{{ user.email }}</span>
                 </div>
-                <div class="info-group">
-                    <label>Họ và tên</label>
-                    <p>{{ user.fullName }}</p>
+
+                <div class="detail-item">
+                    <label>Số điện thoại:</label>
+                    <span>{{ user.phoneNumber }}</span>
                 </div>
-                <div class="info-group">
-                    <label>Số điện thoại</label>
-                    <p>{{ user.phoneNumber }}</p>
-                </div>
-                <div class="info-group">
-                    <label>Địa chỉ</label>
-                    <p>{{ user.address }}</p>
+
+                <div class="detail-item">
+                    <label>Địa chỉ:</label>
+                    <span>{{ user.address }}</span>
                 </div>
             </div>
+        </div>
+
+        <div *ngIf="!user && !error" class="loading">
+            Đang tải thông tin...
         </div>
     </div>
 
     <section class="password-section">
-        <h2>Change Password</h2>
+        <h2>Đổi mật khẩu</h2>
         <form id="passwordForm" novalidate>
             <div class="form-group">
-                <label for="currentPassword">Current Password</label>
+                <label for="currentPassword">Mật khẩu hiện tại</label>
                 <div class="password-input">
                     <input 
                         type="password" 
@@ -75,7 +68,7 @@
             </div>
 
             <div class="form-group">
-                <label for="newPassword">New Password</label>
+                <label for="newPassword">Mật khẩu mới</label>
                 <div class="password-input">
                     <input 
                         type="password" 
@@ -91,12 +84,12 @@
                 </div>
                 <p class="password-hint">
                     <i class="fas fa-info-circle"></i>
-                    Password must contain at least 8 characters, including uppercase, lowercase, number, and special character
+                    Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt
                 </p>
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Confirm New Password</label>
+                <label for="confirmPassword">Xác nhận mật khẩu mới</label>
                 <div class="password-input">
                     <input 
                         type="password" 
@@ -112,7 +105,7 @@
             </div>
 
             <button type="submit" class="update-button">
-                <i class="fas fa-save"></i> Update Password
+                <i class="fas fa-save"></i> Cập nhật mật khẩu
             </button>
         </form>
     </section>
