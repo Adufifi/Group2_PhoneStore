@@ -20,8 +20,6 @@ namespace PhoneStore.Domain.Models
         }
         [Range(0, double.MaxValue)]
         public required double Price { get; set; }
-        public Guid CartId { get; set; }
-        public required Cart Carts { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 

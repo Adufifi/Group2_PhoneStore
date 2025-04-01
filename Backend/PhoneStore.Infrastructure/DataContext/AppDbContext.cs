@@ -50,13 +50,6 @@ namespace PhoneStore.Infrastructure.DataContext
             .WithOne(r => r.Account)
             .HasForeignKey(r => r.AccountId)
             .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<ProductVariants>(entity =>
-            {
-                // Cấu hình 1–1: Bảng ProductVariant có CartId làm FK
-                entity.HasOne(pv => pv.Carts)
-                      .WithOne(c => c.ProductVariants)
-                      .HasForeignKey<ProductVariants>(pv => pv.CartId);
-            });
         }
     }
 }

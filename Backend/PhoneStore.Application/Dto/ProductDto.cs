@@ -15,7 +15,6 @@ namespace PhoneStore.Application.Dto
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
         [Range(0, int.MaxValue)]
-        public int Stock { get; set; }
         public bool IsPromoted { get; set; }
         [Range(0, int.MaxValue)]
         public int? BuyCount { get; set; }
