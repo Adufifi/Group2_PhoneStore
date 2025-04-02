@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+
 namespace PhoneStore.Api.Controllers
 {
     [ApiController]
@@ -14,8 +16,10 @@ namespace PhoneStore.Api.Controllers
         }
 
         [HttpGet("All")]
+        [Authorize(policy: "asdfasdf")]
         public async Task<IActionResult> All()
         {
+
             var data = await _capacityServices.GetAllAsync();
             return Ok(data);
         }

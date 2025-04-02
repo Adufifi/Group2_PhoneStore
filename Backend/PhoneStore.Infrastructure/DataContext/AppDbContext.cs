@@ -33,6 +33,7 @@ namespace PhoneStore.Infrastructure.DataContext
             modelBuilder.Entity<Review>().HasOne<Account>(sc => sc.Account)
             .WithMany(s => s.AccountReview).HasForeignKey(sc => sc.AccountId)
             .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Review>().HasOne<Product>(sc => sc.Product)
             .WithMany(s => s.ProductReview).HasForeignKey(sc => sc.ProductId)
             .OnDelete(DeleteBehavior.Restrict);
@@ -49,13 +50,6 @@ namespace PhoneStore.Infrastructure.DataContext
             .WithOne(r => r.Account)
             .HasForeignKey(r => r.AccountId)
             .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<ProductVariants>(entity =>
-            {
-                // Cấu hình 1–1: Bảng ProductVariant có CartId làm FK
-                entity.HasOne(pv => pv.Carts)
-                      .WithOne(c => c.ProductVariants)
-                      .HasForeignKey<ProductVariants>(pv => pv.CartId);
-            });
         }
     }
 }

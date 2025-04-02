@@ -803,29 +803,6 @@
         }
       }
     },
-    "/api/product/DeleteById/{id}": {
-      "delete": {
-        "tags": [
-          "Product"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/product/UpdateById/{id}": {
       "put": {
         "tags": [
@@ -1850,12 +1827,6 @@
             "type": "string",
             "nullable": true
           },
-          "description": {
-            "maxLength": 500,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
           "products": {
             "type": "array",
             "items": {
@@ -1874,12 +1845,6 @@
         "properties": {
           "name": {
             "maxLength": 50,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
@@ -1907,8 +1872,12 @@
             "type": "string",
             "nullable": true
           },
-          "productVariant": {
-            "$ref": "#/components/schemas/ProductVariants"
+          "productVariants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductVariants"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2175,12 +2144,6 @@
             "type": "string",
             "nullable": true
           },
-          "stock": {
-            "maximum": 2147483647,
-            "minimum": 0,
-            "type": "integer",
-            "format": "int32"
-          },
           "isPromoted": {
             "type": "boolean"
           },
@@ -2245,19 +2208,30 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "brandId": {
             "type": "string",
             "format": "uuid"
           },
+          "brandName": {
+            "type": "string",
+            "nullable": true
+          },
           "productName": {
             "maxLength": 100,
             "minLength": 0,
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "image": {
             "type": "string",
             "format": "byte",
+            "nullable": true
+          },
+          "imagePath": {
+            "type": "string",
             "nullable": true
           },
           "description": {

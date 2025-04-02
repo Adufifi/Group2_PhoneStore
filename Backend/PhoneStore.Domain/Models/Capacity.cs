@@ -4,6 +4,6 @@ namespace PhoneStore.Domain.Models
     {
         [StringLength(100)]
         public required string CapacityName { get; set; }
-        public virtual ProductVariants? ProductVariant { get; set; }
+        public ICollection<ProductVariants> ProductVariants { get; set; } = new List<ProductVariants>();
     }
 }

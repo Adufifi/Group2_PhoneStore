@@ -15,7 +15,8 @@
         public async Task<IActionResult> AllBrand()
         {
             var data = await _brandService.GetAllAsync();
-            return Ok(data);
+            var orderedData = data.OrderBy(x => x.CreatedDate).ToList();
+            return Ok(orderedData);
         }
         [HttpGet("GetBrandById/{id}")]
         public async Task<IActionResult> GetBrandById(Guid id)

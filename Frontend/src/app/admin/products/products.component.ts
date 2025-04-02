@@ -1,104 +1,142 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Product } from '../../Interface/Product';
+import { ProductService } from '../../Services/ProductServices';
+import { BrandService } from '../../Services/BrandService';
+import { Brand } from '../../Interface/Brand';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
-export class ProductsComponent {
-  products = [
-    {
-      id: 1,
-      name: 'iPhone 15 Pro Max',
-      category: 'Apple',
-      price: 32990000,
-      stock: 25,
-      image:
-        'https://images.unsplash.com/photo-1696435026934-d16ad4665929?q=80&w=1976&auto=format&fit=crop',
-    },
-    {
-      id: 2,
-      name: 'Samsung Galaxy S24 Ultra',
-      category: 'Samsung',
-      price: 29990000,
-      stock: 30,
-      image:
-        'https://images.unsplash.com/photo-1707383848513-6ac3f4b75fce?q=80&w=1974&auto=format&fit=crop',
-    },
-    {
-      id: 3,
-      name: 'Google Pixel 8 Pro',
-      category: 'Google',
-      price: 23990000,
-      stock: 15,
-      image:
-        'https://images.unsplash.com/photo-1696447965426-d72d9da71f35?q=80&w=1975&auto=format&fit=crop',
-    },
-    {
-      id: 4,
-      name: 'Xiaomi 14 Pro',
-      category: 'Xiaomi',
-      price: 19990000,
-      stock: 20,
-      image:
-        'https://images.unsplash.com/photo-1646562201103-00715a461fc8?q=80&w=1936&auto=format&fit=crop',
-    },
-    {
-      id: 5,
-      name: 'Oppo Find X7 Ultra',
-      category: 'Oppo',
-      price: 24990000,
-      stock: 18,
-      image:
-        'https://images.unsplash.com/photo-1617997455090-270256d4dc22?q=80&w=1964&auto=format&fit=crop',
-    },
-  ];
+export class ProductsComponent implements OnInit {
+  allProducts: Product[] = [];
+  allBrands: Brand[] = [];
+  products: Product[] = [];
+  searchQuery: string = '';
+  sortField: string = 'Name';
+  sortOrder: string = 'Ascending';
 
-  filteredProducts = [...this.products];
-  searchTerm = '';
-  sortBy = 'name';
-  sortOrder = 'asc';
-
-  search() {
-    if (!this.searchTerm.trim()) {
-      this.filteredProducts = [...this.products];
-    } else {
-      const term = this.searchTerm.toLowerCase();
-      this.filteredProducts = this.products.filter(
-        (product) =>
-          product.name.toLowerCase().includes(term) ||
-          product.category.toLowerCase().includes(term)
-      );
-    }
-
-    this.sortProducts();
+  brandService = inject(BrandService);
+  constructor(private productService: ProductService) {}
+  ngOnInit(): void {
+    this.loadProducts();
+    this.loadBrands();
   }
 
-  sortProducts() {
-    this.filteredProducts.sort((a, b) => {
-      let comparison = 0;
-
-      if (this.sortBy === 'name') {
-        comparison = a.name.localeCompare(b.name);
-      } else if (this.sortBy === 'price') {
-        comparison = a.price - b.price;
-      } else if (this.sortBy === 'stock') {
-        comparison = a.stock - b.stock;
-      } else if (this.sortBy === 'category') {
-        comparison = a.category.localeCompare(b.category);
-      }
-
-      return this.sortOrder === 'asc' ? comparison : -comparison;
+  loadBrands(): void {
+    this.brandService.getAllBrands().subscribe({
+      next: (data) => {
+        this.allBrands = data;
+      },
+      error: (error) => {
+        console.error('Error loading brands:', error);
+      },
+    });
+  }
+  loadProducts(): void {
+    this.productService.getAllProducts().subscribe({
+      next: (data) => {
+        this.allProducts = data.map((product) => ({
+          ...product,
+          image: product.image,
+          // ? this.decodeBase64Image(product.image) : null
+        }));
+        this.applyFilters();
+      },
+      error: (error) => {
+        console.error('Error loading products:', error);
+      },
     });
   }
 
-  deleteProduct(id: number) {
-    this.products = this.products.filter((product) => product.id !== id);
-    this.search();
+  // decodeBase64Image(base64String: string): string {
+  //   try {
+  //     const decodedString = atob(base64String);
+  //     return decodedString;
+  //   } catch (error) {
+  //     console.error('Error decoding image:', error);
+  //     return '';
+  //   }
+  // }
+
+  applyFilters(): void {
+    let filteredProducts = [...this.allProducts];
+
+    if (this.searchQuery) {
+      filteredProducts = filteredProducts.filter(
+        (product) =>
+          product.productName
+            .toLowerCase()
+            .includes(this.searchQuery.toLowerCase()) ||
+          product.brandName
+            .toLowerCase()
+            .includes(this.searchQuery.toLowerCase())
+      );
+    }
+
+    filteredProducts.sort((a, b) => {
+      let comparison = 0;
+      switch (this.sortField) {
+        case 'Name':
+          comparison = a.productName.localeCompare(b.productName);
+          break;
+        case 'Brand':
+          comparison = a.brandName.localeCompare(b.brandName);
+          break;
+        case 'Status':
+          comparison =
+            a.isPromoted === b.isPromoted ? 0 : a.isPromoted ? -1 : 1;
+          break;
+      }
+      return this.sortOrder === 'Ascending' ? comparison : -comparison;
+    });
+
+    this.products = filteredProducts;
+  }
+
+  onSearch(query: string): void {
+    this.searchQuery = query;
+    this.applyFilters();
+  }
+
+  onSortFieldChange(field: string): void {
+    this.sortField = field;
+    this.applyFilters();
+  }
+
+  onSortOrderChange(order: string): void {
+    this.sortOrder = order;
+    this.applyFilters();
+  }
+
+  deleteProduct(id: string): void {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.productService.deleteProduct(id).subscribe({
+        next: () => {
+          this.loadProducts();
+        },
+        error: (error) => {
+          console.error('Error deleting product:', error);
+        },
+      });
+    }
+  }
+
+  onImageError(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    img.style.display = 'none';
+    const container = img.parentElement;
+    if (container) {
+      const placeholder = container.querySelector('.product-image-placeholder');
+      if (placeholder) {
+        placeholder.classList.add('show');
+      }
+    }
   }
 }
