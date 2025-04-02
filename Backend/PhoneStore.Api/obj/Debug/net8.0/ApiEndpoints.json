@@ -606,6 +606,16 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.ProductController",
+    "Method": "GetProductNewBrandId",
+    "RelativePath": "api/product/GetProductNewBrandId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.ProductController",
     "Method": "UpdateProduct",
     "RelativePath": "api/product/UpdateById/{id}",
     "HttpMethod": "PUT",

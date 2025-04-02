@@ -11,12 +11,23 @@ export class DashboardService {
   getAllOrders(): Observable<any[]> {
     return this.http.get<any[]>(`${api_url}/Order/getAllOrders`);
   }
+  getProductVariantById(id: string): Observable<any> {
+    return this.http.get<any>(`${api_url}/ProductVariants/${id}`);
+  }
+
   getAccountById(id: string): Observable<any> {
     return this.http.get<any>(`${api_url}/account/GetById${id}`);
   }
+  updateOrder(orderId: string, updatedOrder: any): Observable<any> {
+    return this.http.put(
+      `${api_url}/Order/updateOrder/${orderId}`,
+      updatedOrder
+    );
+  }
+
   getOrderItemsByOrderId(id: string): Observable<any> {
     return this.http.get<any>(
-      `${api_url}/OrderItem/getOrderItemsByOrderId${id}`
+      `${api_url}/OrderItem/getOrderItemsByOrderId/${id}`
     );
   }
 }

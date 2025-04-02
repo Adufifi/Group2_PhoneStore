@@ -10,6 +10,7 @@ namespace PhoneStore.Domain.Models
         public byte[]? Image { get; set; }
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
+        public decimal? Price { get; set; }
         public bool IsPromoted { get; set; }
         [Range(0, int.MaxValue)]
         public int? BuyCount { get; set; }

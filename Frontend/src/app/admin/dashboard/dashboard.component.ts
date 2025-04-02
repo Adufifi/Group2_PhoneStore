@@ -119,14 +119,23 @@ export class DashboardComponent {
       .getOrderItemsByOrderId(orderId)
       .toPromise()
       .then(
-        (orderItems) => {
+        async (orderItems) => {
           let total = 0;
           if (orderItems && Array.isArray(orderItems)) {
-            orderItems.forEach((item) => {
-              total += item.priceAtTime * item.quantity;
-            });
-          } else {
-            console.warn(`No order items found for order ID: ${orderId}`);
+            for (const item of orderItems) {
+              try {
+                const productVariant = await this.dashboardService
+                  .getProductVariantById(item.productVariantsId)
+                  .toPromise();
+                const price = productVariant.price || 0;
+                total += price * item.quantity;
+              } catch (error) {
+                console.error(
+                  `Lỗi khi lấy ProductVariant với ID ${item.productVariantsId}`,
+                  error
+                );
+              }
+            }
           }
           return total;
         },

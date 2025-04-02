@@ -20,9 +20,13 @@ namespace PhoneStore.Application.Services
              .ToList());
         }
 
-        //public Task<Product?> GetByIddAsync(Guid id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<IEnumerable<Product>> GetNewProductByBrand(IEnumerable<Brand> list)
+        {
+            var brandIds = list.Select(b => b.Id).ToList();
+            var products = await _unitOfWod.GenericRepository<Product>()
+                .Get(filter: p => brandIds.Contains(p.BrandId), includeProperties: "Brand")
+                .ToListAsync();
+            return products;
+        }
     }
 }

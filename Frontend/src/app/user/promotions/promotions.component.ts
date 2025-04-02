@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../../Services/ProductServices';
 
 @Component({
   selector: 'app-promotions',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './promotions.component.html',
   styleUrl: './promotions.component.scss',
 })
-export class PromotionsComponent {}
+export class PromotionsComponent {
+  productServices = inject(ProductService);
+}

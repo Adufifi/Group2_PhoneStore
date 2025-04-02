@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using PhoneStore.Api.Helper;
 
 namespace PhoneStore.Api.Controllers
@@ -8,25 +9,14 @@ namespace PhoneStore.Api.Controllers
     {
         private readonly IProductServices _productServices;
         private readonly IMapper _mapper;
-        private readonly IOrderServices _orderServices;
-        private readonly IReviewServices _reviewServices;
-        private readonly ICartServices _cartServices;
-        private readonly IOrderItemServices _orderItemServices;
-        private readonly IProductVariantsServices _productVariantsServices;
-        private readonly IProductImageServices _productImageServices;
+        private readonly IBrandServices _brandServices;
 
         public ProductController(IProductServices productServices, IMapper mapper,
-        IOrderServices orderServices, IReviewServices reviewServices, ICartServices cartServices, IOrderItemServices orderItemServices,
-        IProductVariantsServices productVariantsServices, IProductImageServices productImageServices)
+        IBrandServices brandServices)
         {
             _productServices = productServices;
             _mapper = mapper;
-            _orderServices = orderServices;
-            _reviewServices = reviewServices;
-            _cartServices = cartServices;
-            _orderItemServices = orderItemServices;
-            _productVariantsServices = productVariantsServices;
-            _productImageServices = productImageServices;
+            _brandServices = brandServices;
         }
 
         [HttpGet("All")]
@@ -46,6 +36,24 @@ namespace PhoneStore.Api.Controllers
                 return NotFound();
             }
             return Ok(data);
+        }
+        [HttpGet("GetProductNewBrandId")]
+        public async Task<IActionResult> GetProductNewBrandId()
+        {
+            try
+            {
+                var listBrand = await _brandServices.GetAllAsync();
+                var data = await _productServices.GetNewProductByBrand(listBrand);
+                if (data == null)
+                {
+                    return NotFound();
+                }
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("CreateProduct")]
