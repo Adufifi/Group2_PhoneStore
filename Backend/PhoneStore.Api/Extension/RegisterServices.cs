@@ -6,9 +6,10 @@ namespace PhoneStore.Api
     {
         public static void RegisterServicesMiddleware(this IServiceCollection services, IConfiguration configuration)
         {
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection") ?? throw new Exception("Sai đường dẫn kết nối kiểm tra lại appsetting"));
+                options.UseSqlServer(connectionString ?? throw new Exception("Sai đường dẫn kết nối kiểm tra lại appsetting"));
             });
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IAccountServices, AccountServices>();
@@ -29,6 +30,7 @@ namespace PhoneStore.Api
             services.AddTransient<IReviewServices, ReviewServices>();
             services.AddTransient<IRoleServices, RoleServices>();
             services.AddAutoMapper(typeof(ClassMapping));
+
         }
     }
 }

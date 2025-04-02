@@ -1,0 +1,142 @@
+<div class="admin-layout">
+  <!-- Admin Sidebar -->
+  <div class="col-lg-3 col-xl-2 p-0 bg-dark vh-100 position-fixed">
+    <div class="px-3 pt-4 pb-3 text-white">
+      <h4 class="fw-bold mb-4">Mobile Shop Admin</h4>
+      <div class="d-flex flex-column h-100">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a routerLink="/admin" class="nav-link px-0 text-white-50">
+              <i class="bi bi-speedometer2 me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              routerLink="/admin/products"
+              class="nav-link active px-0 text-white"
+            >
+              <i class="bi bi-box me-2"></i> Sản phẩm
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/orders" class="nav-link px-0 text-white-50">
+              <i class="bi bi-cart me-2"></i> Đơn hàng
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              routerLink="/admin/customers"
+              class="nav-link px-0 text-white-50"
+            >
+              <i class="bi bi-people me-2"></i> Khách hàng
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/report" class="nav-link px-0 text-white-50">
+              <i class="bi bi-graph-up me-2"></i> Báo cáo
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/settings" class="nav-link px-0 text-white-50">
+              <i class="bi bi-gear me-2"></i> Cài đặt
+            </a>
+          </li>
+        </ul>
+        <div class="mt-auto">
+          <a routerLink="/" class="nav-link px-0 text-white-50">
+            <i class="bi bi-box-arrow-left me-2"></i> Thoát Admin
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="add-product-container">
+      <div class="header">
+        <h1>Add New Product</h1>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="product-form">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input
+            type="text"
+            id="productName"
+            [(ngModel)]="newProduct.productName"
+            name="productName"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <select
+            id="brand"
+            [(ngModel)]="newProduct.brandId"
+            name="brand"
+            (ngModelChange)="onBrandSelect($event)"
+            class="form-control"
+          >
+            <option value="">Select a brand</option>
+            <option *ngFor="let brand of brands" [value]="brand.id">
+              {{ brand.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Product Image</label>
+          <input
+            type="file"
+            id="image"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+            class="form-control"
+          />
+          <div *ngIf="imagePreview" class="image-preview mt-2">
+            <img
+              [src]="imagePreview"
+              alt="Product preview"
+              class="preview-image"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            [(ngModel)]="newProduct.description"
+            name="description"
+            rows="4"
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="form-group checkbox">
+          <label>
+            <input
+              type="checkbox"
+              [(ngModel)]="newProduct.isPromoted"
+              name="isPromoted"
+              class="form-check-input"
+            />
+            Promote this product
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

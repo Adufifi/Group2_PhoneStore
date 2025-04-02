@@ -9,6 +9,7 @@ import { CartComponent } from './user/cart/cart.component';
 import { NewsComponent } from './user/news/news.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { ProfileDetailComponent } from './user/profile-detail/profile-detail.component';
 
 // Trang admin
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -20,6 +21,8 @@ import { SettingsComponent } from './admin/settings/settings.component';
 
 // Guards
 import { authGuard } from './page/guards/auth.guard';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
 
 export const routes: Routes = [
   // Main routes - Các trang người dùng
@@ -28,6 +31,7 @@ export const routes: Routes = [
   { path: 'products', component: CustomerProductsComponent },
   { path: 'promotions', component: PromotionsComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   {
     path: 'cart',
     component: CartComponent,
@@ -38,6 +42,7 @@ export const routes: Routes = [
   // Auth routes - Các trang tài khoản
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'profile/:id', component: ProfileDetailComponent, canActivate: [authGuard] },
 
   // Admin routes - Các trang admin
   { path: 'admin', component: DashboardComponent },
@@ -46,6 +51,7 @@ export const routes: Routes = [
   { path: 'admin/customers', component: CustomersComponent },
   { path: 'admin/report', component: ReportComponent },
   { path: 'admin/settings', component: SettingsComponent },
+  { path: 'admin/products/new', component: AddProductComponent },
 
   // Fallback route
   { path: '**', redirectTo: '' },

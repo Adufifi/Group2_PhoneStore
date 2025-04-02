@@ -15,6 +15,9 @@ import { AuthService } from '../../Services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  loginWithGoogle() {
+    throw new Error('Method not implemented.');
+  }
   user: LoginVm = {
     email: '',
     password: '',
@@ -26,7 +29,7 @@ export class LoginComponent {
   errorMessage = '';
 
   login() {
-    debugger;
+    // debugger;
     this.userServices.login(this.user).subscribe(
       (res) => {
         if (res.status === -9999) {

@@ -4,112 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Detail</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile-detail.component.scss">
     <!-- Thêm font awesome để có icon đẹp hơn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <main class="profile-container">
-        <section class="profile-header">
-            <div class="profile-image">
-                <img src="https://via.placeholder.com/150" alt="Profile Image">
-                <button class="edit-button" aria-label="Edit profile picture">
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
-            </div>
-            
-            <h1>John Doe</h1>
+    <div class="profile-container">
+        <!-- Loading State -->
+        <div *ngIf="isLoading" class="loading-state">
+            <div class="spinner"></div>
+            <p>Đang tải thông tin...</p>
+        </div>
 
-            <div class="profile-info">
-                <div class="info-group">
-                    <label>Email</label>
-                    <p><i class="fas fa-envelope"></i> john.doe@example.com</p>
+        <!-- Error State -->
+        <div *ngIf="error" class="error-state">
+            <i class="fas fa-exclamation-circle"></i>
+            <p>{{ error }}</p>
+        </div>
+
+        <!-- User Info -->
+        <div *ngIf="!isLoading && !error && user" class="user-info">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img [src]="user.img || 'assets/images/default-avatar.png'" alt="Avatar" class="avatar">
+                    <div class="avatar-overlay">
+                        <i class="fas fa-camera"></i>
+                    </div>
                 </div>
-
-                <div class="info-group">
-                    <label>Phone</label>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                </div>
-
-                <div class="info-group">
-                    <label>Date of Birth</label>
-                    <p><i class="fas fa-calendar"></i> May 15, 1990</p>
-                </div>
-
-                <div class="info-group">
-                    <label>Location</label>
-                    <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
-                </div>
-
-                <div class="info-group">
-                    <label>Joined Date</label>
-                    <p><i class="fas fa-clock"></i> January 01, 2022</p>
+                <div class="user-title">
+                    <h2>{{ user.userName }}</h2>
+                    <p class="user-role">Người dùng</p>
                 </div>
             </div>
-        </section>
 
-        <section class="password-section">
-            <h2>Change Password</h2>
-            <form id="passwordForm" novalidate>
-                <div class="form-group">
-                    <label for="currentPassword">Current Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="currentPassword"
-                            name="currentPassword"
-                            required
-                            minlength="8"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
+            <div class="profile-content">
+                <div class="info-section">
+                    <h3><i class="fas fa-user"></i> Thông tin cá nhân</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label><i class="fas fa-envelope"></i> Email:</label>
+                            <span>{{ user.email }}</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="form-group">
-                    <label for="newPassword">New Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="newPassword"
-                            name="newPassword"
-                            required
-                            minlength="8"
-                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <p class="password-hint">
-                        <i class="fas fa-info-circle"></i>
-                        Password must contain at least 8 characters, including uppercase, lowercase, number, and special character
-                    </p>
+    <section class="password-section">
+        <h2><i class="fas fa-key"></i> Đổi mật khẩu</h2>
+        <form id="passwordForm" novalidate>
+            <div class="form-group">
+                <label for="currentPassword">
+                    <i class="fas fa-lock"></i> Mật khẩu hiện tại
+                </label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="currentPassword"
+                        name="currentPassword"
+                        required
+                        minlength="8"
+                        placeholder="Nhập mật khẩu hiện tại"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="confirmPassword">Confirm New Password</label>
-                    <div class="password-input">
-                        <input 
-                            type="password" 
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            required
-                            minlength="8"
-                        >
-                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
+            <div class="form-group">
+                <label for="newPassword">
+                    <i class="fas fa-key"></i> Mật khẩu mới
+                </label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="newPassword"
+                        name="newPassword"
+                        required
+                        minlength="8"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                        placeholder="Nhập mật khẩu mới"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
+                <p class="password-hint">
+                    <i class="fas fa-info-circle"></i>
+                    Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt
+                </p>
+            </div>
 
-                <button type="submit" class="update-button">
-                    <i class="fas fa-save"></i> Update Password
-                </button>
-            </form>
-        </section>
-    </main>
+            <div class="form-group">
+                <label for="confirmPassword">
+                    <i class="fas fa-check-circle"></i> Xác nhận mật khẩu mới
+                </label>
+                <div class="password-input">
+                    <input 
+                        type="password" 
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        required
+                        minlength="8"
+                        placeholder="Xác nhận mật khẩu mới"
+                    >
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="update-button">
+                <i class="fas fa-save"></i> Cập nhật mật khẩu
+            </button>
+        </form>
+    </section>
 
     <!-- Script để xử lý hiển thị/ẩn mật khẩu -->
     <script>

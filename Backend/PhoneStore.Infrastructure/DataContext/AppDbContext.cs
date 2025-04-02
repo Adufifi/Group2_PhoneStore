@@ -33,13 +33,9 @@ namespace PhoneStore.Infrastructure.DataContext
             modelBuilder.Entity<Review>().HasOne<Account>(sc => sc.Account)
             .WithMany(s => s.AccountReview).HasForeignKey(sc => sc.AccountId)
             .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Review>().HasOne<Product>(sc => sc.Product)
             .WithMany(s => s.ProductReview).HasForeignKey(sc => sc.ProductId)
-            .OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<OrderItem>()
-            .HasOne(oi => oi.Product)
-            .WithMany(p => p.OrderItems)
-            .HasForeignKey(oi => oi.ProductId)
             .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<ProductVariants>()
             .HasOne(pv => pv.ProductImages)
@@ -49,7 +45,6 @@ namespace PhoneStore.Infrastructure.DataContext
             modelBuilder.Entity<OrderItem>()
             .Property(o => o.PriceAtTime)
             .HasColumnType("decimal(18,2)");
-
             modelBuilder.Entity<Account>()
             .HasMany(a => a.RefreshTokens)
             .WithOne(r => r.Account)

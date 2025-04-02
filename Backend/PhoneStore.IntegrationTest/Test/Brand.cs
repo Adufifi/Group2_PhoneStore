@@ -1,11 +1,4 @@
-﻿using PhoneStore.Domain.ViewModel;
-using System.Net;
-using System.Net.Http.Json;
-using PhoneStore.Domain.Models;
-using PhoneStore.Application.Dto;
-using Microsoft.AspNetCore.Mvc.Testing;
-
-namespace PhoneStore.IntegrationTest.Test
+﻿namespace PhoneStore.IntegrationTest.Test
 {
     public class BrandTest : IClassFixture<WebApplicationFactory<Program>>
     {
@@ -65,8 +58,7 @@ namespace PhoneStore.IntegrationTest.Test
             var client = _factory.CreateClient();
             var brandDto = new BrandDto
             {
-                Name = "Test Brand",
-                Description = "Test Description"
+                Name = "Test Brand"
             };
 
             // Act
@@ -88,8 +80,7 @@ namespace PhoneStore.IntegrationTest.Test
             var brandId = await CreateTestBrand(client);
             var updateDto = new BrandDto
             {
-                Name = "Updated Brand",
-                Description = "Updated Description"
+                Name = "Updated Brand"
             };
 
             // Act
@@ -125,8 +116,7 @@ namespace PhoneStore.IntegrationTest.Test
         {
             var brandDto = new BrandDto
             {
-                Name = "Test Brand",
-                Description = "Test Description"
+                Name = "Test Brand"
             };
 
             var response = await client.PostAsJsonAsync($"{_baseUrl}/CreateBrand", brandDto);
