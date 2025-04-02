@@ -1898,9 +1898,6 @@
         "additionalProperties": false
       },
       "Cart": {
-        "required": [
-          "productVariants"
-        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1910,6 +1907,10 @@
           "createdDate": {
             "type": "string",
             "format": "date-time"
+          },
+          "productVariantsId": {
+            "type": "string",
+            "format": "uuid"
           },
           "productVariants": {
             "$ref": "#/components/schemas/ProductVariants"
@@ -2240,13 +2241,9 @@
             "type": "string",
             "nullable": true
           },
-          "stock": {
+          "isPromoted": {
             "maximum": 2147483647,
             "minimum": 0,
-            "type": "integer",
-            "format": "int32"
-          },
-          "isPromoted": {
             "type": "boolean"
           },
           "buyCount": {
@@ -2272,7 +2269,8 @@
           },
           "productVariantId": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "nullable": true
           },
           "productVariants": {
             "$ref": "#/components/schemas/ProductVariants"
@@ -2315,11 +2313,9 @@
       "ProductVariants": {
         "required": [
           "capacityId",
-          "carts",
           "colorId",
           "price",
-          "productId",
-          "productImageId"
+          "productId"
         ],
         "type": "object",
         "properties": {
@@ -2347,7 +2343,8 @@
           },
           "productImageId": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "nullable": true
           },
           "productImages": {
             "$ref": "#/components/schemas/ProductImage"
@@ -2369,13 +2366,6 @@
             "minimum": 0,
             "type": "number",
             "format": "double"
-          },
-          "cartId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "carts": {
-            "$ref": "#/components/schemas/Cart"
           },
           "orderItems": {
             "type": "array",

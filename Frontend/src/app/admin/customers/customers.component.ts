@@ -151,7 +151,7 @@ export class CustomersComponent implements OnInit {
     console.log('Opening add customer modal');
   }
 
-  isAdmin(roleId: string): boolean {
-    return roleId === '1'; // Giả sử role_id '1' là admin
+  isAdmin(roleId: number): boolean {
+    return roleId === 1; // Giả sử role_id 1 là admin
   }
 }
