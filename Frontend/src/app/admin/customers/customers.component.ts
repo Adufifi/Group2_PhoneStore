@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { Customer } from '../../Interface/customer.interface';
 import { Role, RoleService } from '../../Services/role.service';
 import { CustomerService } from '../../Services/customer.service';
-
 
 @Component({
   selector: 'app-customers',
@@ -30,10 +30,14 @@ export class CustomersComponent implements OnInit {
   totalPages = 1;
   pages: number[] = [];
   Math = Math;
+  isLoading = false;
+  error: string | null = null;
 
   constructor(
     private customerService: CustomerService,
-    private roleService: RoleService
+    private roleService: RoleService,
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -145,5 +149,9 @@ export class CustomersComponent implements OnInit {
   openAddCustomerModal() {
     // TODO: Implement modal logic
     console.log('Opening add customer modal');
+  }
+
+  isAdmin(roleId: string): boolean {
+    return roleId === '1'; // Giả sử role_id '1' là admin
   }
 }

@@ -132,6 +132,11 @@
                       </button>
                     </div>
                   </td>
+                  <td>
+                    <div class="role-badge" [class.admin]="isAdmin(customer.role_id)">
+                      {{ isAdmin(customer.role_id) ? 'Admin' : 'User' }}
+                    </div>
+                  </td>
                 </tr>
                 <tr *ngIf="filteredCustomers.length === 0">
                   <td colspan="4" class="text-center py-3">Không tìm thấy khách hàng nào</td>

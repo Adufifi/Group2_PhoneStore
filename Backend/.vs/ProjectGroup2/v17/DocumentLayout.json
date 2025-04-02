@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\code\\OJT\\project\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\code\\ojt\\project\\backend\\phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\code\\ojt\\project\\backend\\phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.14\\tools\\about_EntityFrameworkCore.help.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
@@ -68,7 +68,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -104,16 +104,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Account.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
               "RelativeToolTip": "PhoneStore.Domain\\Models\\Account.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAA2wAkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwAkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T06:44:35.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T06:44:35.303Z"
             },
             {
               "$type": "Document",
@@ -163,13 +162,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwCAAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAA1wDYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T20:57:26.727Z",
               "EditorCaption": ""

@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginVm } from '../Interface/LoginVm';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { AuthResultVm } from '../Interface/AuthResultVm';
-import { Customer } from '../Interface/customer.interface';
+import { User } from '../Interface/user';
 import { CookieService } from 'ngx-cookie-service';
 import { api_url } from '../app.config';
 
@@ -21,12 +21,45 @@ export class UserService {
     return this.http.post(`${api_url}/account/CreateAccount`, registerData);
   }
 
-  getUserById(id: string): Observable<Customer> {
+  getUserById(id: string): Observable<User> {
     const token = this.cookieService.get('Authentication');
+    if (!token) {
+      throw new Error('Không tìm thấy token xác thực');
+    }
+
     const headers = {
       'Authorization': `Bearer ${token}`
     };
-    return this.http.get<Customer>(`${api_url}/User/GetById/${id}`, { headers });
+
+    console.log('Calling API:', `${api_url}/account/GetById${id}`);
+    return this.http.get<User>(`${api_url}/account/GetById${id}`, { headers }).pipe(
+      map(response => {
+        console.log('API Response:', response);
+        return response;
+      }),
+      catchError(error => {
+        console.error('API Error:', error);
+        throw error;
+      })
+    );
+  }
+
+  getAllUsers(): Observable<User[]> {
+    const token = this.cookieService.get('Authentication');
+    if (!token) {
+      throw new Error('Không tìm thấy token xác thực');
+    }
+
+    const headers = {
+      'Authorization': `Bearer ${token}`
+    };
+
+    return this.http.get<User[]>(`${api_url}/account/GetAll`, { headers }).pipe(
+      catchError(error => {
+        console.error('Error fetching users:', error);
+        throw error;
+      })
+    );
   }
 }
 
