@@ -96,7 +96,7 @@ namespace PhoneStore.Infrastructure.Migrations
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ColorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductColorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ProductImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     CapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
@@ -143,27 +143,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         principalTable: "ProductVariant",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductImage",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductVariantId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    Img = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductImage", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductImage_ProductVariant_ProductVariantId",
-                        column: x => x.ProductVariantId,
-                        principalTable: "ProductVariant",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -335,13 +314,6 @@ namespace PhoneStore.Infrastructure.Migrations
                 column: "BrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductImage_ProductVariantId",
-                table: "ProductImage",
-                column: "ProductVariantId",
-                unique: true,
-                filter: "[ProductVariantId] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProductVariant_CapacityId",
                 table: "ProductVariant",
                 column: "CapacityId");
@@ -372,9 +344,6 @@ namespace PhoneStore.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "OrderItems");
-
-            migrationBuilder.DropTable(
-                name: "ProductImage");
 
             migrationBuilder.DropTable(
                 name: "RefreshToken");

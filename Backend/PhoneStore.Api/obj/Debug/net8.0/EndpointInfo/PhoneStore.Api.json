@@ -988,131 +988,6 @@
         }
       }
     },
-    "/api/ProductImage": {
-      "get": {
-        "tags": [
-          "ProductImage"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "ProductImage"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/ProductImage/{id}": {
-      "get": {
-        "tags": [
-          "ProductImage"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "ProductImage"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductImageDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "ProductImage"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/ProductVariants": {
       "get": {
         "tags": [
@@ -2273,60 +2148,6 @@
         },
         "additionalProperties": false
       },
-      "ProductImage": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "productVariantId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "productVariants": {
-            "$ref": "#/components/schemas/ProductVariants"
-          },
-          "img": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
-          "description": {
-            "maxLength": 1000,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProductImageDto": {
-        "type": "object",
-        "properties": {
-          "productVariantId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "img": {
-            "type": "string",
-            "format": "byte",
-            "nullable": true
-          },
-          "description": {
-            "maxLength": 1000,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ProductVariants": {
         "required": [
           "capacityId",
@@ -2358,13 +2179,10 @@
           "productColor": {
             "$ref": "#/components/schemas/ProductColor"
           },
-          "productImageId": {
+          "image": {
             "type": "string",
-            "format": "uuid",
+            "format": "byte",
             "nullable": true
-          },
-          "productImages": {
-            "$ref": "#/components/schemas/ProductImage"
           },
           "capacityId": {
             "type": "string",
