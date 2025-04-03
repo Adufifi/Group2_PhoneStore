@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\code\\OJT\\project\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\extension\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,7 +137,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -173,18 +173,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductImage.cs",
-              "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductImage.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\ProductImage.cs",
-              "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductImage.cs",
-              "RelativeToolTip": "PhoneStore.Domain\\Models\\ProductImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T03:55:36.625Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 15,
               "Title": "BaseServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Services\\Base\\BaseServices.cs",
@@ -197,15 +185,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAPkAAAAAAAAAAAAUwMgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvx4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T03:14:48.598Z"
+              "WhenOpened": "2025-03-31T03:14:48.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -267,16 +256,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BrandController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\BrandController.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwv28AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T09:34:24.181Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductImage.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\ProductImage.cs",
+              "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductImage.cs",
+              "RelativeToolTip": "PhoneStore.Domain\\Models\\ProductImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T03:55:36.625Z"
             },
             {
               "$type": "Document",

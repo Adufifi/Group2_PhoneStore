@@ -205,8 +205,7 @@
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
               "ViewState": "AgIAAPkAAAAAAAAAAAAUwMgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T03:14:48.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T03:14:48.598Z"
             },
             {
               "$type": "Document",
@@ -252,8 +251,7 @@
               "RelativeToolTip": "PhoneStore.Api\\Extension\\MailHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T09:07:07.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T09:07:07.869Z"
             },
             {
               "$type": "Document",
@@ -265,8 +263,7 @@
               "RelativeToolTip": "PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T09:07:08.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T09:07:08.956Z"
             },
             {
               "$type": "Document",
@@ -276,7 +273,7 @@
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\BrandController.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\BrandController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADwv28AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T09:34:24.181Z",
               "EditorCaption": ""

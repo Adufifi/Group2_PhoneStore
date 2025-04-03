@@ -61,6 +61,10 @@ export class UserService {
       })
     );
   }
+
+  deleteUser(id: string): Observable<any> {
+    return this.http.delete(`${api_url}/account/delete${id}`);
+  }
 }
 
 export interface RegisterRequest {

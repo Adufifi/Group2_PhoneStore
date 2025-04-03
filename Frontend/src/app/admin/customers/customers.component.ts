@@ -4,29 +4,25 @@ import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
-
-import { HttpClientModule } from '@angular/common/http';
-import { Customer } from '../../Interface/customer.interface';
-import { Role, RoleService } from '../../Services/role.service';
-import { CustomerService } from '../../Services/customer.service';
+import { UserService } from '../../Services/user.service';
+import { User } from '../../Interface/user';
 
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, HttpClientModule],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.scss',
 })
 export class CustomersComponent implements OnInit {
-  customers: Customer[] = [];
-  filteredCustomers: Customer[] = [];
-  roles: Role[] = [];
+  users: User[] = [];
+  filteredUsers: User[] = [];
   searchTerm = '';
   sortBy = 'username';
   sortOrder = 'asc';
   currentPage = 1;
   pageSize = 10;
-  totalCustomers = 0;
+  totalUsers = 0;
   totalPages = 1;
   pages: number[] = [];
   Math = Math;
@@ -34,60 +30,38 @@ export class CustomersComponent implements OnInit {
   error: string | null = null;
 
   constructor(
-    private customerService: CustomerService,
-    private roleService: RoleService,
+    private userService: UserService,
     private router: Router,
     private authService: AuthService
   ) {}
 
   ngOnInit() {
-    this.loadRoles();
-    this.loadCustomers();
+    this.loadUsers();
   }
 
-  loadRoles() {
-    this.roleService.getAllRoles().subscribe({
+  loadUsers() {
+    this.isLoading = true;
+    this.error = null;
+
+    this.userService.getAllUsers().subscribe({
       next: (data) => {
-        this.roles = data;
-      },
-      error: (error) => {
-        console.error('Lỗi khi tải danh sách vai trò:', error);
-      }
-    });
-  }
-
-  getRoleName(roleId: number): string {
-    const role = this.roles.find(r => r.id === roleId);
-    return role ? role.roleName : 'Không xác định';
-  }
-
-  loadCustomers() {
-    this.customerService.getAllCustomers().subscribe({
-      next: (data) => {
-        console.log('Dữ liệu nhận được:', data);
-        this.customers = data.map(customer => ({
-          id: customer.id,
-          username: customer.username,
-          email: customer.email,
-          password: customer.password,
-          role_id: customer.role_id,
-          created_date: customer.created_date,
-          updated_date: customer.updated_date,
-          status: customer.status
-        }));
-        this.filteredCustomers = [...this.customers];
-        this.totalCustomers = this.filteredCustomers.length;
+        this.users = data;
+        this.filteredUsers = [...this.users];
+        this.totalUsers = this.filteredUsers.length;
         this.calculatePages();
-        this.sortCustomers();
+        this.sortUsers();
+        this.isLoading = false;
       },
       error: (error) => {
-        console.error('Lỗi khi tải danh sách khách hàng:', error);
+        this.error = 'Không thể tải danh sách người dùng';
+        this.isLoading = false;
+        console.error('Lỗi khi tải danh sách người dùng:', error);
       }
     });
   }
 
   calculatePages() {
-    this.totalPages = Math.ceil(this.totalCustomers / this.pageSize);
+    this.totalPages = Math.ceil(this.totalUsers / this.pageSize);
     this.pages = Array.from({length: this.totalPages}, (_, i) => i + 1);
   }
 
@@ -101,57 +75,60 @@ export class CustomersComponent implements OnInit {
   applyPagination() {
     const start = (this.currentPage - 1) * this.pageSize;
     const end = start + this.pageSize;
-    this.filteredCustomers = this.customers.slice(start, end);
+    this.filteredUsers = this.users.slice(start, end);
   }
 
   search() {
     if (!this.searchTerm.trim()) {
-      this.filteredCustomers = [...this.customers];
+      this.filteredUsers = [...this.users];
     } else {
       const term = this.searchTerm.toLowerCase();
-      this.filteredCustomers = this.customers.filter(
-        (customer) =>
-          customer.username.toLowerCase().includes(term) ||
-          customer.email.toLowerCase().includes(term)
+      this.filteredUsers = this.users.filter(
+        (user) =>
+          user.userName.toLowerCase().includes(term) ||
+          user.email.toLowerCase().includes(term)
       );
     }
-    this.totalCustomers = this.filteredCustomers.length;
+    this.totalUsers = this.filteredUsers.length;
     this.calculatePages();
     this.currentPage = 1;
-    this.sortCustomers();
+    this.sortUsers();
   }
 
-  sortCustomers() {
-    this.filteredCustomers.sort((a, b) => {
+  sortUsers() {
+    this.filteredUsers.sort((a, b) => {
       let comparison = 0;
       if (this.sortBy === 'username') {
-        comparison = a.username.localeCompare(b.username);
-      } else if (this.sortBy === 'created_date') {
-        comparison = new Date(a.created_date).getTime() - new Date(b.created_date).getTime();
+        comparison = a.userName.localeCompare(b.userName);
+      } else if (this.sortBy === 'email') {
+        comparison = a.email.localeCompare(b.email);
       }
       return this.sortOrder === 'asc' ? comparison : -comparison;
     });
     this.applyPagination();
   }
 
-  deleteCustomer(id: number) {
-    this.customerService.deleteCustomer(id.toString()).subscribe({
-      next: () => {
-        this.customers = this.customers.filter(customer => customer.id !== id);
-        this.search();
-      },
-      error: (error) => {
-        console.error('Lỗi khi xóa khách hàng:', error);
-      }
-    });
+  deleteUser(id: string) {
+    if (confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
+      this.userService.deleteUser(id).subscribe({
+        next: (response: any) => {
+          if (response.status === 1) {
+            this.users = this.users.filter(user => user.id !== id);
+            this.search();
+          } else {
+            this.error = response.mess || 'Không thể xóa người dùng';
+          }
+        },
+        error: (error: Error) => {
+          this.error = 'Lỗi khi xóa người dùng: ' + error.message;
+          console.error('Lỗi khi xóa người dùng:', error);
+        }
+      });
+    }
   }
 
-  openAddCustomerModal() {
+  openAddUserModal() {
     // TODO: Implement modal logic
-    console.log('Opening add customer modal');
-  }
-
-  isAdmin(roleId: number): boolean {
-    return roleId === 1; // Giả sử role_id 1 là admin
+    console.log('Opening add user modal');
   }
 }
