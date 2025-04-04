@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginVm } from '../Interface/LoginVm';
 import { Observable } from 'rxjs';
-import { AuthResultVm } from '../Models/AuthResultVm';
+import { AuthResultVm } from '../Interface/AuthResultVm';
 import { api_url } from '../app.config';
 
 @Injectable({

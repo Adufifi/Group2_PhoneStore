@@ -16,8 +16,14 @@
           <div class="input-icon">
             <i class="fas fa-user"></i>
           </div>
-          <input type="text" id="email" name="email" [(ngModel)]="user.email" placeholder="Nhập tên đăng nhập của bạn"
-            required />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            [(ngModel)]="user.email"
+            placeholder="Nhập tên đăng nhập của bạn"
+            required
+          />
         </div>
       </div>
 
@@ -27,8 +33,14 @@
           <div class="input-icon">
             <i class="fas fa-lock"></i>
           </div>
-          <input type="password" id="password" name="password" [(ngModel)]="user.password"
-            placeholder="Nhập mật khẩu của bạn" required />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            placeholder="Nhập mật khẩu của bạn"
+            required
+          />
         </div>
       </div>
 
@@ -37,7 +49,9 @@
           <input type="checkbox" id="remember" />
           <label for="remember">Ghi nhớ đăng nhập</label>
         </div>
-        <a routerLink="/forgot-password" class="forgot-password">Quên mật khẩu?</a>
+        <a routerLink="/forgot-password" class="forgot-password"
+          >Quên mật khẩu?</a
+        >
       </div>
 
       <button type="submit" class="login-button">
@@ -53,8 +67,16 @@
         <span>hoặc</span>
       </div>
 
-      <button type="button" class="google-login-button" (click)="loginWithGoogle()">
-        <img src="assets/images/google-icon.png" alt="Google Icon" class="google-icon">
+      <button
+        type="button"
+        class="google-login-button"
+        (click)="loginWithGoogle()"
+      >
+        <img
+          src="assets/images/google-icon.png"
+          alt="Google Icon"
+          class="google-icon"
+        />
         <span>Đăng nhập với Google</span>
       </button>
     </form>

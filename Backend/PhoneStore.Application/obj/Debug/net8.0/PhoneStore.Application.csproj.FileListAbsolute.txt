@@ -46,22 +46,22 @@ C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\Phone
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\refint\PhoneStore.Application.dll
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\ref\PhoneStore.Application.dll
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.deps.json
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.dll
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.pdb
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.dll
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.pdb
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.AssemblyReference.cache
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.GeneratedMSBuildEditorConfig.editorconfig
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfoInputs.cache
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfo.cs
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.CoreCompileInputs.cache
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.sourcelink.json
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneSto.9E81BDAA.Up2Date
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.dll
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\refint\PhoneStore.Application.dll
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.pdb
-D:\ojt\New folder\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\ref\PhoneStore.Application.dll
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.deps.json
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.dll
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.pdb
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.dll
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Domain.pdb
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.AssemblyReference.cache
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfoInputs.cache
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.AssemblyInfo.cs
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.csproj.CoreCompileInputs.cache
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.sourcelink.json
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneSto.9E81BDAA.Up2Date
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.dll
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\refint\PhoneStore.Application.dll
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\PhoneStore.Application.pdb
+D:\Coding\Tests\Group2_PhoneStore (1)\Group2_PhoneStore\Backend\PhoneStore.Application\obj\Debug\net8.0\ref\PhoneStore.Application.dll
 D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.deps.json
 D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.dll
 D:\ojt\New folder (2)\Group2_PhoneStore\Group2_PhoneStore\Backend\PhoneStore.Application\bin\Debug\net8.0\PhoneStore.Application.pdb

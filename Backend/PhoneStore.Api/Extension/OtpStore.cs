@@ -1,6 +1,8 @@
-﻿
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PhoneStore.Api.Extension
 {
@@ -12,13 +14,13 @@ namespace PhoneStore.Api.Extension
         public static void SaveOtp(string email, string otp, int expireSeconds = 120)
         {
             var expiry = DateTime.Now.AddSeconds(expireSeconds);
-            var key = email.Trim().ToLower(); // chuẩn hóa
+            var key = email.Trim().ToLower();
             _otpCache[key] = (otp, expiry);
         }
 
         public static bool VerifyOtp(string email, string otp)
         {
-            var key = email.Trim().ToLower(); // chuẩn hóa
+            var key = email.Trim().ToLower();
             if (_otpCache.TryGetValue(key, out var data))
             {
                 if (data.Otp == otp && DateTime.Now <= data.Expiry)
@@ -31,5 +33,5 @@ namespace PhoneStore.Api.Extension
         }
 
     }
-}
 
+}

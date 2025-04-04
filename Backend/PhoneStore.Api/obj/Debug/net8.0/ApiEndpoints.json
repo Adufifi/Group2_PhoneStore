@@ -281,17 +281,100 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.CartController",
-    "Method": "GetCart",
+    "Method": "GetAll",
     "RelativePath": "api/cart",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PhoneStore.Domain.Models.Cart, PhoneStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "Create",
+    "RelativePath": "api/cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "PhoneStore.Domain.Models.Cart",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhoneStore.Domain.Models.Cart",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "GetById",
+    "RelativePath": "api/cart/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PhoneStore.Domain.Models.Cart",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.CartController",
+    "Method": "Update",
+    "RelativePath": "api/cart/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "cart",
+        "Type": "PhoneStore.Domain.Models.Cart",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.CartController",
-    "Method": "DeleteCart",
+    "Method": "Delete",
     "RelativePath": "api/cart/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -507,9 +590,9 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.ProductController",
-    "Method": "DeleteProduct",
-    "RelativePath": "api/product/DeleteById/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "GetProductById",
+    "RelativePath": "api/product/GetProductById/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -523,18 +606,12 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.ProductController",
-    "Method": "GetProductById",
-    "RelativePath": "api/product/GetProductById/{id}",
+    "Method": "GetProductNewBrandId",
+    "RelativePath": "api/product/GetProductNewBrandId",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -638,87 +715,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PhoneStore.Api.Controllers.ProductImageController",
-    "Method": "Get",
-    "RelativePath": "api/ProductImage",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PhoneStore.Api.Controllers.ProductImageController",
-    "Method": "Post",
-    "RelativePath": "api/ProductImage",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productImageDto",
-        "Type": "PhoneStore.Application.Dto.ProductImageDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PhoneStore.Api.Controllers.ProductImageController",
-    "Method": "Get",
-    "RelativePath": "api/ProductImage/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PhoneStore.Api.Controllers.ProductImageController",
-    "Method": "UpdateProductImage",
-    "RelativePath": "api/ProductImage/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "productImageDto",
-        "Type": "PhoneStore.Application.Dto.ProductImageDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PhoneStore.Api.Controllers.ProductImageController",
-    "Method": "DeleteProductImage",
-    "RelativePath": "api/ProductImage/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "PhoneStore.Api.Controllers.ProductVariantsController",
-    "Method": "Get",
+    "Method": "All",
     "RelativePath": "api/ProductVariants",
     "HttpMethod": "GET",
     "IsController": true,
@@ -796,6 +794,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PhoneStore.Api.Controllers.ProductVariantsController",
+    "Method": "GetByCapacityId",
+    "RelativePath": "api/ProductVariants/capacity/{capacityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "capacityId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.ProductVariantsController",
+    "Method": "GetByColorId",
+    "RelativePath": "api/ProductVariants/color/{colorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "colorId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.ProductVariantsController",
+    "Method": "GetByProductId",
+    "RelativePath": "api/ProductVariants/product/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PhoneStore.Api.Controllers.ReviewController",
     "Method": "All",
     "RelativePath": "api/review/All",
@@ -857,6 +903,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.ReviewController",
+    "Method": "GetReviewsByProductId",
+    "RelativePath": "api/review/getReviewsByProductId/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
         "Type": "System.Guid",
         "IsRequired": true
       }

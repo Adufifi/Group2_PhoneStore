@@ -1,0 +1,151 @@
+<div class="admin-layout">
+  <!-- Admin Sidebar -->
+  <div class="col-lg-3 col-xl-2 p-0 bg-dark vh-100 position-fixed">
+    <div class="px-3 pt-4 pb-3 text-white">
+      <h4 class="fw-bold mb-4">Mobile Shop Admin</h4>
+      <div class="d-flex flex-column h-100">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a routerLink="/admin" class="nav-link px-0 text-white-50">
+              <i class="bi bi-speedometer2 me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/products" class="nav-link px-0 text-white-50">
+              <i class="bi bi-box me-2"></i> Sản phẩm
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/orders" class="nav-link px-0 text-white-50">
+              <i class="bi bi-cart me-2"></i> Đơn hàng
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a
+              routerLink="/admin/customers"
+              class="nav-link px-0 text-white-50"
+            >
+              <i class="bi bi-people me-2"></i> Khách hàng
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/report" class="nav-link px-0 text-white-50">
+              <i class="bi bi-graph-up me-2"></i> Báo cáo
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a routerLink="/admin/settings" class="nav-link px-0 text-white-50">
+              <i class="bi bi-gear me-2"></i> Cài đặt
+            </a>
+          </li>
+        </ul>
+        <div class="mt-auto">
+          <a routerLink="/" class="nav-link px-0 text-white-50">
+            <i class="bi bi-box-arrow-left me-2"></i> Thoát Admin
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="add-variant-container">
+      <div class="header">
+        <h1>Add New Variant</h1>
+        <div class="product-info" *ngIf="product">
+          <h2>{{ product.productName }}</h2>
+        </div>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" class="variant-form">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <div class="form-group">
+          <label for="color">Color</label>
+          <select
+            id="color"
+            [(ngModel)]="newVariant.colorId"
+            name="color"
+            class="form-control"
+            required
+          >
+            <option value="">Select a color</option>
+            <option *ngFor="let color of colors" [value]="color.id">
+              {{ color.colorName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <select
+            id="capacity"
+            [(ngModel)]="newVariant.capacityId"
+            name="capacity"
+            class="form-control"
+            required
+          >
+            <option value="">Select a capacity</option>
+            <option *ngFor="let capacity of capacities" [value]="capacity.id">
+              {{ capacity.capacityName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            [(ngModel)]="newVariant.price"
+            name="price"
+            class="form-control"
+            required
+            min="0"
+            step="0.01"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            [(ngModel)]="newVariant.quantity"
+            name="quantity"
+            class="form-control"
+            required
+            min="0"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="image">Variant Image</label>
+          <input
+            type="file"
+            id="image"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+            class="form-control"
+          />
+          <div *ngIf="imagePreview" class="image-preview mt-2">
+            <img
+              [src]="imagePreview"
+              alt="Variant preview"
+              class="preview-image"
+            />
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">Add Variant</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+// Table cell styles
+.table {
+  td {
+    vertical-align: middle;
+    .badge {
+      font-size: 0.85rem;
+      padding: 0.5em 0.8em;
+    }
+  }
+}
+
+// Pagination styles
+.pagination {
+  .page-link {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+  .active .page-link {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+}
+
+// Search and filter card
+.card {
+  margin-bottom: 1.5rem;
+}
+
+.form-control,
+.form-select {
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(#0056b3, 0.25);
+    border-color: lighten(#0056b3, 20%);
+  }
+}

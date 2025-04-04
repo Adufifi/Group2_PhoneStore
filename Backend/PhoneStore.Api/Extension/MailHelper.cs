@@ -1,6 +1,8 @@
-﻿using System;
-using System.Net;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace PhoneStore.Api.Extension
 {
@@ -12,7 +14,7 @@ namespace PhoneStore.Api.Extension
             {
                 var fromAddress = new MailAddress("anhnthe172469@fpt.edu.vn", "Mail");
                 var toAddress = new MailAddress(toEmail);
-                const string fromPass = "mrju qfuy crvb geao"; // App Password Gmail
+                const string fromPass = "mrju qfuy crvb geao";
                 const string subject = "Mã OTP đặt lại mật khẩu";
                 string body = $"Mã OTP của bạn là: {otp}";
 
@@ -44,4 +46,5 @@ namespace PhoneStore.Api.Extension
             }
         }
     }
+
 }

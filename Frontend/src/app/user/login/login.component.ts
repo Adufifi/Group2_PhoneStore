@@ -15,6 +15,9 @@ import { AuthService } from '../../Services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  loginWithGoogle() {
+    throw new Error('Method not implemented.');
+  }
   user: LoginVm = {
     email: '',
     password: '',
@@ -26,23 +29,7 @@ export class LoginComponent {
   errorMessage = '';
 
   login() {
-    // Predefined admin credentials for testing
-    if (this.user.email === 'Amin123' && this.user.password === 'Admin123') {
-      this.cookieServices.set(
-        'Authentication',
-        'admin-token',
-        undefined,
-        '/',
-        undefined,
-        true,
-        'Strict'
-      );
-      this.authService.login(this.user.email);
-      this.router.navigateByUrl('/admin');
-      return;
-    }
-
-    // Existing login logic
+    debugger;
     this.userServices.login(this.user).subscribe(
       (res) => {
         if (res.status === -9999) {
@@ -89,11 +76,5 @@ export class LoginComponent {
         this.errorMessage = 'Server Error';
       }
     );
-  }
-
-  loginWithGoogle() {
-    // TODO: Implement Google login functionality
-    console.log('Google login clicked');
-    this.errorMessage = 'Tính năng đăng nhập bằng Google đang được phát triển';
   }
 }

@@ -12,17 +12,48 @@ namespace PhoneStore.Api.Controllers
             _productVariantsServices = productVariantsServices;
             _mapper = mapper;
         }
+
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> All()
         {
             var productVariants = await _productVariantsServices.GetAllAsync();
-            return Ok(productVariants);
+            var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
+            return Ok(productVariantsDtos);
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
             var productVariants = await _productVariantsServices.GetByIdAsync(id);
+        //    var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
             return Ok(productVariants);
+        }
+        [HttpGet("color/{colorId}")]
+        public async Task<IActionResult> GetByColorId(Guid colorId)
+        {
+            var allVariants = await _productVariantsServices.GetAllAsync();
+            var productVariants = allVariants.Where(v => v.ColorId == colorId).ToList();
+            var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
+            return Ok(productVariantsDtos);
+        }
+
+        [HttpGet("capacity/{capacityId}")]
+        public async Task<IActionResult> GetByCapacityId(Guid capacityId)
+        {
+            var allVariants = await _productVariantsServices.GetAllAsync();
+            var productVariants = allVariants.Where(v => v.CapacityId == capacityId).ToList();
+            var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
+            return Ok(productVariantsDtos);
+        }
+
+
+        [HttpGet("product/{productId}")]
+        public async Task<IActionResult> GetByProductId(Guid productId)
+        {
+            var allVariants = await _productVariantsServices.GetAllAsync();
+            var productVariants = allVariants.Where(v => v.ProductId == productId).ToList();
+            var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
+            return Ok(productVariantsDtos);
         }
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ProductVariantsDto productVariantsDto)

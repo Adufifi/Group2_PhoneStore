@@ -1,4 +1,4 @@
-
+﻿
 namespace PhoneStore.Api.Controllers
 {
     [Route("api/review")]
@@ -100,6 +100,20 @@ namespace PhoneStore.Api.Controllers
             statusResponse.mess = "Update failed";
             return StatusCode(500, statusResponse);
         }
+        [HttpGet("getReviewsByProductId/{productId}")]
+        public async Task<IActionResult> GetReviewsByProductId(Guid productId)
+        {
+            var reviews = await _reviewServices.GetAllAsync();
+            var filteredReviews = reviews.Where(review => review.ProductId == productId).ToList();
+
+            if (filteredReviews.Any())
+            {
+                return Ok(filteredReviews);
+            }
+
+            return NotFound("Không tìm thấy reviews cho productId: " + productId);
+        }
+
         [HttpDelete("DeleteReview/{id}")]
         public async Task<IActionResult> DeleteReview(Guid id, [FromQuery] Guid accountId, [FromQuery] Guid productId)
         {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d127bea3ffb2e0577782262fac165d4ef43a578")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6990283fa79f298040640625ba46587ff0a18b33")]
 [assembly: System.Reflection.AssemblyProductAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PhoneStore.IntegrationTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
