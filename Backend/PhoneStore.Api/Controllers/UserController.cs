@@ -1,6 +1,4 @@
-﻿
-
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace PhoneStore.Api.Controllers
 {
@@ -281,6 +279,52 @@ namespace PhoneStore.Api.Controllers
                 return true;
             }
             return false;
+        }
+
+        [HttpPost("update-profile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.UserName))
+                return BadRequest(new { success = false, message = "Email hoặc tên người dùng không hợp lệ." });
+
+            var account = await _accountServices.GetAccountByEmail(request.Email);
+            if (account == null)
+                return NotFound(new { success = false, message = "Không tìm thấy tài khoản." });
+
+            account.UserName = request.UserName;
+            var result = await _accountServices.UpdateAsync(account);
+            if (result)
+                return Ok(new { success = true, message = "Cập nhật hồ sơ thành công." });
+
+            return StatusCode(500, new { success = false, message = "Lỗi hệ thống khi cập nhật hồ sơ." });
+        }
+        public class UpdateProfileRequest
+        {
+            public string Email { get; set; } = string.Empty;
+            public string UserName { get; set; } = string.Empty;
+        }
+
+        [HttpPost("update-user")]
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.NewEmail))
+                return BadRequest(new { success = false, message = "Email cũ hoặc mới không hợp lệ." });
+
+            var account = await _accountServices.GetAccountByEmail(request.Email);
+            if (account == null)
+                return NotFound(new { success = false, message = "Không tìm thấy tài khoản." });
+
+            account.NormalizedEmail = request.NewEmail.ToUpper();
+            var result = await _accountServices.UpdateAsync(account);
+            if (result)
+                return Ok(new { success = true, message = "Cập nhật người dùng thành công." });
+
+            return StatusCode(500, new { success = false, message = "Lỗi hệ thống khi cập nhật người dùng." });
+        }
+        public class UpdateUserRequest
+        {
+            public string Email { get; set; } = string.Empty;
+            public string NewEmail { get; set; } = string.Empty;
         }
     }
 }

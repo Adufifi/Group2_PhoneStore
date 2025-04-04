@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|d:\\code\\ojt\\project\\backend\\phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178EC893-7B29-DA65-1CE4-08DE273B73A7}|PhoneStore.Domain\\PhoneStore.Domain.csproj|solutionrelative:phonestore.domain\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|d:\\code\\ojt\\project\\backend\\phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -137,7 +141,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -173,7 +177,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Account.cs",
+              "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Account.cs",
+              "RelativeToolTip": "PhoneStore.Domain\\Models\\Account.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA5wBQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T02:38:46.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "BaseServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Services\\Base\\BaseServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\Base\\BaseServices.cs",
@@ -191,14 +208,14 @@
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\UserController.cs",
               "ToolTip": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvx4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAcwNQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T03:14:48.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "20250401072337_IniaaatialCreate.cs",
               "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250401072337_IniaaatialCreate.cs",
               "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250401072337_IniaaatialCreate.cs",
@@ -208,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\ProductServices.cs",
@@ -220,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IProductServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Services\\Interface\\IProductServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\Interface\\IProductServices.cs",
@@ -232,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MailHelper.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Extension\\MailHelper.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\MailHelper.cs",
@@ -244,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ExceptionMiddlewareExtensions.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
@@ -256,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BrandController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\BrandController.cs",
@@ -264,12 +281,11 @@
               "RelativeToolTip": "PhoneStore.Api\\Controllers\\BrandController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T09:34:24.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T09:34:24.181Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ProductImage.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductImage.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\ProductImage.cs",
@@ -281,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Preview\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -291,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "20250401072721_IniaaatiaasdfsadflCreate.cs",
               "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250401072721_IniaaatiaasdfsadflCreate.cs",
               "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250401072721_IniaaatiaasdfsadflCreate.cs",
@@ -300,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ProductVariants.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductVariants.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\ProductVariants.cs",
@@ -312,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Cart.cs",
@@ -324,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
               "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\DataContext\\AppDbContext.cs",
@@ -336,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\IRepository\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\IRepository\\IGenericRepository.cs",
@@ -348,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\ProductController.cs",
@@ -360,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Dto\\ProductDto.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Dto\\ProductDto.cs",
@@ -372,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\IUnitOfWorkDomain\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\IUnitOfWorkDomain\\IUnitOfWork.cs",
@@ -384,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\IUnitOfWork\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\IUnitOfWork\\UnitOfWork.cs",
@@ -396,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IBaseServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Application\\Services\\Base\\IBaseServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Application\\Services\\Base\\IBaseServices.cs",
@@ -408,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Brand.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.IntegrationTest\\Test\\Brand.cs",
               "RelativeDocumentMoniker": "PhoneStore.IntegrationTest\\Test\\Brand.cs",
@@ -420,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "20250331155246_adfasdf.cs",
               "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250331155246_adfasdf.cs",
               "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure\\Migrations\\20250331155246_adfasdf.cs",
@@ -430,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ProductColor.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\ProductColor.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\ProductColor.cs",
@@ -442,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Capacity.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Capacity.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Capacity.cs",
@@ -454,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Brand.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Brand.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Brand.cs",
@@ -466,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\appsettings.json",
               "RelativeDocumentMoniker": "PhoneStore.Api\\appsettings.json",
@@ -478,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\Models\\Role.cs",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\Models\\Role.cs",
@@ -490,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Program.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Program.cs",
@@ -502,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "about_EntityFrameworkCore.help.txt",
               "DocumentMoniker": "C:\\Users\\hieun\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.14\\tools\\about_EntityFrameworkCore.help.txt",
               "ToolTip": "C:\\Users\\hieun\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.14\\tools\\about_EntityFrameworkCore.help.txt [Read Only]",
@@ -513,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "PhoneStore.Infrastructure.csproj",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
               "RelativeDocumentMoniker": "PhoneStore.Infrastructure\\PhoneStore.Infrastructure.csproj",
@@ -525,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "RegisterServices.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Extension\\RegisterServices.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\RegisterServices.cs",
@@ -537,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "PhoneStore.Domain.csproj",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Domain\\PhoneStore.Domain.csproj",
               "RelativeDocumentMoniker": "PhoneStore.Domain\\PhoneStore.Domain.csproj",
@@ -549,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ProductImageController.cs",
               "DocumentMoniker": "D:\\code\\OJT\\project\\Backend\\PhoneStore.Api\\Controllers\\ProductImageController.cs",
               "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\ProductImageController.cs",

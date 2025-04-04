@@ -40,10 +40,20 @@
     font-weight: 600;
     color: #1f2937;
     background-color: #f9fafb;
+    white-space: nowrap;
+    padding: 1rem;
   }
 
   td {
     vertical-align: middle;
+    padding: 1rem;
+  }
+
+  .badge {
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: 6px;
   }
 }
 
@@ -51,6 +61,15 @@
   .btn {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    i {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -86,5 +105,16 @@
 @media (max-width: 768px) {
   .table-responsive {
     margin: 0 -1rem;
+  }
+
+  .table {
+    th, td {
+      padding: 0.75rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
   }
 }

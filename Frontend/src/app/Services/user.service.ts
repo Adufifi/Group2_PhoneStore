@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { LoginVm } from '../Interface/LoginVm';
 import { Observable, catchError, map } from 'rxjs';
 import { AuthResultVm } from '../Interface/AuthResultVm';
-import { User } from '../Interface/user';
+import { Customer } from '../Interface/customer.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { api_url } from '../app.config';
 
@@ -21,7 +21,7 @@ export class UserService {
     return this.http.post(`${api_url}/account/CreateAccount`, registerData);
   }
 
-  getUserById(id: string): Observable<User> {
+  getUserById(id: string): Observable<Customer> {
     const token = this.cookieService.get('Authentication');
     if (!token) {
       throw new Error('Không tìm thấy token xác thực');
@@ -32,7 +32,7 @@ export class UserService {
     };
 
     console.log('Calling API:', `${api_url}/account/GetById${id}`);
-    return this.http.get<User>(`${api_url}/account/GetById${id}`, { headers }).pipe(
+    return this.http.get<Customer>(`${api_url}/account/GetById${id}`, { headers }).pipe(
       map(response => {
         console.log('API Response:', response);
         return response;
@@ -44,7 +44,7 @@ export class UserService {
     );
   }
 
-  getAllUsers(): Observable<User[]> {
+  getAllUsers(): Observable<Customer[]> {
     const token = this.cookieService.get('Authentication');
     if (!token) {
       throw new Error('Không tìm thấy token xác thực');
@@ -54,7 +54,7 @@ export class UserService {
       'Authorization': `Bearer ${token}`
     };
 
-    return this.http.get<User[]>(`${api_url}/account/GetAll`, { headers }).pipe(
+    return this.http.get<Customer[]>(`${api_url}/account/GetAll`, { headers }).pipe(
       catchError(error => {
         console.error('Error fetching users:', error);
         throw error;
@@ -63,7 +63,11 @@ export class UserService {
   }
 
   deleteUser(id: string): Observable<any> {
-    return this.http.delete(`${api_url}/account/delete${id}`);
+    return this.http.delete(`${api_url}/account/delete/${id}`);
+  }
+
+  updateUser(user: Customer): Observable<any> {
+    return this.http.put(`${api_url}/account/Update`, user);
   }
 }
 

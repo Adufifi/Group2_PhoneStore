@@ -1,39 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
 import { UserService } from '../../Services/user.service';
-import { User } from '../../Interface/user';
+import { Customer } from '../../Interface/customer.interface';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthHttpService } from '../../auth/services/auth-http.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink, FormsModule, ReactiveFormsModule],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.scss',
 })
 export class CustomersComponent implements OnInit {
-  users: User[] = [];
-  filteredUsers: User[] = [];
+  users: Customer[] = [];
+  filteredUsers: Customer[] = [];
   searchTerm = '';
-  sortBy = 'username';
-  sortOrder = 'asc';
+  sortBy = 'userName';
+  sortOrder: 'asc' | 'desc' = 'asc';
+  filterRole = '';
   currentPage = 1;
   pageSize = 10;
   totalUsers = 0;
-  totalPages = 1;
+  totalPages = 0;
   pages: number[] = [];
   Math = Math;
   isLoading = false;
   error: string | null = null;
+  editUserForm: FormGroup;
+  isUpdating = false;
+  selectedUser: Customer | null = null;
 
   constructor(
     private userService: UserService,
     private router: Router,
-    private authService: AuthService
-  ) {}
+    private authService: AuthService,
+    private cookieService: CookieService,
+    private authHttp: AuthHttpService,
+    private snackBar: MatSnackBar,
+    private fb: FormBuilder
+  ) {
+    this.editUserForm = this.fb.group({
+      userName: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      role_id: ['', [Validators.required]],
+      img: ['']
+    });
+  }
 
   ngOnInit() {
     this.loadUsers();
@@ -49,7 +69,7 @@ export class CustomersComponent implements OnInit {
         this.filteredUsers = [...this.users];
         this.totalUsers = this.filteredUsers.length;
         this.calculatePages();
-        this.sortUsers();
+        this.filterUsers();
         this.isLoading = false;
       },
       error: (error) => {
@@ -78,34 +98,55 @@ export class CustomersComponent implements OnInit {
     this.filteredUsers = this.users.slice(start, end);
   }
 
-  search() {
-    if (!this.searchTerm.trim()) {
-      this.filteredUsers = [...this.users];
-    } else {
-      const term = this.searchTerm.toLowerCase();
-      this.filteredUsers = this.users.filter(
-        (user) =>
-          user.userName.toLowerCase().includes(term) ||
-          user.email.toLowerCase().includes(term)
+  filterUsers() {
+    let filtered = [...this.users];
+
+    // Filter by search term
+    if (this.searchTerm) {
+      const searchLower = this.searchTerm.toLowerCase();
+      filtered = filtered.filter(user => 
+        user.userName.toLowerCase().includes(searchLower) ||
+        user.email.toLowerCase().includes(searchLower)
       );
     }
-    this.totalUsers = this.filteredUsers.length;
-    this.calculatePages();
+
+    // Filter by role
+    if (this.filterRole) {
+      filtered = filtered.filter(user => user.role?.roleName === this.filterRole);
+    }
+
+    // Sort users
+    filtered.sort((a, b) => {
+      let valueA = a[this.sortBy as keyof Customer];
+      let valueB = b[this.sortBy as keyof Customer];
+
+      // Handle date sorting
+      if (this.sortBy === 'created_date') {
+        const dateA = valueA instanceof Date ? valueA.getTime() : 0;
+        const dateB = valueB instanceof Date ? valueB.getTime() : 0;
+        return this.sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+      }
+
+      // Handle string comparison
+      if (typeof valueA === 'string' && typeof valueB === 'string') {
+        return this.sortOrder === 'asc' 
+          ? valueA.localeCompare(valueB)
+          : valueB.localeCompare(valueA);
+      }
+
+      return 0;
+    });
+
+    this.filteredUsers = filtered;
+    this.totalUsers = filtered.length;
+    this.totalPages = Math.ceil(this.totalUsers / this.pageSize);
     this.currentPage = 1;
-    this.sortUsers();
+    this.calculatePages();
   }
 
-  sortUsers() {
-    this.filteredUsers.sort((a, b) => {
-      let comparison = 0;
-      if (this.sortBy === 'username') {
-        comparison = a.userName.localeCompare(b.userName);
-      } else if (this.sortBy === 'email') {
-        comparison = a.email.localeCompare(b.email);
-      }
-      return this.sortOrder === 'asc' ? comparison : -comparison;
-    });
-    this.applyPagination();
+  toggleSortOrder() {
+    this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    this.filterUsers();
   }
 
   deleteUser(id: string) {
@@ -114,7 +155,7 @@ export class CustomersComponent implements OnInit {
         next: (response: any) => {
           if (response.status === 1) {
             this.users = this.users.filter(user => user.id !== id);
-            this.search();
+            this.filterUsers();
           } else {
             this.error = response.mess || 'Không thể xóa người dùng';
           }
@@ -130,5 +171,50 @@ export class CustomersComponent implements OnInit {
   openAddUserModal() {
     // TODO: Implement modal logic
     console.log('Opening add user modal');
+  }
+
+  openEditUserModal(user: Customer) {
+    this.selectedUser = user;
+    this.editUserForm.patchValue({
+      userName: user.userName,
+      email: user.email,
+      role_id: user.role?.id,
+      img: user.img
+    });
+    const modal = new bootstrap.Modal(document.getElementById('editUserModal'));
+    modal.show();
+  }
+
+  updateUser() {
+    if (this.editUserForm.valid && this.selectedUser) {
+      this.isUpdating = true;
+      const updatedUser = {
+        ...this.selectedUser,
+        ...this.editUserForm.value
+      };
+
+      this.userService.updateUser(updatedUser).subscribe({
+        next: () => {
+          this.isUpdating = false;
+          const modal = bootstrap.Modal.getInstance(document.getElementById('editUserModal'));
+          modal.hide();
+          this.loadUsers();
+          this.snackBar.open('Cập nhật thông tin người dùng thành công', 'Đóng', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top'
+          });
+        },
+        error: (error) => {
+          this.isUpdating = false;
+          this.snackBar.open('Có lỗi xảy ra khi cập nhật thông tin người dùng', 'Đóng', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top'
+          });
+          console.error('Error updating user:', error);
+        }
+      });
+    }
   }
 }

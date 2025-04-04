@@ -1,10 +1,15 @@
+export interface Role {
+  id: string;
+  roleName: string;
+}
+
 export interface Customer {
-  id: number;
-  username: string;
+  id: string;
+  userName: string;
   email: string;
   password: string;
-  role_id: number;
+  role_id: string; // Guid type
+  role?: Role;
   created_date: Date;
-  updated_date: Date;
-  status: boolean;
+  img?: string;
 }
