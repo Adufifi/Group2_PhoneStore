@@ -467,3 +467,6 @@ C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\Phone
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.pdb
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\PhoneStore.Api.genruntimeconfig.cache
 C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\ref\PhoneStore.Api.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Authentication.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\bin\Debug\net8.0\PhoneStore.Authentication.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

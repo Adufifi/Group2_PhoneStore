@@ -1,5 +1,8 @@
 ﻿
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+
 namespace PhoneStore.Api
 {
     public static class RegisterServices
@@ -29,6 +32,23 @@ namespace PhoneStore.Api
             services.AddTransient<IReviewServices, ReviewServices>();
             services.AddTransient<IRoleServices, RoleServices>();
             services.AddAutoMapper(typeof(ClassMapping));
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"] ?? throw new Exception("Sai Secret key")))
+                };
+            });
 
         }
     }

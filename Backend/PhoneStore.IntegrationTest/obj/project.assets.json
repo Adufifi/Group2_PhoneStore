@@ -3738,6 +3738,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "PhoneStore.Application": "1.0.0",
+          "PhoneStore.Authentication": "1.0.0",
           "PhoneStore.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "8.0.0"
         },
@@ -3764,6 +3765,19 @@
         },
         "runtime": {
           "bin/placeholder/PhoneStore.Application.dll": {}
+        }
+      },
+      "PhoneStore.Authentication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "[8.0.14]"
+        },
+        "compile": {
+          "bin/placeholder/PhoneStore.Authentication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PhoneStore.Authentication.dll": {}
         }
       },
       "PhoneStore.Domain/1.0.0": {
@@ -10844,6 +10858,11 @@
       "type": "project",
       "path": "../PhoneStore.Application/PhoneStore.Application.csproj",
       "msbuildProject": "../PhoneStore.Application/PhoneStore.Application.csproj"
+    },
+    "PhoneStore.Authentication/1.0.0": {
+      "type": "project",
+      "path": "../PhoneStore.Authentication/PhoneStore.Authentication.csproj",
+      "msbuildProject": "../PhoneStore.Authentication/PhoneStore.Authentication.csproj"
     },
     "PhoneStore.Domain/1.0.0": {
       "type": "project",

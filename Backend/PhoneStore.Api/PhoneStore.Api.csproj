@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PhoneStore.Application\PhoneStore.Application.csproj" />
+    <ProjectReference Include="..\PhoneStore.Authentication\PhoneStore.Authentication.csproj" />
     <ProjectReference Include="..\PhoneStore.Infrastructure\PhoneStore.Infrastructure.csproj" />
   </ItemGroup>
 

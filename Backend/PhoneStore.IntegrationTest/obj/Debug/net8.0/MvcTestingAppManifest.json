@@ -1,6 +1,7 @@
 {
   "PhoneStore.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api",
   "PhoneStore.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Application",
+  "PhoneStore.Authentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication",
   "PhoneStore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Domain",
   "PhoneStore.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\hieun\\OneDrive\\Máy tính\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Infrastructure"
 }

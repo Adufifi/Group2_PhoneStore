@@ -6,6 +6,8 @@ namespace PhoneStore.Api
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllers();
+
+
             builder.Services.RegisterServicesMiddleware(builder.Configuration);
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -26,6 +28,7 @@ namespace PhoneStore.Api
             });
             app.UseHttpsRedirection();
             app.UseAuthorization();
+            app.UseAuthentication();
             app.MapControllers();
             app.Run();
         }

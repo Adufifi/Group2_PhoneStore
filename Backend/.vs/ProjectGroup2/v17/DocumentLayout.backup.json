@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.authentication\\xclientsourceauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|solutionrelative:phonestore.authentication\\xclientsourceauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\extension\\registerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\extension\\registerservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.authentication\\xclientsourceauthenticationhandleroption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|solutionrelative:phonestore.authentication\\xclientsourceauthenticationhandleroption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\extension\\otpstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\extension\\otpstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.authentication\\phonestore.authentication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|solutionrelative:phonestore.authentication\\phonestore.authentication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\extension\\mailhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\extension\\mailhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.authentication\\xclientsourceextenstions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F11782F5-EDDF-4FE4-9C81-CE3A55163271}|PhoneStore.Authentication\\PhoneStore.Authentication.csproj|solutionrelative:phonestore.authentication\\xclientsourceextenstions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\extension\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\extension\\exceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|c:\\users\\hieun\\onedrive\\m\u00E1y t\u00EDnh\\projectgroup2\\group2_phonestore\\backend\\phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2351D11-164A-4EAB-8DAD-044B0ED566D7}|PhoneStore.Api\\PhoneStore.Api.csproj|solutionrelative:phonestore.api\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PhoneStore.Authentication.csproj",
-              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\PhoneStore.Authentication.csproj",
-              "RelativeDocumentMoniker": "PhoneStore.Authentication\\PhoneStore.Authentication.csproj",
-              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\PhoneStore.Authentication.csproj",
-              "RelativeToolTip": "PhoneStore.Authentication\\PhoneStore.Authentication.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-03T05:02:57.573Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "OtpStore.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\OtpStore.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\OtpStore.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\OtpStore.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Extension\\OtpStore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T08:41:57.691Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "XClientSourceExtenstions.cs",
-              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XClientSourceExtenstions.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Authentication\\XClientSourceExtenstions.cs",
-              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XClientSourceExtenstions.cs",
-              "RelativeToolTip": "PhoneStore.Authentication\\XClientSourceExtenstions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Title": "ExceptionMiddlewareExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Extension\\ExceptionMiddlewareExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:01:36.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T08:41:55.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "XClientSourceAuthenticationHandlerOption.cs",
-              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XClientSourceAuthenticationHandlerOption.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Authentication\\XClientSourceAuthenticationHandlerOption.cs",
-              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XClientSourceAuthenticationHandlerOption.cs",
-              "RelativeToolTip": "PhoneStore.Authentication\\XClientSourceAuthenticationHandlerOption.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "PhoneStore.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-03T08:35:30.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BrandController.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Controllers\\BrandController.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Controllers\\BrandController.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Controllers\\BrandController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T05:00:48.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T08:29:40.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\appsettings.json",
+              "RelativeToolTip": "PhoneStore.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-03T08:29:11.496Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "XCLientSourceAuthenticationHandler.cs",
-              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XCLientSourceAuthenticationHandler.cs",
-              "RelativeDocumentMoniker": "PhoneStore.Authentication\\XCLientSourceAuthenticationHandler.cs",
-              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Authentication\\XCLientSourceAuthenticationHandler.cs",
-              "RelativeToolTip": "PhoneStore.Authentication\\XCLientSourceAuthenticationHandler.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA7wBIAAABHAAAAAAAAAA==",
+              "Title": "RegisterServices.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\RegisterServices.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\RegisterServices.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\RegisterServices.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Extension\\RegisterServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T04:59:53.707Z",
+              "WhenOpened": "2025-04-03T08:26:44.015Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MailHelper.cs",
+              "DocumentMoniker": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\MailHelper.cs",
+              "RelativeDocumentMoniker": "PhoneStore.Api\\Extension\\MailHelper.cs",
+              "ToolTip": "C:\\Users\\hieun\\OneDrive\\M\u00E1y t\u00EDnh\\ProjectGroup2\\Group2_PhoneStore\\Backend\\PhoneStore.Api\\Extension\\MailHelper.cs",
+              "RelativeToolTip": "PhoneStore.Api\\Extension\\MailHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T08:26:34.104Z"
             }
           ]
         }

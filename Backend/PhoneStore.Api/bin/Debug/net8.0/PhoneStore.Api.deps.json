@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "PhoneStore.Application": "1.0.0",
+          "PhoneStore.Authentication": "1.0.0",
           "PhoneStore.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "8.0.0"
         },
@@ -968,6 +969,17 @@
           }
         }
       },
+      "PhoneStore.Authentication/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.14"
+        },
+        "runtime": {
+          "PhoneStore.Authentication.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "PhoneStore.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.14",
@@ -1561,6 +1573,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "PhoneStore.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PhoneStore.Authentication/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

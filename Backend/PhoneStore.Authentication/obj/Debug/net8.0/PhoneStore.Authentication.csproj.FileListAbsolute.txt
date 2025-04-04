@@ -1,0 +1,13 @@
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\bin\Debug\net8.0\PhoneStore.Authentication.deps.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\bin\Debug\net8.0\PhoneStore.Authentication.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\bin\Debug\net8.0\PhoneStore.Authentication.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.csproj.AssemblyReference.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.AssemblyInfoInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.AssemblyInfo.cs
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.csproj.CoreCompileInputs.cache
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.sourcelink.json
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\refint\PhoneStore.Authentication.dll
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\PhoneStore.Authentication.pdb
+C:\Users\hieun\OneDrive\Máy tính\ProjectGroup2\Group2_PhoneStore\Backend\PhoneStore.Authentication\obj\Debug\net8.0\ref\PhoneStore.Authentication.dll
