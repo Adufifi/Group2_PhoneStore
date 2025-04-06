@@ -282,6 +282,12 @@ namespace PhoneStore.Api.Controllers
             }
             return false;
         }
+        [HttpPost("token")]
+        public IActionResult GetToken([FromHeader] string token)
+        {
+            var statusResponse = new StatusResponse();
+            return Ok(statusResponse);
+        }
     }
 }
 

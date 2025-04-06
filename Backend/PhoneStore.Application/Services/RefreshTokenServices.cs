@@ -24,8 +24,7 @@ namespace PhoneStore.Application.Services
                 var authClaim = new List<Claim>()
             {
                 new Claim(ClaimTypes.Sid, account.Id.ToString()),
-                new Claim(ClaimTypes.Email,account.Email),
-                new Claim(ClaimTypes.Role,account.RoleId.ToString())
+                new Claim(ClaimTypes.Email,account.Email)
             };
                 var authSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"] ?? throw new Exception("Sai Secret key")));
                 var timeToken = int.Parse(_configuration["JWT:Time"] ?? throw new Exception("Time Token is not valid"));

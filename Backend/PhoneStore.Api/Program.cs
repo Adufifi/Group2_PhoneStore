@@ -25,6 +25,7 @@ namespace PhoneStore.Api
                 options.AllowAnyOrigin();
             });
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
             app.Run();

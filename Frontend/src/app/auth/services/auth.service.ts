@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { jwtDecode } from 'jwt-decode';
+import { StatusResponse } from '../../Interface/StatusResponse';
+import { api_url } from '../../app.config';
 
 export interface User {
   id?: string;
@@ -25,34 +27,39 @@ export interface LoginResponse {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private readonly API_URL = 'https://localhost:7107/api';
   private $user = new BehaviorSubject<User | undefined>(undefined);
 
-  constructor(
-    private http: HttpClient,
-    private cookieService: CookieService
-  ) {
+  constructor(private http: HttpClient, private cookieService: CookieService) {
     this.initializeUser();
   }
-
+  checkAdmin(userId: string): Observable<StatusResponse> {
+    return this.http.post<StatusResponse>(
+      `${api_url}/authentication/checkAdmin`,
+      userId
+    );
+  }
   private initializeUser(): void {
     const token = this.cookieService.get('Authentication');
     console.log('Token from cookie:', token);
-    
+
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
         console.log('Decoded token:', decodedToken);
-        
-        const userId = decodedToken.sid;
+
+        const userId =
+          decodedToken[
+            'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid'
+          ];
         console.log('User ID from token:', userId);
-        
+
         const userJson = localStorage.getItem('user-data');
         console.log('User data from localStorage:', userJson);
-        
+
         if (userJson) {
           try {
             const userData = JSON.parse(userJson);
@@ -71,7 +78,10 @@ export class AuthService {
   }
 
   login(request: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.API_URL}/Authentication/login-user`, request);
+    return this.http.post<LoginResponse>(
+      `${this.API_URL}/Authentication/login-user`,
+      request
+    );
   }
 
   setUser(user: User): void {
@@ -100,7 +110,7 @@ export class AuthService {
   getUserId(): string | undefined {
     const token = this.cookieService.get('Authentication');
     console.log('Getting token:', token);
-    
+
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));

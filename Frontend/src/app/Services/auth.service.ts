@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  cookieServices = inject(CookieService);
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
   public isLoggedIn = this.loggedIn.asObservable();
 
@@ -19,6 +21,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('email');
+    this.cookieServices.delete('Authentication', '/');
     this.loggedIn.next(false);
   }
 }

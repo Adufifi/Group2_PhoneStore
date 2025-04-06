@@ -1,0 +1,111 @@
+<div class="main-content">
+    <div class="edit-product-container">
+      <div class="header">
+        <h1>Edit Product</h1>
+      </div>
+  
+      <form (ngSubmit)="onSubmit()" class="product-form" *ngIf="product">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+  
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input
+            type="text"
+            id="productName"
+            [(ngModel)]="product.productName"
+            name="productName"
+            class="form-control"
+            required
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <select
+            id="brand"
+            [(ngModel)]="product.brandId"
+            name="brand"
+            class="form-control"
+            required
+          >
+            <option value="">Select a brand</option>
+            <option *ngFor="let brand of brands" [value]="brand.id">
+              {{ brand.name }}
+            </option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="price">Price (VND)</label>
+          <input
+            type="number"
+            id="price"
+            [(ngModel)]="product.price"
+            name="price"
+            class="form-control"
+            required
+            min="0"
+            step="1000"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="image">Product Image</label>
+          <div class="image-upload-container">
+            <div class="image-preview" *ngIf="imagePreview">
+              <img
+                [src]="imagePreview"
+                alt="Product preview"
+                class="preview-image"
+              />
+            </div>
+            <div class="upload-controls">
+              <input
+                type="file"
+                id="image"
+                (change)="onImageSelected($event)"
+                accept="image/*"
+                class="form-control"
+              />
+              <small class="form-text text-muted">
+                Select a new image to replace the current one
+              </small>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            [(ngModel)]="product.description"
+            name="description"
+            rows="4"
+            class="form-control"
+          ></textarea>
+        </div>
+  
+        <div class="form-group checkbox">
+          <label>
+            <input
+              type="checkbox"
+              [(ngModel)]="product.isPromoted"
+              name="isPromoted"
+              class="form-check-input"
+            />
+            Promote this product
+          </label>
+        </div>
+  
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

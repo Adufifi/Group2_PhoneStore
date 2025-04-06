@@ -29,9 +29,9 @@ export class LoginComponent {
   errorMessage = '';
 
   login() {
-    // debugger;
     this.userServices.login(this.user).subscribe(
       (res) => {
+        console.log(res);
         if (res.status === -9999) {
           this.errorMessage = res.mess ?? '';
         }
@@ -51,10 +51,10 @@ export class LoginComponent {
             undefined,
             '/',
             undefined,
-            true,
+            false,
             'Strict'
           );
-          this.authService.login(this.user.email);
+          localStorage.setItem('email', this.user.email);
           this.router.navigateByUrl('/admin');
         }
         if (res.status === 1) {
@@ -64,10 +64,10 @@ export class LoginComponent {
             undefined,
             '/',
             undefined,
-            true,
+            false,
             'Strict'
           );
-          this.authService.login(this.user.email);
+          localStorage.setItem('email', this.user.email);
           this.router.navigateByUrl('/home');
         }
       },

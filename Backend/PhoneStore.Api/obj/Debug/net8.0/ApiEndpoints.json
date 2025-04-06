@@ -91,6 +91,22 @@
   },
   {
     "ContainingType": "PhoneStore.Api.Controllers.UserController",
+    "Method": "GetToken",
+    "RelativePath": "api/account/token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.UserController",
     "Method": "ResetPassword",
     "RelativePath": "api/auth/reset-password",
     "HttpMethod": "POST",
@@ -116,6 +132,22 @@
       {
         "Name": "request",
         "Type": "PhoneStore.Api.Controllers.UserController\u002BVerifyOtpRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PhoneStore.Api.Controllers.AuthenticationController",
+    "Method": "Index",
+    "RelativePath": "api/authentication/checkAdmin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkRequest",
+        "Type": "PhoneStore.Domain.ModelRequest.CheckRequest",
         "IsRequired": true
       }
     ],

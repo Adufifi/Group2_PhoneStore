@@ -1,4 +1,6 @@
-﻿namespace PhoneStore.Api.Controllers
+﻿using Microsoft.AspNetCore.Authorization;
+
+namespace PhoneStore.Api.Controllers
 {
     [Route("api/brand")]
     [ApiController]
@@ -12,6 +14,7 @@
             _mapper = mapper;
         }
         [HttpGet("AllBrand")]
+        [Authorize]
         public async Task<IActionResult> AllBrand()
         {
             var data = await _brandService.GetAllAsync();

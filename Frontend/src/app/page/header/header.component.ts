@@ -18,16 +18,13 @@ export class HeaderComponent implements OnInit {
   userId: string | null = null;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private authService: AuthService,
     private cookieService: CookieService
   ) {}
 
   ngOnInit() {
-    // Kiểm tra trạng thái đăng nhập khi component được khởi tạo
     this.checkLoginStatus();
-
-    // Đăng ký theo dõi thay đổi trạng thái đăng nhập
     this.authService.isLoggedIn.subscribe((status: boolean) => {
       this.isLoggedIn = status;
       if (status) {
@@ -54,7 +51,8 @@ export class HeaderComponent implements OnInit {
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token.replace('Bearer ', ''));
-        const sidKey = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid";
+        const sidKey =
+          'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid';
         this.userId = decodedToken[sidKey];
         console.log('User ID from token:', this.userId);
       } catch (error) {

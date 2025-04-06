@@ -6,6 +6,8 @@ import { AuthResultVm } from '../Interface/AuthResultVm';
 import { User } from '../Interface/user';
 import { CookieService } from 'ngx-cookie-service';
 import { api_url } from '../app.config';
+import { StatusResponse } from '../Interface/StatusResponse';
+import { CheckRequest } from '../Interface/CheckRequest';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,15 @@ import { api_url } from '../app.config';
 export class UserService {
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
+  checkAdmin(checkRequest: CheckRequest): Observable<StatusResponse> {
+    return this.http.post<StatusResponse>(
+      `https://localhost:7227/api/authentication/checkAdmin`,
+      checkRequest,
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
   login(loginVm: LoginVm): Observable<AuthResultVm> {
     return this.http.post<AuthResultVm>(`${api_url}/account/login`, loginVm);
   }
@@ -28,20 +39,18 @@ export class UserService {
     }
 
     const headers = {
-      'Authorization': `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     };
-
-    console.log('Calling API:', `${api_url}/account/GetById${id}`);
-    return this.http.get<User>(`${api_url}/account/GetById${id}`, { headers }).pipe(
-      map(response => {
-        console.log('API Response:', response);
-        return response;
-      }),
-      catchError(error => {
-        console.error('API Error:', error);
-        throw error;
-      })
-    );
+    return this.http
+      .get<User>(`${api_url}/account/GetById${id}`, { headers })
+      .pipe(
+        map((response) => {
+          return response;
+        }),
+        catchError((error) => {
+          throw error;
+        })
+      );
   }
 
   getAllUsers(): Observable<User[]> {
@@ -51,11 +60,11 @@ export class UserService {
     }
 
     const headers = {
-      'Authorization': `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     };
 
     return this.http.get<User[]>(`${api_url}/account/GetAll`, { headers }).pipe(
-      catchError(error => {
+      catchError((error) => {
         console.error('Error fetching users:', error);
         throw error;
       })
