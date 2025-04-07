@@ -12,4 +12,6 @@ export interface Customer {
   role?: Role;
   created_date: Date;
   img?: string;
+  roleName?: string;
+  createdDate?: Date;
 }

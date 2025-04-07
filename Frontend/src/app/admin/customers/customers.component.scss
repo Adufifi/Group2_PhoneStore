@@ -118,3 +118,212 @@
     }
   }
 }
+
+// Sidebar styles
+.bg-dark {
+  background-color: #1a1c23 !important;
+}
+
+.nav-link {
+  transition: all 0.3s;
+  border-radius: 6px;
+  padding: 0.75rem 1rem !important;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  &.active {
+    background-color: #0d6efd;
+    color: white !important;
+  }
+}
+
+// Main content styles
+.container-fluid {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+// Table styles
+.table {
+  margin-bottom: 0;
+  
+  th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-top: none;
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+  
+  td {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+}
+
+// Badge styles
+.badge {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  
+  &.bg-primary {
+    background-color: #0d6efd !important;
+  }
+  
+  &.bg-success {
+    background-color: #198754 !important;
+  }
+}
+
+// Button styles
+.btn {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  
+  &-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    
+    &:hover {
+      background-color: #0b5ed7;
+      border-color: #0a58ca;
+    }
+  }
+  
+  &-outline-primary {
+    &:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+  }
+  
+  &-outline-danger {
+    &:hover {
+      background-color: #dc3545;
+      color: white;
+    }
+  }
+}
+
+// Form control styles
+.form-control, .form-select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  
+  &:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+}
+
+// Avatar styles
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Loading state
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+  
+  .spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0d6efd;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Error state
+.error-state {
+  text-align: center;
+  padding: 2rem;
+  color: #dc3545;
+  
+  i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// Pagination
+.pagination {
+  .page-link {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin: 0 0.25rem;
+    border: none;
+    color: #0d6efd;
+    
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+  
+  .active .page-link {
+    background-color: #0d6efd;
+    color: white;
+  }
+}
+
+// Modal styles
+.modal-content {
+  border-radius: 10px;
+  border: none;
+  
+  .modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.5rem;
+    
+    .modal-title {
+      font-weight: 600;
+    }
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1.5rem;
+  }
+}
+
+// Responsive styles
+@media (max-width: 992px) {
+  .col-lg-3 {
+    position: static !important;
+    height: auto !important;
+  }
+  
+  .col-lg-9 {
+    margin-left: 0 !important;
+  }
+}

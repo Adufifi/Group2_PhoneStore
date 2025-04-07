@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginVm } from '../Interface/LoginVm';
-import { Observable, catchError, map } from 'rxjs';
+import { Observable, catchError, map, forkJoin } from 'rxjs';
 import { AuthResultVm } from '../Interface/AuthResultVm';
 import { Customer } from '../Interface/customer.interface';
 import { CookieService } from 'ngx-cookie-service';
@@ -54,9 +54,21 @@ export class UserService {
       'Authorization': `Bearer ${token}`
     };
 
-    return this.http.get<Customer[]>(`${api_url}/account/GetAll`, { headers }).pipe(
+    return forkJoin({
+      users: this.http.get<any[]>(`${api_url}/account/GetAll`, { headers }),
+      roles: this.http.get<any[]>(`${api_url}/role/All`, { headers })
+    }).pipe(
+      map(({ users, roles }) => {
+        return users.map(user => {
+          const userRole = roles.find(role => role.id === user.roleId);
+          return {
+            ...user,
+            roleName: userRole ? userRole.roleName : 'Chưa xác định'
+          };
+        });
+      }),
       catchError(error => {
-        console.error('Error fetching users:', error);
+        console.error('Error fetching data:', error);
         throw error;
       })
     );
@@ -67,7 +79,21 @@ export class UserService {
   }
 
   updateUser(user: Customer): Observable<any> {
-    return this.http.put(`${api_url}/account/Update`, user);
+    const token = this.cookieService.get('Authentication');
+    if (!token) {
+      throw new Error('Không tìm thấy token xác thực');
+    }
+
+    const headers = {
+      'Authorization': `Bearer ${token}`
+    };
+
+    return this.http.post(`${api_url}/account/update-profile`, {
+      email: user.email,
+      userName: user.userName,
+      roleId: user.role_id,
+      createdDate: user.created_date
+    }, { headers });
   }
 }
 
