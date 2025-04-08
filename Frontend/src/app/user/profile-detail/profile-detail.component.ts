@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './profile-detail.component.html',
-  styleUrl: './profile-detail.component.scss'
+  styleUrl: './profile-detail.component.scss',
 })
 export class ProfileDetailComponent implements OnInit {
   user: User | null = null;
@@ -53,9 +53,10 @@ export class ProfileDetailComponent implements OnInit {
       },
       error: (error) => {
         console.error('Lỗi khi lấy thông tin người dùng:', error);
-        this.error = 'Không thể lấy thông tin người dùng. Vui lòng thử lại sau.';
+        this.error =
+          'Không thể lấy thông tin người dùng. Vui lòng thử lại sau.';
         this.isLoading = false;
-      }
+      },
     });
   }
 }

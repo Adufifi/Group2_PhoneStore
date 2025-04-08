@@ -14,6 +14,9 @@ namespace PhoneStore.Application.Dto
         public string? ImagePath { get; set; }
         [StringLength(1000)]
         public string Description { get; set; } = string.Empty;
+        [Range(0, double.MaxValue)]
+        public double Price { get; set; }
+
         [Range(0, int.MaxValue)]
         public bool IsPromoted { get; set; }
         [Range(0, int.MaxValue)]

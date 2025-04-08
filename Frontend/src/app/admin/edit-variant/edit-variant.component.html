@@ -1,0 +1,107 @@
+<div class="main-content">
+  <div class="edit-variant-container">
+    <div class="header">
+      <h1>Edit Variant</h1>
+      <div class="product-info" *ngIf="product">
+        <h2>{{ product.productName }}</h2>
+      </div>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="variant-form" *ngIf="variant">
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <div class="form-group">
+        <label for="image">Variant Image</label>
+        <div class="image-upload-container">
+          <div class="image-preview" *ngIf="imagePreview">
+            <img
+              [src]="imagePreview"
+              alt="Variant preview"
+              class="preview-image"
+            />
+          </div>
+          <div class="upload-controls">
+            <input
+              type="file"
+              id="image"
+              (change)="onImageSelected($event)"
+              accept="image/*"
+              class="form-control"
+            />
+            <small class="form-text text-muted">
+              Select a new image to replace the current one
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="color">Color</label>
+        <select
+          id="color"
+          [(ngModel)]="variant.colorId"
+          name="color"
+          class="form-control"
+          required
+        >
+          <option value="">Select a color</option>
+          <option *ngFor="let color of colors" [value]="color.id">
+            {{ color.colorName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <select
+          id="capacity"
+          [(ngModel)]="variant.capacityId"
+          name="capacity"
+          class="form-control"
+          required
+        >
+          <option value="">Select a capacity</option>
+          <option *ngFor="let capacity of capacities" [value]="capacity.id">
+            {{ capacity.capacityName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          id="price"
+          [(ngModel)]="variant.price"
+          name="price"
+          class="form-control"
+          required
+          min="0"
+          step="0.01"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          [(ngModel)]="variant.quantity"
+          name="quantity"
+          class="form-control"
+          required
+          min="0"
+        />
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>

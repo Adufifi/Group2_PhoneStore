@@ -20,9 +20,7 @@ namespace PhoneStore.Api
             services.AddTransient<ICapacityServices, CapacityServices>();
             services.AddTransient<ICartServices, CartServices>();
             services.AddTransient<IOrderServices, OrderServices>();
-            services.AddTransient<IOrderItemServices, OrderItemServices>();
             services.AddTransient<IProductColorServices, ProductColorServices>();
-            services.AddTransient<IProductImageServices, ProductImageServices>();
             services.AddTransient<IProductServices, ProductServices>();
             services.AddTransient<IProductVariantsServices, ProductVariantsServices>();
             services.AddTransient<IRefreshTokenServices>(servicesProvider =>

@@ -1,0 +1,261 @@
+<div class="container mt-4 mb-5">
+  <!-- Loading state -->
+  <div class="text-center" *ngIf="!product">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="row" *ngIf="product">
+    <!-- Phần hình ảnh sản phẩm -->
+    <div class="col-md-6">
+      <div class="product-images">
+        <div class="main-image">
+          <img
+            [src]="getImageUrl(selectedVariant?.image ?? product?.image)"
+            [alt]="product?.productName"
+            class="img-fluid"
+          />
+        </div>
+        <div class="thumbnail-images">
+          <div
+            class="thumbnail"
+            *ngFor="let variant of variants"
+            (click)="selectVariant(variant)"
+          >
+            <img
+              [src]="getImageUrl(variant.image)"
+              [alt]="product?.productName"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần thông tin sản phẩm -->
+    <div class="col-md-6">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/products">Sản phẩm</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a
+              [routerLink]="['/products']"
+              [queryParams]="{ brand: product.brandId }"
+            >
+              {{ brand?.name || "Thương hiệu" }}
+            </a>
+          </li>
+          <li class="breadcrumb-item active">{{ product.productName }}</li>
+        </ol>
+      </nav>
+
+      <div class="product-info">
+        <h1 class="h2 mb-3">{{ product.productName }}</h1>
+
+        <!-- Brand -->
+        <div class="mb-3">
+          <span class="badge bg-primary">{{ product.brandName }}</span>
+        </div>
+
+        <!-- Giá và trạng thái -->
+        <div class="price mb-4">
+          <h2 class="text-danger">
+            {{
+              selectedVariant ? selectedVariant.price : (product.price | number)
+            }}
+            VND
+          </h2>
+          <span class="badge bg-success" *ngIf="product.isPromoted"
+            >Đang giảm giá</span
+          >
+        </div>
+
+        <!-- Color Selection -->
+        <div class="color-selection mb-4">
+          <h5>Màu sắc:</h5>
+          <div class="color-grid">
+            <div
+              *ngFor="let color of uniqueColors"
+              class="color-box"
+              [class.selected]="selectedColor?.id === color.id"
+              (click)="selectColor(color)"
+            >
+              {{ color.colorName }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Capacity Selection -->
+        <div class="capacity-selection mb-4">
+          <h5>Dung lượng:</h5>
+          <div class="capacity-grid">
+            <div
+              *ngFor="let capacity of availableCapacities"
+              class="capacity-box"
+              [class.selected]="selectedCapacity?.id === capacity.id"
+              (click)="selectCapacity(capacity)"
+            >
+              {{ capacity.capacityName }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Mô tả sản phẩm -->
+        <div class="description mb-4">
+          <h5>Mô tả sản phẩm:</h5>
+          <p>{{ product.description }}</p>
+        </div>
+
+        <!-- Stock Info -->
+        <div class="stock-info mb-4">
+          <p class="text-muted">
+            <i class="bi bi-box-seam"></i>
+            Còn lại: {{ selectedVariant?.quantity || 0 }} sản phẩm
+          </p>
+        </div>
+
+        <!-- Số lượng đặt mua -->
+        <div class="add-to-cart">
+          <div class="d-flex gap-3 align-items-center mb-3">
+            <!-- <div class="quantity-selector">
+              <button
+                class="btn btn-outline-secondary"
+                (click)="decreaseQuantity()"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                class="form-control d-inline-block mx-2"
+                [(ngModel)]="quantity"
+                min="1"
+                style="width: 60px"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                (click)="increaseQuantity()"
+              >
+                +
+              </button>
+            </div> -->
+          </div>
+          <div class="d-flex gap-2">
+            <button
+              class="btn btn-primary btn-lg flex-grow-1"
+              (click)="addToCart()"
+              [disabled]="!selectedVariant"
+            >
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error state -->
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Phần đánh giá sản phẩm -->
+  <div class="row mt-5" *ngIf="product">
+    <div class="col-12">
+      <h2 class="mb-4">Đánh giá sản phẩm</h2>
+
+      <!-- Tổng quan đánh giá -->
+      <div class="rating-overview mb-4">
+        <div class="d-flex align-items-center">
+          <div class="average-rating me-3">
+            <h3 class="mb-0">{{ averageRating | number : "1.1-1" }}</h3>
+            <div class="stars">
+              <i
+                class="bi bi-star-fill text-warning"
+                *ngFor="let i of [1, 2, 3, 4, 5]"
+              ></i>
+            </div>
+            <p class="text-muted mb-0">{{ reviews.length }} đánh giá</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form đánh giá mới -->
+      <div class="review-form mb-5">
+        <h4>Viết đánh giá của bạn</h4>
+        <div class="mb-3">
+          <label class="form-label">Đánh giá của bạn</label>
+          <div class="rating-input">
+            <i
+              class="bi"
+              [class.bi-star-fill]="i <= newReview.rating"
+              [class.bi-star]="i > newReview.rating"
+              *ngFor="let i of [1, 2, 3, 4, 5]"
+              (click)="newReview.rating = i"
+              style="cursor: pointer; font-size: 1.5rem; color: #ffc107"
+            ></i>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="reviewComment" class="form-label">Nhận xét của bạn</label>
+          <textarea
+            class="form-control"
+            id="reviewComment"
+            rows="3"
+            [(ngModel)]="newReview.comment"
+            placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm này"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-primary"
+          (click)="submitReview()"
+          [disabled]="isSubmittingReview || !newReview.comment.trim()"
+        >
+          <span
+            class="spinner-border spinner-border-sm me-1"
+            *ngIf="isSubmittingReview"
+          ></span>
+          Gửi đánh giá
+        </button>
+      </div>
+
+      <!-- Danh sách đánh giá -->
+      <div class="reviews-list mt-5">
+        <h4 class="mb-4">Đánh giá sản phẩm</h4>
+
+        <!-- Hiển thị danh sách đánh giá -->
+        <div
+          class="review-item mb-4 p-3 border rounded shadow-sm"
+          *ngFor="let review of reviews"
+        >
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <h5 class="mb-0">{{ review.userName }}</h5>
+              <small class="text-muted">{{
+                review.createdDate | date : "dd/MM/yyyy HH:mm"
+              }}</small>
+            </div>
+            <div class="stars">
+              <i
+                class="bi bi-star-fill text-warning"
+                *ngFor="let i of [1, 2, 3, 4, 5]"
+                [class.text-warning]="i <= review.rating"
+                [class.text-muted]="i > review.rating"
+              ></i>
+            </div>
+          </div>
+          <p class="mb-0">{{ review.comment }}</p>
+        </div>
+
+        <!-- Thông báo khi không có đánh giá -->
+        <div class="text-center text-muted" *ngIf="reviews.length === 0">
+          <p>Chưa có đánh giá nào cho sản phẩm này.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

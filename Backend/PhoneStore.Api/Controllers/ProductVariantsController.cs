@@ -92,5 +92,13 @@ namespace PhoneStore.Api.Controllers
             }
             return Ok(statusResponse);
         }
+        [HttpGet("product/{productId}")]
+        public async Task<IActionResult> GetByProductId(Guid productId)
+        {
+            var allVariants = await _productVariantsServices.GetAllAsync();
+            var productVariants = allVariants.Where(v => v.ProductId == productId).ToList();
+            var productVariantsDtos = _mapper.Map<IEnumerable<ProductVariantsDto>>(productVariants);
+            return Ok(productVariantsDtos);
+        }
     }
 }

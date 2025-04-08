@@ -22,30 +22,25 @@ export class ProductsComponent implements OnInit {
   sortField: string = 'Name';
   sortOrder: string = 'Ascending';
 
+  currentPage: number = 1;
+  itemsPerPage: number = 6;
+  totalPages: number = 0;
+  paginatedProducts: Product[] = [];
+
   brandService = inject(BrandService);
   constructor(private productService: ProductService) {}
+
   ngOnInit(): void {
     this.loadProducts();
     this.loadBrands();
   }
 
-  loadBrands(): void {
-    this.brandService.getAllBrands().subscribe({
-      next: (data) => {
-        this.allBrands = data;
-      },
-      error: (error) => {
-        console.error('Error loading brands:', error);
-      },
-    });
-  }
   loadProducts(): void {
     this.productService.getAllProducts().subscribe({
       next: (data) => {
         this.allProducts = data.map((product) => ({
           ...product,
           image: product.image,
-          // ? this.decodeBase64Image(product.image) : null
         }));
         this.applyFilters();
       },
@@ -54,16 +49,6 @@ export class ProductsComponent implements OnInit {
       },
     });
   }
-
-  // decodeBase64Image(base64String: string): string {
-  //   try {
-  //     const decodedString = atob(base64String);
-  //     return decodedString;
-  //   } catch (error) {
-  //     console.error('Error decoding image:', error);
-  //     return '';
-  //   }
-  // }
 
   applyFilters(): void {
     let filteredProducts = [...this.allProducts];
@@ -98,28 +83,61 @@ export class ProductsComponent implements OnInit {
     });
 
     this.products = filteredProducts;
+    this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
+    this.updatePaginatedProducts();
+  }
+
+  updatePaginatedProducts(): void {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedProducts = this.products.slice(startIndex, endIndex);
+  }
+
+  onPageChange(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePaginatedProducts();
+    }
   }
 
   onSearch(query: string): void {
     this.searchQuery = query;
+    this.currentPage = 1;
     this.applyFilters();
   }
 
   onSortFieldChange(field: string): void {
     this.sortField = field;
+    this.currentPage = 1;
     this.applyFilters();
   }
 
   onSortOrderChange(order: string): void {
     this.sortOrder = order;
+    this.currentPage = 1;
     this.applyFilters();
+  }
+
+  loadBrands(): void {
+    this.brandService.getAllBrands().subscribe({
+      next: (brands) => {
+        this.allBrands = brands;
+      },
+      error: (error) => {
+        console.error('Error loading brands:', error);
+      },
+    });
   }
 
   deleteProduct(id: string): void {
     if (confirm('Are you sure you want to delete this product?')) {
+      debugger;
       this.productService.deleteProduct(id).subscribe({
-        next: () => {
-          this.loadProducts();
+        next: (res) => {
+          if (res.status === 1) {
+            alert(res.mess);
+            this.loadProducts();
+          }
         },
         error: (error) => {
           console.error('Error deleting product:', error);
@@ -131,12 +149,11 @@ export class ProductsComponent implements OnInit {
   onImageError(event: Event): void {
     const img = event.target as HTMLImageElement;
     img.style.display = 'none';
-    const container = img.parentElement;
-    if (container) {
-      const placeholder = container.querySelector('.product-image-placeholder');
-      if (placeholder) {
-        placeholder.classList.add('show');
-      }
+    const placeholder = img.parentElement?.querySelector(
+      '.product-image-placeholder'
+    );
+    if (placeholder) {
+      placeholder.classList.add('show');
     }
   }
 }

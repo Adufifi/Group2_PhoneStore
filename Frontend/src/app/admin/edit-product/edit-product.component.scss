@@ -1,0 +1,7 @@
+.preview-image {
+  max-width: 150px; /* Đặt chiều rộng tối đa */
+  max-height: 150px; /* Đặt chiều cao tối đa */
+  object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+  border: 1px solid #ccc; /* Thêm viền nếu cần */
+  border-radius: 5px; /* Bo góc hình ảnh */
+}

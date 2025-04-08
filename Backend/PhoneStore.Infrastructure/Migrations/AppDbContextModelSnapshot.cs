@@ -22,6 +22,21 @@ namespace PhoneStore.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("OrderProductVariants", b =>
+                {
+                    b.Property<Guid>("OrderItemsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductVariantsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("OrderItemsId", "ProductVariantsId");
+
+                    b.HasIndex("ProductVariantsId");
+
+                    b.ToTable("OrderProductVariants");
+                });
+
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.Property<Guid>("Id")
@@ -84,11 +99,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -130,10 +140,15 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("ProductVariantsId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductVariantsId");
 
                     b.ToTable("Cart");
                 });
@@ -178,36 +193,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("PhoneStore.Domain.Models.OrderItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("PriceAtTime")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("ProductVariantsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductVariantsId");
-
-                    b.ToTable("OrderItems");
-                });
-
             modelBuilder.Entity("PhoneStore.Domain.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -234,13 +219,13 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<bool>("IsPromoted")
                         .HasColumnType("bit");
 
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Stock")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -268,35 +253,6 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.ToTable("Color");
                 });
 
-            modelBuilder.Entity("PhoneStore.Domain.Models.ProductImage", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<byte[]>("Img")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<Guid>("ProductVariantId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductVariantId")
-                        .IsUnique();
-
-                    b.ToTable("ProductImage");
-                });
-
             modelBuilder.Entity("PhoneStore.Domain.Models.ProductVariants", b =>
                 {
                     b.Property<Guid>("Id")
@@ -306,25 +262,19 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<Guid>("CapacityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CartId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("ColorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<Guid?>("ProductColorId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductImageId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
@@ -332,13 +282,9 @@ namespace PhoneStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CapacityId")
-                        .IsUnique();
+                    b.HasIndex("CapacityId");
 
-                    b.HasIndex("CartId")
-                        .IsUnique();
-
-                    b.HasIndex("ProductColorId");
+                    b.HasIndex("ColorId");
 
                     b.HasIndex("ProductId");
 
@@ -391,6 +337,9 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("AccountId", "ProductId");
 
                     b.HasIndex("ProductId");
@@ -417,6 +366,21 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.ToTable("Role");
                 });
 
+            modelBuilder.Entity("OrderProductVariants", b =>
+                {
+                    b.HasOne("PhoneStore.Domain.Models.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderItemsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PhoneStore.Domain.Models.ProductVariants", null)
+                        .WithMany()
+                        .HasForeignKey("ProductVariantsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PhoneStore.Domain.Models.Account", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Cart", "Cart")
@@ -434,6 +398,17 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
+                {
+                    b.HasOne("PhoneStore.Domain.Models.ProductVariants", "ProductVariants")
+                        .WithMany()
+                        .HasForeignKey("ProductVariantsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductVariants");
+                });
+
             modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Account", "Account")
@@ -443,25 +418,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Account");
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.OrderItem", b =>
-                {
-                    b.HasOne("PhoneStore.Domain.Models.Order", "Order")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PhoneStore.Domain.Models.ProductVariants", "Product")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("ProductVariantsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Product", b =>
@@ -475,34 +431,19 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("PhoneStore.Domain.Models.ProductImage", b =>
-                {
-                    b.HasOne("PhoneStore.Domain.Models.ProductVariants", "ProductVariants")
-                        .WithOne("ProductImages")
-                        .HasForeignKey("PhoneStore.Domain.Models.ProductImage", "ProductVariantId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("ProductVariants");
-                });
-
             modelBuilder.Entity("PhoneStore.Domain.Models.ProductVariants", b =>
                 {
                     b.HasOne("PhoneStore.Domain.Models.Capacity", "Capacity")
-                        .WithOne("ProductVariant")
-                        .HasForeignKey("PhoneStore.Domain.Models.ProductVariants", "CapacityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PhoneStore.Domain.Models.Cart", "Carts")
-                        .WithOne("ProductVariants")
-                        .HasForeignKey("PhoneStore.Domain.Models.ProductVariants", "CartId")
+                        .WithMany("ProductVariants")
+                        .HasForeignKey("CapacityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("PhoneStore.Domain.Models.ProductColor", "ProductColor")
-                        .WithMany()
-                        .HasForeignKey("ProductColorId");
+                        .WithMany("ProductVariants")
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PhoneStore.Domain.Models.Product", "Product")
                         .WithMany()
@@ -511,8 +452,6 @@ namespace PhoneStore.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Capacity");
-
-                    b.Navigation("Carts");
 
                     b.Navigation("Product");
 
@@ -563,20 +502,12 @@ namespace PhoneStore.Infrastructure.Migrations
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Capacity", b =>
                 {
-                    b.Navigation("ProductVariant");
+                    b.Navigation("ProductVariants");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Cart", b =>
                 {
                     b.Navigation("Account");
-
-                    b.Navigation("ProductVariants")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PhoneStore.Domain.Models.Order", b =>
-                {
-                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Product", b =>
@@ -584,11 +515,9 @@ namespace PhoneStore.Infrastructure.Migrations
                     b.Navigation("ProductReview");
                 });
 
-            modelBuilder.Entity("PhoneStore.Domain.Models.ProductVariants", b =>
+            modelBuilder.Entity("PhoneStore.Domain.Models.ProductColor", b =>
                 {
-                    b.Navigation("OrderItems");
-
-                    b.Navigation("ProductImages");
+                    b.Navigation("ProductVariants");
                 });
 
             modelBuilder.Entity("PhoneStore.Domain.Models.Role", b =>

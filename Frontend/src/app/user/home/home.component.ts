@@ -6,8 +6,6 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  // Không cần dữ liệu sản phẩm nữa vì trang chủ chỉ giới thiệu shop
-}
+export class HomeComponent {}

@@ -230,32 +230,28 @@
       align-items: center;
 
       .btn-icon {
-        width: 32px;
-        height: 32px;
-        padding: 0;
+        padding: 0.25rem 0.5rem;
         border: none;
-        border-radius: 4px;
+        background: none;
         cursor: pointer;
-        transition: background-color 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: #6c757d;
+        transition: color 0.2s;
 
         &.edit {
-          background-color: #e3f2fd;
-          color: #1976d2;
-
           &:hover {
-            background-color: #bbdefb;
+            color: #4285f4;
+          }
+        }
+
+        &.view {
+          &:hover {
+            color: #0d904f;
           }
         }
 
         &.delete {
-          background-color: #ffebee;
-          color: #d32f2f;
-
           &:hover {
-            background-color: #ffcdd2;
+            color: #ea4335;
           }
         }
 
@@ -313,5 +309,37 @@
       margin-left: 0;
       padding: 1rem;
     }
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  .btn-pagination {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not([disabled]) {
+      background-color: #f0f0f0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .page-info {
+    font-size: 1rem;
+    color: #666;
   }
 }

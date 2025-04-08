@@ -1,0 +1,51 @@
+<div class="my-orders">
+  <h1 class="text-center mb-4">Đơn hàng của tôi</h1>
+
+  <div *ngIf="orderResponse.length > 0; else noOrders">
+    <div class="order-card" *ngFor="let order of orderResponse; let i = index">
+      <div class="order-header">
+        <div><strong>Mã đơn hàng:</strong> #{{ i + 1 }}</div>
+        <div>
+          <span>
+            <!-- {{ getStatusText(order.statusProduct) }} -->
+          </span>
+        </div>
+      </div>
+      <div class="order-body">
+        <div class="order-info">
+          <p><strong>Ngày đặt hàng:</strong> {{ order.createdDate }}</p>
+          <p><strong>Địa chỉ giao hàng:</strong> {{ order.shippingAddress }}</p>
+          <p>
+            <strong>Phương thức thanh toán:</strong>
+            {{
+              order.paymentMethod === 0
+                ? "Thanh toán khi nhận hàng"
+                : "Chuyển khoản ngân hàng"
+            }}
+          </p>
+        </div>
+        <div class="order-items">
+          <h5>Sản phẩm:</h5>
+          <div class="item" *ngFor="let item of order.productVariantResponse">
+            <img
+              [src]="'data:image/png;base64,' + item.image"
+              [alt]="item.productName"
+            />
+            <div class="item-details">
+              <p>
+                <strong>{{ item.productName }}</strong>
+              </p>
+              <p>Màu sắc: {{ item.colorName }}</p>
+              <p>Dung lượng: {{ item.capacityName }}</p>
+              <p>Giá: {{ item.price | currency : "VND" }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noOrders>
+    <p class="text-center text-muted">Bạn chưa có đơn hàng nào.</p>
+  </ng-template>
+</div>

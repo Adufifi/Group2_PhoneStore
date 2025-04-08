@@ -9,7 +9,7 @@ import { jwtDecode } from 'jwt-decode';
   selector: 'app-header',
   imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'], // Sửa lại từ styleUrl thành styleUrls
   standalone: true,
 })
 export class HeaderComponent implements OnInit {

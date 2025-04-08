@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../Interface/Product';
 import { api_url } from '../app.config';
+import { StatusResponse } from '../Interface/StatusResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,7 @@ export class ProductService {
     return this.http.put(`${this.apiUrl}/UpdateById/${id}`, product);
   }
 
-  deleteProduct(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/DeleteById/${id}`);
+  deleteProduct(id: string): Observable<StatusResponse> {
+    return this.http.delete<StatusResponse>(`${this.apiUrl}/DeleteById/${id}`);
   }
 }

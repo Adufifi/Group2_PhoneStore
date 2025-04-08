@@ -5,17 +5,41 @@
     public class CartController : ControllerBase
     {
         private readonly ICartServices _cartServices;
+        private readonly IMapper _mapper;
 
-        public CartController(ICartServices cartServices)
+        public CartController(ICartServices cartServices, IMapper mapper)
         {
             _cartServices = cartServices;
+            _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllCart")]
         public async Task<ActionResult<IEnumerable<Cart>>> GetAll()
         {
             var carts = await _cartServices.GetAllAsync();
             return Ok(carts);
+        }
+        [HttpGet("GetCartByAccountId/{accountId}")]
+        public async Task<IActionResult> GetCartByAccountId(string accountId)
+        {
+            if (!Guid.TryParse(accountId, out Guid accountIdGuid))
+            {
+                return BadRequest("Invalid account ID format");
+            }
+            var carts = await _cartServices.GetAllCart(accountIdGuid);
+
+            var cartByAccountId = carts.Where(c => c.AccountId == accountIdGuid).ToList();
+            var cartDtoList = cartByAccountId.Select(c => new CartDto
+            {
+                Id = c.Id,
+                ProductName = c.ProductVariants.Product.ProductName,
+                ColorName = c.ProductVariants.ProductColor.ColorName,
+                CapacityName = c.ProductVariants.Capacity.CapacityName,
+                Price = c.ProductVariants.Price,
+                Quantity = c.Quantity,
+                Image = c.ProductVariants.Product.Image
+            });
+            return Ok(cartDtoList);
         }
 
         [HttpGet("{id}")]
@@ -27,18 +51,46 @@
             return Ok(cart);
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Cart>> Create([FromBody] Cart cart)
+        [HttpPost("AddCart")]
+        public async Task<IActionResult> Create([FromBody] AddCart cart)
         {
+            var statusResponse = new StatusResponse();
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            cart.CreatedDate = DateTime.UtcNow;
-            var result = await _cartServices.AddAsync(cart);
-            if (result <= 0)
-                return BadRequest("Failed to create cart");
-
-            return CreatedAtAction(nameof(GetById), new { id = cart.Id }, cart);
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input invalid";
+                return Ok(statusResponse);
+            }
+            if (!Guid.TryParse(cart.ProductVariantId, out Guid productVariantsId))
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input invalid";
+                return Ok(statusResponse);
+            }
+            if (!Guid.TryParse(cart.AccountId, out Guid accountId))
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input invalid";
+                return Ok(statusResponse);
+            }
+            var cartEntity = new Cart
+            {
+                Id = Guid.NewGuid(),
+                AccountId = accountId,
+                ProductVariantsId = productVariantsId,
+                CreatedDate = DateTime.Now,
+                Quantity = 1
+            };
+            var result = await _cartServices.AddAsync(cartEntity);
+            if (result > 0)
+            {
+                statusResponse.status = 1;
+                statusResponse.mess = "Add success";
+                return Ok(statusResponse);
+            }
+            statusResponse.status = -2;
+            statusResponse.mess = "Failed to add cart";
+            return Ok(statusResponse);
         }
 
         [HttpPut("{id}")]
@@ -61,19 +113,50 @@
 
             return NoContent();
         }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        [HttpDelete("DeleteAllCartByAccountId/{accountId}")]
+        public async Task<IActionResult> DeleteAll(string accountId)
         {
-            var existingCart = await _cartServices.GetByIdAsync(id);
-            if (existingCart == null)
-                return NotFound($"Cart with id {id} not found");
+            var statusResponse = new StatusResponse();
+            if (!Guid.TryParse(accountId, out Guid accountIdGuid))
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input invalid";
+                return Ok(statusResponse);
+            }
+            var result = await _cartServices.DeleteAllAsync(accountIdGuid);
+            if (result)
+            {
+                statusResponse.status = 1;
+                statusResponse.mess = "Delete success";
+                return Ok(statusResponse);
+            }
+            statusResponse.status = -2;
+            statusResponse.mess = "Failed to delete cart";
+            return Ok(statusResponse);
+        }
 
-            var result = await _cartServices.DeleteAsync(id);
-            if (!result)
-                return BadRequest("Failed to delete cart");
 
-            return NoContent();
+        [HttpDelete("DeleteCartById/{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var statusResponse = new StatusResponse();
+            if (!Guid.TryParse(id, out Guid cartId))
+            {
+                statusResponse.status = -999;
+                statusResponse.mess = "Input invalid";
+                return Ok(statusResponse);
+            }
+            var result = await _cartServices.DeleteAsync(cartId);
+            if (result)
+            {
+                statusResponse.status = 1;
+                statusResponse.mess = "Delete success";
+                return Ok(statusResponse);
+            }
+            statusResponse.status = -2;
+            statusResponse.mess = "Failed to delete cart";
+            return Ok(statusResponse);
+
         }
 
     }

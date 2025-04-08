@@ -1,7 +1,7 @@
 namespace PhoneStore.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/color")]
     public class ProductColorController : ControllerBase
     {
         private readonly IProductColorServices _productColorServices;

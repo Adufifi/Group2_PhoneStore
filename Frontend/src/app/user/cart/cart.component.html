@@ -11,12 +11,15 @@
       <div class="card border-0 shadow-sm rounded-3 mb-3">
         <div class="card-body p-4">
           <!-- Item 1 -->
-          <div class="row mb-4 border-bottom pb-4">
+          <div
+            class="row mb-4 border-bottom pb-4"
+            *ngFor="let item of listCartDto"
+          >
             <div class="col-md-2 col-4">
               <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-pro-max_3.png"
+                [src]="'data:image/png;base64,' + item.image"
                 class="img-fluid rounded"
-                alt="iPhone 15 Pro Max"
+                [alt]="item.productName"
               />
             </div>
             <div class="col-md-10 col-8">
@@ -24,123 +27,25 @@
                 class="d-flex justify-content-between align-items-start mb-2"
               >
                 <h5 class="card-title mb-0">
-                  iPhone 15 Pro Max - 256GB - Titan Tự Nhiên
+                  {{ item.productName }} Màu {{ item.colorName }}
                 </h5>
-                <button class="btn btn-sm btn-outline-danger">
+                <button
+                  class="btn btn-sm btn-outline-danger"
+                  (click)="removeItem(item.id)"
+                >
                   <i class="bi bi-trash"></i>
                 </button>
               </div>
-              <p class="text-muted small mb-2">Apple</p>
+              <p class="text-muted small mb-2">
+                Dung lượng: {{ item.capacityName }}
+              </p>
               <div
                 class="d-flex justify-content-between align-items-center mt-3"
               >
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-outline-secondary btn-sm me-2">
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    class="form-control form-control-sm text-center"
-                    style="width: 60px"
-                    value="1"
-                    min="1"
-                  />
-                  <button class="btn btn-outline-secondary btn-sm ms-2">
-                    +
-                  </button>
-                </div>
                 <div class="text-end">
-                  <p class="text-danger fw-bold mb-0">31.990.000₫</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="row mb-4 border-bottom pb-4">
-            <div class="col-md-2 col-4">
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/s/a/samsung-galaxy-s23-ultra.png"
-                class="img-fluid rounded"
-                alt="Samsung Galaxy S23 Ultra"
-              />
-            </div>
-            <div class="col-md-10 col-8">
-              <div
-                class="d-flex justify-content-between align-items-start mb-2"
-              >
-                <h5 class="card-title mb-0">
-                  Samsung Galaxy S23 Ultra - 256GB - Đen
-                </h5>
-                <button class="btn btn-sm btn-outline-danger">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </div>
-              <p class="text-muted small mb-2">Samsung</p>
-              <div
-                class="d-flex justify-content-between align-items-center mt-3"
-              >
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-outline-secondary btn-sm me-2">
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    class="form-control form-control-sm text-center"
-                    style="width: 60px"
-                    value="1"
-                    min="1"
-                  />
-                  <button class="btn btn-outline-secondary btn-sm ms-2">
-                    +
-                  </button>
-                </div>
-                <div class="text-end">
-                  <p class="text-danger fw-bold mb-0">21.990.000₫</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="row">
-            <div class="col-md-2 col-4">
-              <img
-                src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/g/t/gtt_7766_3__1.jpg"
-                class="img-fluid rounded"
-                alt="iPhone 13"
-              />
-            </div>
-            <div class="col-md-10 col-8">
-              <div
-                class="d-flex justify-content-between align-items-start mb-2"
-              >
-                <h5 class="card-title mb-0">iPhone 13 - 128GB - Xanh Dương</h5>
-                <button class="btn btn-sm btn-outline-danger">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </div>
-              <p class="text-muted small mb-2">Apple</p>
-              <div
-                class="d-flex justify-content-between align-items-center mt-3"
-              >
-                <div class="d-flex align-items-center">
-                  <button class="btn btn-outline-secondary btn-sm me-2">
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    class="form-control form-control-sm text-center"
-                    style="width: 60px"
-                    value="1"
-                    min="1"
-                  />
-                  <button class="btn btn-outline-secondary btn-sm ms-2">
-                    +
-                  </button>
-                </div>
-                <div class="text-end">
-                  <p class="text-danger fw-bold mb-0">14.990.000₫</p>
+                  <p class="text-danger fw-bold mb-0">
+                    {{ item.price }} <span class="text-danger">VND</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -153,7 +58,7 @@
         <a routerLink="/products" class="btn btn-outline-primary">
           <i class="bi bi-arrow-left me-2"></i>Tiếp tục mua hàng
         </a>
-        <button class="btn btn-outline-danger">
+        <button class="btn btn-outline-danger" (click)="removeAll()">
           <i class="bi bi-trash me-2"></i>Xóa tất cả
         </button>
       </div>
@@ -164,32 +69,38 @@
       <div class="card border-0 shadow-sm rounded-3 mb-3">
         <div class="card-body p-4">
           <h5 class="card-title mb-4">Tóm Tắt Đơn Hàng</h5>
+          <!-- Hiển thị tổng số lượng sản phẩm -->
           <div class="d-flex justify-content-between mb-2">
-            <span>Tạm tính (3 sản phẩm)</span>
-            <span>68.970.000₫</span>
+            <span>Tạm tính ({{ totalQuantity }} sản phẩm)</span>
+            <span>{{ totalPrice | number }}₫</span>
           </div>
+          <!-- Hiển thị phí vận chuyển -->
           <div class="d-flex justify-content-between mb-2">
             <span>Phí vận chuyển</span>
             <span>Miễn phí</span>
           </div>
+          <!-- Hiển thị giảm giá -->
           <div class="d-flex justify-content-between mb-3">
             <span>Giảm giá</span>
             <span>0₫</span>
           </div>
           <hr />
+          <!-- Hiển thị tổng cộng -->
           <div class="d-flex justify-content-between mb-3">
             <span class="fw-bold">Tổng cộng</span>
-            <span class="fw-bold text-danger fs-5">68.970.000₫</span>
-          </div>
-
-          <!-- Mã giảm giá -->
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Mã giảm giá" />
-            <button class="btn btn-outline-primary">Áp dụng</button>
+            <span class="fw-bold text-danger fs-5"
+              >{{ totalPrice | number }}₫</span
+            >
           </div>
 
           <!-- Nút thanh toán -->
-          <button class="btn btn-primary w-100">Tiến hành thanh toán</button>
+          <button
+            class="btn btn-primary w-100"
+            [disabled]="totalQuantity === 0"
+            (click)="proceedToCheckout()"
+          >
+            Tiến hành thanh toán
+          </button>
         </div>
       </div>
 

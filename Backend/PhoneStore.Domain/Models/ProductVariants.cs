@@ -6,10 +6,9 @@ namespace PhoneStore.Domain.Models
         public required Guid ProductId { get; set; }
         public virtual Product? Product { get; set; }
         public required Guid ColorId { get; set; }
+        [ForeignKey("ColorId")]
         public virtual ProductColor? ProductColor { get; set; }
-        public Guid? ProductImageId { get; set; }
-        [ForeignKey("ProductImageId")]
-        public virtual ProductImage? ProductImages { get; set; }
+        public byte[]? Image { get; set; }
         public required Guid CapacityId { get; set; }
         public virtual Capacity? Capacity { get; set; }
 
@@ -21,7 +20,7 @@ namespace PhoneStore.Domain.Models
         [Range(0, double.MaxValue)]
         public required double Price { get; set; }
 
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<Order> OrderItems { get; set; } = new List<Order>();
 
 
     }

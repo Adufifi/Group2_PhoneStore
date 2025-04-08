@@ -1,8 +1,4 @@
-﻿
-
-using System.Threading.Tasks;
-
-namespace PhoneStore.Api.Controllers
+﻿namespace PhoneStore.Api.Controllers
 {
     [Route("api/account")]
     [ApiController]
@@ -69,7 +65,7 @@ namespace PhoneStore.Api.Controllers
                     return NotFound(statusResponse);
                 }
                 var defaultRole = (await _roleServices.GetAllAsync())
-                            .FirstOrDefault(r => r.RoleName == "Admin");
+                            .FirstOrDefault(r => r.RoleName == "User");
                 if (defaultRole is null)
                 {
                     statusResponse.status = -1;

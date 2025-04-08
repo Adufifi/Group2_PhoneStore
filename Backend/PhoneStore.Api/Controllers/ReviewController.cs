@@ -32,34 +32,60 @@ namespace PhoneStore.Api.Controllers
         [HttpPost("CreateReview")]
         public async Task<IActionResult> CreateReview([FromBody] ReviewDto reviewDto)
         {
-            var statusResponse = new StatusResponse();
-            if (!ModelState.IsValid)
+            try
             {
-                statusResponse.status = -999;
-                statusResponse.mess = "Input invalid";
-                return BadRequest(statusResponse);
-            }
+                var statusResponse = new StatusResponse();
+                if (!ModelState.IsValid)
+                {
+                    statusResponse.status = -999;
+                    statusResponse.mess = "Input invalid";
+                    return BadRequest(statusResponse);
+                }
 
-            var review = _mapper.Map<Review>(reviewDto);
-            review.CreatedDate = DateTime.Now;
-            if (review.ProductId == Guid.Empty || review.AccountId == Guid.Empty)
-            {
-                statusResponse.status = -999;
-                statusResponse.mess = "ProductId or AccountId cannot be empty";
-                return BadRequest(statusResponse);
-            }
+                var review = new Review();
+                review.Id = Guid.NewGuid();
+                review.AccountId = reviewDto.AccountId;
+                review.ProductId = reviewDto.ProductId;
+                review.Comment = reviewDto.Comment;
+                review.CreatedDate = DateTime.Now;
+                if (review.ProductId == Guid.Empty || review.AccountId == Guid.Empty)
+                {
+                    statusResponse.status = -999;
+                    statusResponse.mess = "ProductId or AccountId cannot be empty";
+                    return BadRequest(statusResponse);
+                }
 
-            var result = await _reviewServices.AddAsync(review);
-            if (result > 0)
+                var result = await _reviewServices.AddAsync(review);
+                if (result > 0)
+                {
+                    statusResponse.status = 1;
+                    statusResponse.mess = "Add success";
+                    return Ok(statusResponse);
+                }
+
+                statusResponse.status = -2;
+                statusResponse.mess = "Add failed";
+                return StatusCode(500, statusResponse);
+            }
+            catch (Exception ex)
             {
-                statusResponse.status = 1;
-                statusResponse.mess = "Add success";
+
+                var statusResponse = new StatusResponse();
+                statusResponse.status = -2;
+                statusResponse.mess = ex.Message;
                 return Ok(statusResponse);
             }
-
-            statusResponse.status = -2;
-            statusResponse.mess = "Add failed";
-            return StatusCode(500, statusResponse);
+        }
+        [HttpGet("getReviewsByProductId/{productId}")]
+        public async Task<IActionResult> GetReviewsByProductId(Guid productId)
+        {
+            var data = await _reviewServices.GetAllAsync();
+            var dataReturn = data.Where(x => x.ProductId == productId).ToList();
+            if (dataReturn == null)
+            {
+                return NotFound();
+            }
+            return Ok(dataReturn);
         }
         [HttpPut("UpdateReview/{id}")]
         public async Task<IActionResult> UpdateReview(Guid id, [FromBody] ReviewDto reviewDto)
@@ -101,22 +127,9 @@ namespace PhoneStore.Api.Controllers
             return StatusCode(500, statusResponse);
         }
         [HttpDelete("DeleteReview/{id}")]
-        public async Task<IActionResult> DeleteReview(Guid id, [FromQuery] Guid accountId, [FromQuery] Guid productId)
+        public async Task<IActionResult> DeleteReview(Guid id)
         {
             var statusResponse = new StatusResponse();
-            var reviewToDelete = await _reviewServices.GetByIdAsync(id);
-            if (reviewToDelete == null)
-            {
-                statusResponse.status = -1;
-                statusResponse.mess = "Review not found";
-                return NotFound(statusResponse);
-            }
-            if (reviewToDelete.AccountId != accountId || reviewToDelete.ProductId != productId)
-            {
-                statusResponse.status = -999;
-                statusResponse.mess = "AccountId and ProductId do not match the review";
-                return BadRequest(statusResponse);
-            }
 
             var result = await _reviewServices.DeleteAsync(id);
             if (result)

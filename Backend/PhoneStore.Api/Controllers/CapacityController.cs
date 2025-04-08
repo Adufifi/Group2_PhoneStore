@@ -1,9 +1,7 @@
-using Microsoft.AspNetCore.Authorization;
-
 namespace PhoneStore.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/capacity")]
     public class CapacityController : ControllerBase
     {
         private readonly ICapacityServices _capacityServices;
@@ -16,7 +14,6 @@ namespace PhoneStore.Api.Controllers
         }
 
         [HttpGet("All")]
-        [Authorize(policy: "asdfasdf")]
         public async Task<IActionResult> All()
         {
 

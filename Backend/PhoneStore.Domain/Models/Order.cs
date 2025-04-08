@@ -14,6 +14,6 @@ namespace PhoneStore.Domain.Models
         public string RecipientName { get; set; } = string.Empty;
         [StringLength(10)]
         public string PhoneNumber { get; set; } = string.Empty;
-        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<ProductVariants> ProductVariants { get; set; } = new List<ProductVariants>();
     }
 }

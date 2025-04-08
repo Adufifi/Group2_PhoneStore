@@ -2,5 +2,6 @@
 {
     public interface IProductVariantsServices : IBaseServices<ProductVariants>
     {
+        Task<IEnumerable<ProductVariants>> GetAllAsync();
     }
 }

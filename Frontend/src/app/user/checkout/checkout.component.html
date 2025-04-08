@@ -1,0 +1,150 @@
+<div class="container mt-4 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Thông Tin Thanh Toán</h2>
+
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+            <!-- Thông tin người nhận -->
+            <div class="mb-4">
+              <h5 class="mb-3">Thông Tin Người Nhận</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Họ và tên</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="recipientName"
+                    placeholder="Nhập họ và tên"
+                  />
+                  <div
+                    class="invalid-feedback d-block"
+                    *ngIf="
+                      checkoutForm.get('recipientName')?.invalid &&
+                      checkoutForm.get('recipientName')?.touched
+                    "
+                  >
+                    Vui lòng nhập họ và tên (ít nhất 3 ký tự)
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Số điện thoại</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    formControlName="phoneNumber"
+                    placeholder="Nhập số điện thoại"
+                  />
+                  <div
+                    class="invalid-feedback d-block"
+                    *ngIf="
+                      checkoutForm.get('phoneNumber')?.invalid &&
+                      checkoutForm.get('phoneNumber')?.touched
+                    "
+                  >
+                    Vui lòng nhập số điện thoại hợp lệ (10 chữ số)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Địa chỉ giao hàng -->
+            <div class="mb-4">
+              <h5 class="mb-3">Địa Chỉ Giao Hàng Hỗ Trợ</h5>
+              <div formGroupName="shippingAddress">
+                <div class="row">
+                  <!-- Tỉnh/Thành phố -->
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Tỉnh/Thành phố</label>
+                    <select
+                      class="form-select"
+                      formControlName="city"
+                      (change)="onCityChange($event)"
+                    >
+                      <option value="">Chọn tỉnh/thành phố</option>
+                      <option *ngFor="let city of cities" [value]="city.id">
+                        {{ city.name }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <!-- Quận/Huyện -->
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Quận/Huyện</label>
+                    <select
+                      class="form-select"
+                      formControlName="district"
+                      [disabled]="!selectedCity"
+                    >
+                      <option value="">Chọn quận/huyện</option>
+                      <option
+                        *ngFor="let district of districts"
+                        [value]="district.id"
+                      >
+                        {{ district.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Địa chỉ cụ thể -->
+                <div class="row">
+                  <div class="col-md-12 mb-3">
+                    <label class="form-label">Địa chỉ cụ thể</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="street"
+                      placeholder="Số nhà, tên đường"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phương thức thanh toán -->
+            <div class="mb-4">
+              <h5 class="mb-3">Phương Thức Thanh Toán</h5>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="paymentMethod"
+                  [value]="0"
+                  id="cod"
+                />
+                <label class="form-check-label" for="cod">
+                  Thanh toán khi nhận hàng (COD)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  formControlName="paymentMethod"
+                  [value]="1"
+                  id="online"
+                />
+                <label class="form-check-label" for="online">
+                  Thanh toán online
+                </label>
+              </div>
+            </div>
+
+            <!-- Nút xác nhận -->
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                [disabled]="checkoutForm.invalid"
+              >
+                Xác Nhận Thanh Toán
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,34 +25,30 @@
 
           <!-- Hiển thị email và dropdown menu khi đã đăng nhập -->
           <ng-container *ngIf="isLoggedIn">
-            <div class="dropdown d-inline-block">
-              <button type="button" class="btn btn-link text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="custom-dropdown">
+              <button class="dropdown-toggle">
                 <i class="bi bi-person-circle me-1"></i> {{ userEmail }}
               </button>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" [routerLink]="['/profile', userId]">
                     <i class="bi bi-person me-2"></i>Thông tin tài khoản
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" routerLink="/orders">
+                  <a class="dropdown-item" routerLink="/order">
                     <i class="bi bi-bag me-2"></i>Đơn hàng của tôi
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item" routerLink="/wishlist">
-                    <i class="bi bi-heart me-2"></i>Sản phẩm yêu thích
-                  </a>
-                </li>
-                <li><hr class="dropdown-divider"></li>
-                <li>
-                  <a class="dropdown-item" routerLink="/settings">
-                    <i class="bi bi-gear me-2"></i>Cài đặt
-                  </a>
+                  <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item text-danger" href="javascript:void(0)" (click)="logout()">
+                  <a
+                    class="dropdown-item text-danger"
+                    href="javascript:void(0)"
+                    (click)="logout()"
+                  >
                     <i class="bi bi-box-arrow-right me-2"></i>Đăng xuất
                   </a>
                 </li>

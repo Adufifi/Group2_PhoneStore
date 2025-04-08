@@ -89,7 +89,7 @@ namespace PhoneStore.Api.Controllers
                     return BadRequest(statusResponse);
                 }
                 statusResponse.status = 200;
-                statusResponse.mess = "User is admin";
+                statusResponse.mess = "User is user";
                 return Ok(statusResponse);
             }
             catch (Exception ex)

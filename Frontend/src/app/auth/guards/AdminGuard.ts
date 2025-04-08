@@ -28,9 +28,11 @@ export class AdminGuard implements CanActivate {
     const token = this.cookieServices.get('Authentication');
     if (!token) {
       this.router.navigate(['/login']);
-      return new Observable((observer) => observer.next(false));
+      return new Observable<boolean>((observer) => {
+        observer.next(false);
+        observer.complete();
+      });
     }
-    debugger;
     const decodedToken: any = jwtDecode(token);
     const userId =
       decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid'];
@@ -41,24 +43,26 @@ export class AdminGuard implements CanActivate {
     return new Observable<boolean>((observer) => {
       this.userServices.checkAdmin(checkRequest).subscribe({
         next: (res) => {
-          // Xem API trả về gì
-          console.log('AdminGuard: checkAdmin next() →', res);
           if (res.status === 200) {
             observer.next(true);
           } else {
+            this.router.navigate(['/login']);
+            this.handler();
             observer.next(false);
-            setTimeout(() => {
-              this.router.navigate(['/login']);
-            }, 0);
           }
           observer.complete();
         },
         error: (err) => {
-          console.error('AdminGuard: checkAdmin error() =', err);
+          this.router.navigate(['/login']);
+          this.handler();
           observer.next(false);
           observer.complete();
         },
       });
     });
+  }
+  handler(): void {
+    localStorage.clear();
+    this.cookieServices.delete('Authentication', '/');
   }
 }

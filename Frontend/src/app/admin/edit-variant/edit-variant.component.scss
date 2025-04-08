@@ -1,0 +1,129 @@
+.main-content {
+  padding: 20px;
+}
+
+.edit-variant-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+
+    h1 {
+      margin: 0;
+      color: #333;
+    }
+
+    .product-info {
+      margin-top: 10px;
+
+      h2 {
+        margin: 0;
+        color: #666;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .variant-form {
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+      }
+
+      select.form-control {
+        height: 38px;
+      }
+
+      .image-upload-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+
+        .image-preview {
+          width: 150px;
+          height: 150px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          overflow: hidden;
+          background-color: #f8f9fa;
+
+          .preview-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .upload-controls {
+          flex: 1;
+
+          .form-text {
+            display: block;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &.btn-secondary {
+          background-color: #6c757d;
+          color: white;
+          border: none;
+
+          &:hover {
+            background-color: #5a6268;
+          }
+        }
+
+        &.btn-primary {
+          background-color: #007bff;
+          color: white;
+          border: none;
+
+          &:hover {
+            background-color: #0069d9;
+          }
+        }
+      }
+    }
+  }
+}

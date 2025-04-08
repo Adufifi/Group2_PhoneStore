@@ -1,3 +1,4 @@
+import { jwtDecode } from 'jwt-decode';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginVm } from '../Interface/LoginVm';
@@ -18,6 +19,25 @@ export class UserService {
   checkAdmin(checkRequest: CheckRequest): Observable<StatusResponse> {
     return this.http.post<StatusResponse>(
       `https://localhost:7227/api/authentication/checkAdmin`,
+      checkRequest,
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
+  getAccountId(): string {
+    const token = this.cookieService.get('Authentication');
+    if (!token) {
+      return '';
+    }
+    const decodedToken: any = jwtDecode(token);
+    const userId =
+      decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid'];
+    return userId;
+  }
+  checkUser(checkRequest: CheckRequest): Observable<StatusResponse> {
+    return this.http.post<StatusResponse>(
+      `https://localhost:7227/api/authentication/checkUser`,
       checkRequest,
       {
         headers: { 'Content-Type': 'application/json' },

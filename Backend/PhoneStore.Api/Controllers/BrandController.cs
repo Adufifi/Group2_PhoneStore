@@ -14,7 +14,6 @@ namespace PhoneStore.Api.Controllers
             _mapper = mapper;
         }
         [HttpGet("AllBrand")]
-        [Authorize]
         public async Task<IActionResult> AllBrand()
         {
             var data = await _brandService.GetAllAsync();
